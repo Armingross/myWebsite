@@ -1,0 +1,108 @@
+.display {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(2, 31, 86, 0.765);
+}
+
+.textButtonBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 3px solid white;
+    border-radius: 50px;
+    height: 500px;
+    width: 800px;
+}
+
+.greeting {
+    font-size: 50px;
+}
+
+.greetingBox {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.myName {
+    font-size: 80px;
+}
+
+.knowMeBtn {
+    width: 180px;
+    height: 60px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+.knowMeBtn:hover{
+    background-color: rgba(255, 255, 255, 0.354);
+}
+
+#greetingMyName {
+    font-family: Roboto;
+    color:white;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.menuBox {
+    width: 360px;
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menuButton {
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 110px;
+    height: 30px;
+    background-color: transparent;
+    color: white;
+    font-size: 19px;
+}
+
+.menuButton:hover {
+    background-color: rgba(255, 255, 255, 0.354);
+}
+
+.logoBox {
+    position: fixed;
+    border: 2px solid white;
+    border-radius: 5px;
+    left: 40px;
+    top: 30px;
+    height: 45px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoText {
+    color: white;
+    font-size: 24px;
+    margin: 2px;
+    letter-spacing: 1.5px;
+}
+
+.logoBox:hover {
+    background-color: rgba(255, 255, 255, 0.354);
+}
+
+.example-container div {
+    background: white;
+    border-radius: 30px;
+    width: 150px;
+    height: 150px;
+  }
