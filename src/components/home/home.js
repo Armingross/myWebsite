@@ -6,58 +6,105 @@ import { motion } from "framer-motion"
 export default function Home(){
     <link rel="stylesheet" href="home.css"/>
 
-    const menuLogoBoxButtonAppear = {
-        hidden: { opacity: 0 },
-        show: { opacity: 1,
-            transition: {
-                delay: 2
-            } }
-    }
+    const duration = 2.5;
+    const buttonScale = 1.1;
 
-    const textBtnBoxBorderAppear = {
-        hidden: { border: "none" },
-        show: { border: "3px solid white",
-            transition: {
-                delay: 2
-            }
-        }
-    }
-
-    const jumpToLeft = {
-        center: { position: "absolute", fontSize: "100px" },
-        static: { position: "static", fontSize: "50px",
+    const logoVariant = {
+        hidden: { x: -100 },
+        show: { x: 0,
                 transition: {
-                    delay: 2.5,
-                    duration: 5
+                    type: "tween",
+                    delay: duration
+                }},
+        hover: { scale: buttonScale }
+    }
+
+    const menuVariant = {
+        hidden: { x: 0 },
+        show: { x: 0,
+                transition: {
+                    delay: duration,   
+                    when: "beforeChildren",
+                    staggerChildren: 0.2
+                }},
+    }
+
+    const menuButtonVariant = {
+        hidden: { x: "100vw" },
+        show: { x: 0,
+                transition: {
+                    type: "tween"
+                }}
+    }
+
+    const centerBoxVariant = {
+        hidden: { scale: 0.6, border: 0},
+        show: { scale: 1, border: "3px solid white",
+                transition: {
+                    delay: duration
+                }}
+    }
+
+    const textVariant = {
+        hidden: { opacity: 0, y: 50 },
+        show: {y: 0, opacity: 1,
+            transition: {
+                y: { delay: duration },
+                opacity: { duration: 1 }
                 }
             }
-        } 
+        }
 
-    const textAppear = {
+    const buttonVariant = {
         hidden: { opacity: 0 },
         show: { opacity: 1,
             transition: {
-                duration: 1
-            }
-        }
+                delay: duration
+            }}
     }
 
     return(
         <div class="display">
-            <motion.div variants={menuLogoBoxButtonAppear} initial="hidden" animate="show" class="menuLogoBox"> {/*div for logo div and menu div*/}
-                <motion.div animate={{ rotate: 360 }} transition={{ duration: 2.5 }} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} class="logoBox"> {/*div for log*/}
+                {/*logo div*/}
+                <motion.div class="logoBox"
+                variants={logoVariant}
+                initial="hidden"
+                animate="show"
+                whileHover="hover">
                     <Typography class="logoText">A|G</Typography>                    
                 </motion.div>
-                <motion.div class="menuBox"> {/*div for menu buttons*/}
-                    <motion.button animate={{ rotate: 360 }} transition={{ duration: 2.5 }} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} class="menuButton">About Me</motion.button>
-                    <motion.button animate={{ rotate: 360 }} transition={{ duration: 2.5 }} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} class="menuButton">Resume</motion.button>
-                    <motion.button animate={{ rotate: 360 }} transition={{ duration: 2.5 }} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} class="menuButton">Contact</motion.button>
+                {/*div for menu buttons*/}
+                <motion.div class="menuBox"
+                variants={menuVariant}
+                initial="hidden"
+                animate="show">
+                    {/* left Button */}
+                    <motion.button class="menuButton" variants={menuButtonVariant} whileHover={{ scale:buttonScale }}>
+                        About Me
+                    </motion.button>
+                    {/* middle Button */}
+                    <motion.button class="menuButton" variants={menuButtonVariant} whileHover={{ scale:buttonScale }}>
+                        Resume
+                    </motion.button>
+                    {/* right Button */}
+                    <motion.button class="menuButton" variants={menuButtonVariant} whileHover={{ scale:buttonScale }}>
+                        Contact
+                    </motion.button>
                 </motion.div>
-            </motion.div>
-            <motion.div variants={textBtnBoxBorderAppear} initial="hidden" animate="show" class="textButtonBox">{/*white box*/}
-                <motion.p variants={textAppear} initial="hidden" animate="show" class="greeting" id="greetingMyName">Hi, I'm</motion.p>
-                <motion.p variants={textAppear} initial="hidden" animate="show" class="myName" id="greetingMyName">Armin Gross</motion.p>
-                <motion.button variants={menuLogoBoxButtonAppear} initial="hidden" animate="show" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} class="knowMeBtn">Get to know me</motion.button>
+            {/*white box*/}
+            <motion.div class="textBtnBox" variants={centerBoxVariant} initial="hidden" animate="show">
+                <motion.p class="greeting" id="greetingMyName" variants={textVariant}>
+                    Hi, I'm
+                </motion.p>
+                <motion.p class="myName" id="greetingMyName" variants={textVariant}>
+                    Armin Gross
+                </motion.p>
+                <motion.button class="knowMeBtn"
+                variants={buttonVariant}
+                whileHover={{ scale: buttonScale }}
+                whileTap={{ scale: 0.8 }}>
+                    Get to know me
+                </motion.button>
             </motion.div>
         </div>
     )
