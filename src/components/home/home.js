@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 export default function Home(){
     <link rel="stylesheet" href="home.css"/>
 
-    const duration = 2.5;
+    const delayTime = 2.5;
     const buttonScale = 1.1;
 
     const logoVariant = {
@@ -14,7 +14,7 @@ export default function Home(){
         show: { x: 0,
                 transition: {
                     type: "tween",
-                    delay: duration
+                    delay: delayTime
                 }},
         hover: { scale: buttonScale }
     }
@@ -23,7 +23,7 @@ export default function Home(){
         hidden: { x: 0 },
         show: { x: 0,
                 transition: {
-                    delay: duration,   
+                    delay: delayTime,   
                     when: "beforeChildren",
                     staggerChildren: 0.2
                 }},
@@ -38,10 +38,10 @@ export default function Home(){
     }
 
     const centerBoxVariant = {
-        hidden: { scale: 0.6, border: 0},
-        show: { scale: 1, border: "3px solid white",
+        hidden: { width:"500px", height:"300px", border: 0},
+        show: { width:"800px", height:"500px", border: "3px solid white",
                 transition: {
-                    delay: duration
+                    delay: delayTime
                 }}
     }
 
@@ -49,8 +49,8 @@ export default function Home(){
         hidden: { opacity: 0, y: 50 },
         show: {y: 0, opacity: 1,
             transition: {
-                y: { delay: duration },
-                opacity: { duration: 1 }
+                y: { delay: delayTime },
+                opacity: { delayTime: 1 }
                 }
             }
         }
@@ -59,7 +59,7 @@ export default function Home(){
         hidden: { opacity: 0 },
         show: { opacity: 1,
             transition: {
-                delay: duration
+                delay: delayTime
             }}
     }
 
