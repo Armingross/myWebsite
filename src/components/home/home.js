@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styles from "./home.css"
-import { Typography, useMediaQuery, } from '@mui/material'
+import { duration, Typography, useMediaQuery, } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { motion } from "framer-motion"
 import Menu from "./menu.js"
@@ -13,7 +13,7 @@ export default function Home(){
 
     const smallSize = useMediaQuery("@media screen and (max-width: 900px)")
 
-    const [menuState, setMenuState] = useState("false")
+    const [menuState, setMenuState] = useState(false)
 
     const logoVariant = {
         hidden: { x: "-100vw" },
@@ -97,7 +97,7 @@ export default function Home(){
                         variants={menuIconVariant}
                         initial="hidden"
                         animate="show">
-                            <MenuIcon sx={{color:"white", fontSize: "55px"}}/>
+                                <MenuIcon onClick={() => {setMenuState(true)}} sx={{color:"white", fontSize: "55px"}}/>
                     </motion.div>
         </div>
         )
@@ -123,19 +123,18 @@ export default function Home(){
     
 
     return(
-        <div style={{width: "100vw", height: "100vh", backgrounColor: "red"}}>
-        <Menu></Menu>            
         <div className="display">
-                {/*logo div*/}
-                <motion.div className="logoBox"
-                variants={logoVariant}
-                initial="hidden"
-                animate="show"
-                whileHover="hover">
-                    <Typography className="logoText">A|G</Typography>                    
-                </motion.div>
-                {/*div for menu buttons*/}
-                {menuBox}
+            <Menu menuState={menuState} setMenuState={setMenuState}></Menu>
+            {/*logo div*/}
+            <motion.div className="logoBox"
+            variants={logoVariant}
+            initial="hidden"
+            animate="show"
+            whileHover="hover">
+                <Typography className="logoText">A|G</Typography>                    
+            </motion.div>
+            {/*div for menu buttons*/}
+            {menuBox}
             {/*white box*/}
             <motion.div layout className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">
                 <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
@@ -151,7 +150,6 @@ export default function Home(){
                     Get to know me
                 </motion.button>
             </motion.div>
-        </div>
         </div>
     )
 }
