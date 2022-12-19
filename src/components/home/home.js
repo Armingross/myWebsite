@@ -1,16 +1,22 @@
-import React from "react"
+import React, { useState } from "react"
 import styles from "./home.css"
-import { Typography, Box, Button, } from '@mui/material'
+import { Typography, useMediaQuery, } from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu';
 import { motion } from "framer-motion"
+import Menu from "./menu.js"
 
 export default function Home(){
     <link rel="stylesheet" href="home.css"/>
 
-    const delayTime = 2.5;
-    const buttonScale = 1.1;
+    const delayTime = 2.5
+    const buttonScale = 1.1
+
+    const smallSize = useMediaQuery("@media screen and (max-width: 900px)")
+
+    const [menuState, setMenuState] = useState("false")
 
     const logoVariant = {
-        hidden: { x: -100 },
+        hidden: { x: "-100vw" },
         show: { x: 0,
                 transition: {
                     type: "tween",
@@ -36,17 +42,36 @@ export default function Home(){
                     type: "tween"
                 }}
     }
-
-    const centerBoxVariant = {
-        hidden: { width:"500px", height:"300px", border: 0},
-        show: { width:"800px", height:"500px", border: "3px solid white",
+    
+    const menuIconVariant = {
+        hidden: { x: "100vw" },
+        show: { x: 0,
                 transition: {
+                    type: "tween",
                     delay: delayTime
                 }}
     }
 
+    const centerBoxVariant = smallSize
+    ? {
+        hidden: { width:"100vw", height:"200px", border: 0},
+        show: { width: "100vw", height:"350px", border: 0,
+            transition: {
+                delay: delayTime
+            },
+        }
+    }
+    : {
+        hidden: { width:"500px", height:"300px", border: 0},
+        show: { width:"800px", height:"500px", border: "3px solid white",
+            transition: {
+                delay: delayTime
+            },
+        }
+    }
+
     const textVariant = {
-        hidden: { opacity: 0, y: 50 },
+        hidden: { opacity: 0, y: 34 },
         show: {y: 0, opacity: 1,
             transition: {
                 y: { delay: delayTime },
@@ -63,49 +88,70 @@ export default function Home(){
             }}
     }
 
-    return(
-        <div class="display">
-                {/*logo div*/}
-                <motion.div class="logoBox"
-                variants={logoVariant}
-                initial="hidden"
-                animate="show"
-                whileHover="hover">
-                    <Typography class="logoText">A|G</Typography>                    
-                </motion.div>
-                {/*div for menu buttons*/}
-                <motion.div class="menuBox"
+    const menuBox = smallSize
+    ? (
+        /* Menu icon Box */
+        <div className="menuBox">
+                    {/* Menu icon */}
+                    <motion.div
+                        variants={menuIconVariant}
+                        initial="hidden"
+                        animate="show">
+                            <MenuIcon sx={{color:"white", fontSize: "55px"}}/>
+                    </motion.div>
+        </div>
+        )
+    : (
+        <motion.div className="menuBox"
                 variants={menuVariant}
                 initial="hidden"
                 animate="show">
                     {/* left Button */}
-                    <motion.button class="menuButton" variants={menuButtonVariant} whileHover={{ scale:buttonScale }}>
+                    <motion.button className="menuButton" variants={menuButtonVariant} whileHover={{ scale:buttonScale }}>
                         About Me
                     </motion.button>
                     {/* middle Button */}
-                    <motion.button class="menuButton" variants={menuButtonVariant} whileHover={{ scale:buttonScale }}>
+                    <motion.button className="menuButton" variants={menuButtonVariant} whileHover={{ scale:buttonScale }}>
                         Resume
                     </motion.button>
                     {/* right Button */}
-                    <motion.button class="menuButton" variants={menuButtonVariant} whileHover={{ scale:buttonScale }}>
+                    <motion.button className="menuButton" variants={menuButtonVariant} whileHover={{ scale:buttonScale }}>
                         Contact
                     </motion.button>
                 </motion.div>
+        )
+    
+
+    return(
+        <div style={{width: "100vw", height: "100vh", backgrounColor: "red"}}>
+        <Menu></Menu>            
+        <div className="display">
+                {/*logo div*/}
+                <motion.div className="logoBox"
+                variants={logoVariant}
+                initial="hidden"
+                animate="show"
+                whileHover="hover">
+                    <Typography className="logoText">A|G</Typography>                    
+                </motion.div>
+                {/*div for menu buttons*/}
+                {menuBox}
             {/*white box*/}
-            <motion.div class="textBtnBox" variants={centerBoxVariant} initial="hidden" animate="show">
-                <motion.p class="greeting" id="greetingMyName" variants={textVariant}>
+            <motion.div layout className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">
+                <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
                     Hi, I'm
                 </motion.p>
-                <motion.p class="myName" id="greetingMyName" variants={textVariant}>
+                <motion.p className="myName" id="greetingMyName" variants={textVariant}>
                     Armin Gross
                 </motion.p>
-                <motion.button class="knowMeBtn"
+                <motion.button className="knowMeBtn"
                 variants={buttonVariant}
                 whileHover={{ scale: buttonScale }}
                 whileTap={{ scale: 0.8 }}>
                     Get to know me
                 </motion.button>
             </motion.div>
+        </div>
         </div>
     )
 }
