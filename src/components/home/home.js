@@ -4,6 +4,7 @@ import { duration, Typography, useMediaQuery, } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { motion } from "framer-motion"
 import Menu from "./menu.js"
+import { Navigate, useNavigate } from 'react-router-dom';
 
 export default function Home(){
     <link rel="stylesheet" href="home.css"/>
@@ -14,6 +15,8 @@ export default function Home(){
     const smallSize = useMediaQuery("@media screen and (max-width: 900px)")
 
     const [menuState, setMenuState] = useState(false)
+    
+    let navigate = useNavigate();
 
     const logoVariant = {
         hidden: { x: "-100vw" },
@@ -88,6 +91,11 @@ export default function Home(){
             }}
     }
 
+    const navigateAboutMe = () => {
+        console.log("huso")
+        navigate("/aboutme")
+    }
+
     const menuBox = smallSize
     ? (
         /* Menu icon Box */
@@ -107,7 +115,7 @@ export default function Home(){
                 initial="hidden"
                 animate="show">
                     {/* left Button */}
-                    <motion.button className="menuButton" variants={menuButtonVariant} whileHover={{ scale:buttonScale }}>
+                    <motion.button className="menuButton" onClick={navigateAboutMe} variants={menuButtonVariant} whileHover={{ scale:buttonScale }}>
                         About Me
                     </motion.button>
                     {/* middle Button */}
