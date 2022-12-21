@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styles from "./home.css"
-import { duration, Typography, useMediaQuery, } from '@mui/material'
+import { Typography, useMediaQuery, } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { motion } from "framer-motion"
 import Menu from "./menu.js"
@@ -126,7 +126,7 @@ export default function Home(){
                     <motion.button className="menuButton" variants={menuButtonVariant} whileHover={{ scale:buttonScale }}>
                         Contact
                     </motion.button>
-                </motion.div>
+        </motion.div>
         )
     
 

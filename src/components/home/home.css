@@ -73,7 +73,7 @@
 }
 
 .logoBox {
-    position: fixed;
+    position: absolute;
     border: 2px solid white;
     border-radius: 5px;
     left: 40px;
