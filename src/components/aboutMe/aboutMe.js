@@ -26,66 +26,64 @@ export default function Home(){
                         Contact
                     </button>
             </div>
+
             {/* First Page */}
-            <div className="whiteBoxDiv" id="firstBox">
+            <div className="whiteBoxDiv" id="firstPageBox">
                 {/* Text Box */}
-                <div className="whiteBox" id="firstTextBox">
+                <div className="whiteBox" id="firstPageTextBox">
                     <p className="text">I'm from Sarnthein</p>
                 </div>
-                {/* Picture Box */}
-                <div className="whiteBox" id="firstPictureBox">
-                    <img src="img/sarnthein.jpg" alt="picture of Sarnthein" width={"100%"} height={"100%"}/>
-                </div>
+                {/* Picture */}
+                <img src="img/sarnthein.jpg" alt="picture of Sarnthein" className="firstPagePicture"/>
             </div>
+
             {/* Second Page */}
-            <div className="whiteBoxDiv" id="secondBox">
+            <div className="whiteBoxDiv" id="secondPageBox">
                 {/* Text Box */}
-                <div className="whiteBox" id="secondTextBox">
+                <div className="secondPageTextBox">
                     <p className="text">Which is Located</p>
                     <p className="text">in the North</p>
                     <p className="text">of Italy</p>
                 </div>
                 {/* Picture Box */}
-                <div className="whiteBox" id="secondPictureBox">
-                                        {/* #svgView(preserveAspectRatio(none))  */}
-                    {/* <img src="img/italy.svg" alt="picture of Italy" width={"100%"} height={"100%"}/> */}
-                    <video width="100%" height="100%" style={{objectFit: "fill"}} autoPlay muted>
-                        <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
-                        {/* Sarnthein.mp4#svgView(preserveAspectRatio(none)) */}
-                    </video>
-                </div>
+                <video className="secondPageVideo" autoPlay muted>
+                    <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
+                </video>
             </div>
+
             {/* Third Page */}
             <div className="whiteBoxDiv" id="thirdBox">
-                <div className="whiteBox" id="thirdPictureBox">
-                    <img src="img/hiking.jpg" alt="picture of a Tent" width={"100%"} height={"100%"}/>
-                </div>
+                <img src="img/hikingTent.jpg" alt="picture of a Tent" className="thirdPictureOne"/>
                 <div className="whiteBox" id="thirdTextBox">
-                        <p className="text">I like Hiking</p>
+                    <p className="text">I like Hiking</p>
                 </div>
+                <img src="img/hirzerKreuz.jpg" alt="picture of a cross on mountain" className="thirdPictureTwo"/>
             </div>
-            {/* Fourth page */}
+
+            {/* Traveling page */}
             <div className="whiteBoxDiv" id="fourthBox">
-                <div className="whiteBox" id="fourthPictureOneBox">
-                    <img src="img/grandCanyon.jpg" alt="picture of me at the Grand Canyon" width={"100%"} height={"100%"}/>
+                <img src="img/grandCanyon.jpg" alt="picture of me at the Grand Canyon" className="fourthPictureOne"/>
+                <div className="whiteBox" id="FourthTextPictureBox">
+                    <div id="fourthTextBox">
+                            <p className="text">I like Traveling</p>
+                    </div>
+                    <img src="img/newYork.jpg" alt="picture of the New York Skyline" className="fourthPictureTwo"/>
                 </div>
-                <div className="whiteBox" id="fourthTextBox">
-                        <p className="text">I like Traveling</p>
-                </div>
-                <div className="whiteBox" id="fourthPictureTwoBox">
-                    <img src="img/goldenGate.jpg" alt="picture of me in front of the golden Gate Bridge" width={"100%"} height={"100%"}/>
-                </div>
-            </div>            
-            {/* Fourth page */}
+                <img src="img/goldenGate.jpg" alt="picture of me in front of the golden Gate Bridge" className="travelPictureTwo"/>
+            </div>   
+
+            {/* Fifth page */}
             <div className="whiteBoxDiv">
                 <div className="whiteBox"></div>
                 <div className="whiteBox"></div>
-            </div>            
+            </div> 
+
             {/* Sixth page */}
             <div className="whiteBoxDiv">
                 <div className="whiteBox"></div>
                 <div className="whiteBox"></div>
             </div>
+
         </div>
     )
 }
