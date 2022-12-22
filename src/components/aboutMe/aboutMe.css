@@ -10,8 +10,8 @@
 .page {
     display: flex;
     width: 98%;
-    height: 100vh;
-    border: 1px solid red;
+    height: 100vh;/* 
+    border: 1px solid red; */
 }
 
 .text {
@@ -63,34 +63,31 @@
 /* Hiking Page */
 #thirdPage {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vw;
+    height: 100vh;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 .thirdPictureOne {
-    height: 100%;
-    align-self: flex-end;    
+    width: 30%;
 }
 
 .thridTextPictureBox {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 35vw;
-    width: 70vw;
-    border: 1px solid green;
-    align-self: flex-end;
-    margin-bottom: 10px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
 }
 
 #thirdTextBox {
+    display: flex;
+    align-items: center;
     justify-content: center;
+    height: auto;
 }
 
 .thirdPictureTwo {
-    height: 35vw;
-    align-self: flex-start;
+    width: 100%;
 }
 
 
@@ -101,20 +98,21 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    height: 60vw;
 }
 
 .fourthPictureOne {
-    width: 400px;
+    width: 28vw;
 }
 
 #FourthTextPictureBox {
-    width: 400px;
+    width: 28vw;
     display: flex;
     flex-direction: column;
-    align-self: flex-end;
 }
 
 #fourthTextBox {
+    display: flex;
     justify-content: center;
     height: 188px;
 }
@@ -124,7 +122,7 @@
 }
 
 .travelPictureTwo {
-    width: 400px;
+    width: 28vw;
     height: auto;
 }
 
@@ -135,6 +133,30 @@
     justify-content: space-evenly;
 }
 
-.sportPicture {
-    width: 400px;
+.sportPictureOne {
+    width: 28vw;
+}
+
+.sportPictureTwo {
+    width: 28vw;
+}
+
+/* and of course */
+#sixthPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Programming Page */
+#seventhPage {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.programmingPicture {
+    width: 28vw;
+    height: 500px;
+    border: 1px solid white;
 }

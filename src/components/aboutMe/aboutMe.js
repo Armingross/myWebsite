@@ -57,9 +57,9 @@ export default function Home(){
                     <div id="thirdTextBox">
                         <p className="text">I like Hiking...</p>
                     </div>
-                    <img src="img/hikingTent.jpg" alt="picture of a Tent" className="thirdPictureOne"/>
+                    <img src="img/jakobsSpitzePanorama.jpg" alt="picture of a Tent" className="thirdPictureTwo"/>
                 </div>
-                <img src="img/jakobsSpitzePanorama.jpg" alt="picture of a Tent" className="thirdPictureTwo"/>
+                <img src="img/hikingTent.jpg" alt="picture of a Tent" className="thirdPictureOne"/>
             </div>
 
             {/* Traveling page */}
@@ -76,16 +76,29 @@ export default function Home(){
 
             {/* Fifth page */}
             <div className="page" id="fifthPage">
+                <img src="img/gym.png" alt="picture of me playing volleyball" className="sportPictureOne"/>
                 <div>
                     <p className="text">Sport...</p>
                 </div>
-                <img src="img/volleyball.jpg" alt="picture of me playing volleyball" className="sportPicture"/>
+                <img src="img/volleyball.jpg" alt="picture of me in the gym" className="sportPictureTwo"/>
             </div> 
 
             {/* Sixth page */}
-            <div className="page">
-                <div></div>
-                <div></div>
+            <div className="page" id="sixthPage">
+                <div>
+                    <p className="text">and of course...</p>
+                </div>
+            </div>
+
+            {/* Programming page */}
+            <div className="page" id="seventhPage">
+                <div>
+                    <p className="text">Programming</p>
+                </div>
+                <div className="programmingPicture">
+
+                </div>
+                {/* <img src="img/volleyball.jpg" alt="picture of me programming" className="programmingPicture"/> */}
             </div>
 
         </div>

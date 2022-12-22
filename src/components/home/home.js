@@ -92,7 +92,6 @@ export default function Home(){
     }
 
     const navigateAboutMe = () => {
-        console.log("huso")
         navigate("/aboutme")
     }
 
@@ -132,7 +131,7 @@ export default function Home(){
 
     return(
         <div className="display">
-            <Menu menuState={menuState} setMenuState={setMenuState}></Menu>
+            <Menu menuState={menuState} setMenuState={setMenuState} navigateAboutMe={navigateAboutMe}></Menu>
             {/*logo div*/}
             <motion.div className="logoBox"
             variants={logoVariant}

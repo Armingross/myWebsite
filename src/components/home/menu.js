@@ -3,7 +3,7 @@ import styles from "./home.css"
 import { motion, AnimatePresence } from "framer-motion"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-export default function Menu({menuState, setMenuState}) {
+export default function Menu({menuState, setMenuState, navigateAboutMe}) {
 
     const menuScreenVariant = {
         hidden: { x: "100vw" },
@@ -32,7 +32,7 @@ export default function Menu({menuState, setMenuState}) {
                     exit="hiddenAgain">
                         <div className="menuScreen">
                             <ArrowBackIcon className="arrowIcon" onClick={() => {setMenuState(false)}} sx={{fontSize: "40px"}}/>
-                            <p className="menuItems">About Me</p>
+                            <p className="menuItems" onClick={navigateAboutMe}>About Me</p>
                             <p className="menuItems">Resume</p>
                             <p className="menuItems">Contact Me</p>
                         </div>
