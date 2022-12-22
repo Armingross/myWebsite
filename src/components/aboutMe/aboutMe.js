@@ -28,9 +28,9 @@ export default function Home(){
             </div>
 
             {/* First Page */}
-            <div className="whiteBoxDiv" id="firstPageBox">
+            <div className="page" id="firstPage">
                 {/* Text Box */}
-                <div className="whiteBox" id="firstPageTextBox">
+                <div id="firstPageTextBox">
                     <p className="text">I'm from Sarnthein</p>
                 </div>
                 {/* Picture */}
@@ -38,7 +38,7 @@ export default function Home(){
             </div>
 
             {/* Second Page */}
-            <div className="whiteBoxDiv" id="secondPageBox">
+            <div className="page" id="secondPage">
                 {/* Text Box */}
                 <div className="secondPageTextBox">
                     <p className="text">Which is Located</p>
@@ -52,20 +52,22 @@ export default function Home(){
             </div>
 
             {/* Third Page */}
-            <div className="whiteBoxDiv" id="thirdBox">
-                <img src="img/hikingTent.jpg" alt="picture of a Tent" className="thirdPictureOne"/>
-                <div className="whiteBox" id="thirdTextBox">
-                    <p className="text">I like Hiking</p>
+            <div className="page" id="thirdPage">
+                <div className="thridTextPictureBox">
+                    <div id="thirdTextBox">
+                        <p className="text">I like Hiking...</p>
+                    </div>
+                    <img src="img/hikingTent.jpg" alt="picture of a Tent" className="thirdPictureOne"/>
                 </div>
-                <img src="img/hirzerKreuz.jpg" alt="picture of a cross on mountain" className="thirdPictureTwo"/>
+                <img src="img/jakobsSpitzePanorama.jpg" alt="picture of a Tent" className="thirdPictureTwo"/>
             </div>
 
             {/* Traveling page */}
-            <div className="whiteBoxDiv" id="fourthBox">
+            <div className="page" id="fourthPage">
                 <img src="img/grandCanyon.jpg" alt="picture of me at the Grand Canyon" className="fourthPictureOne"/>
-                <div className="whiteBox" id="FourthTextPictureBox">
+                <div id="FourthTextPictureBox">
                     <div id="fourthTextBox">
-                            <p className="text">I like Traveling</p>
+                            <p className="text">Traveling...</p>
                     </div>
                     <img src="img/newYork.jpg" alt="picture of the New York Skyline" className="fourthPictureTwo"/>
                 </div>
@@ -73,15 +75,17 @@ export default function Home(){
             </div>   
 
             {/* Fifth page */}
-            <div className="whiteBoxDiv">
-                <div className="whiteBox"></div>
-                <div className="whiteBox"></div>
+            <div className="page" id="fifthPage">
+                <div>
+                    <p className="text">Sport...</p>
+                </div>
+                <img src="img/volleyball.jpg" alt="picture of me playing volleyball" className="sportPicture"/>
             </div> 
 
             {/* Sixth page */}
-            <div className="whiteBoxDiv">
-                <div className="whiteBox"></div>
-                <div className="whiteBox"></div>
+            <div className="page">
+                <div></div>
+                <div></div>
             </div>
 
         </div>
