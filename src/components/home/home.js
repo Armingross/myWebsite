@@ -2,9 +2,9 @@ import React, { useState } from "react"
 import styles from "./home.css"
 import { Typography, useMediaQuery, } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import Menu from "./menu.js"
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home(){
     <link rel="stylesheet" href="home.css"/>
@@ -17,6 +17,18 @@ export default function Home(){
     const [menuState, setMenuState] = useState(false)
     
     let navigate = useNavigate();
+
+    const pageVariant = {
+        hidden: { opacity: 0, },
+        show: { opacity: 1,
+                transition: {
+                }
+            },
+        exit: { opacity: 0,
+                transition: {
+                }
+        }
+    }
 
     const logoVariant = {
         hidden: { x: "-100vw" },
@@ -130,7 +142,7 @@ export default function Home(){
     
 
     return(
-        <div className="display">
+        <motion.div className="display" variants={pageVariant} initial="hidden" animate="show" exit="exit">
             <Menu menuState={menuState} setMenuState={setMenuState} navigateAboutMe={navigateAboutMe}></Menu>
             {/*logo div*/}
             <motion.div className="logoBox"
@@ -143,7 +155,7 @@ export default function Home(){
             {/*div for menu buttons*/}
             {menuBox}
             {/*white box*/}
-            <motion.div layout className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">
+            <motion.div layout className="centerBox" variants={centerBoxVariant}>
                 <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
                     Hi, I'm
                 </motion.p>
@@ -157,6 +169,6 @@ export default function Home(){
                     Get to know me
                 </motion.button>
             </motion.div>
-        </div>
+        </motion.div>
     )
 }

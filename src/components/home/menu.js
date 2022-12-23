@@ -17,7 +17,6 @@ export default function Menu({menuState, setMenuState, navigateAboutMe}) {
                             type: "tween",
                             duration: 0.5
                         }
-
         }
     }
 

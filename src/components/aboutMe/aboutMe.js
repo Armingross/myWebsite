@@ -1,12 +1,36 @@
 import React from "react"
 import styles from "./aboutMe.css"
 import { Typography } from '@mui/material'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { Opacity } from "@mui/icons-material"
+import { useNavigate } from 'react-router-dom';
 
 export default function Home(){
     <link rel="stylesheet" href="aboutMe.css"/>
 
+    let { scrollYProgress } = useScroll();
+    let y = useTransform(scrollYProgress, [0, 1],["0","-100%"]);
+
+    let navigate = useNavigate();
+
+    const pageVariant = {
+        hidden: { opacity: 0 },
+        show: { opacity: 1,
+                transition: {
+                }
+            },
+        exit: { opacity: 0,
+                transition: {
+                }
+            }
+    }
+
+    const navigateHome = () => {
+        navigate("/")
+    }
+
     return(
-        <div className="aboutMedisplay">
+        <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit" className="aboutMedisplay">
             {/* Logo in left up Corner */}
             <div className="logoBox">
                 <Typography className="logoText">A|G</Typography>                    
@@ -14,7 +38,7 @@ export default function Home(){
             {/* Menu in right up corner */}
             <div className="menuBox">
                     {/* left Button */}
-                    <button className="menuButton">
+                    <button className="menuButton" onClick={navigateHome}>
                         Home
                     </button>
                     {/* middle Button */}
@@ -101,6 +125,6 @@ export default function Home(){
                 {/* <img src="img/volleyball.jpg" alt="picture of me programming" className="programmingPicture"/> */}
             </div>
 
-        </div>
+        </motion.div>
     )
 }

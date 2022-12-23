@@ -1,17 +1,17 @@
 import './App.css';
 import AboutMe from './components/aboutMe/aboutMe';
 import Home from './components/home/home';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
-function App() {
+export default function App() {
+  const location = useLocation();
   return (
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='aboutMe' element={<AboutMe />} />
-          </Routes>
-        </BrowserRouter>
+    <AnimatePresence exitBeforeEnter>
+      <Routes location={location} key={location.pathname}>
+        <Route path='/' element={<Home />} />
+        <Route path='aboutMe' element={<AboutMe />} />
+      </Routes>
+    </AnimatePresence>
   );
 }
-
-export default App;
