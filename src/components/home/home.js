@@ -4,12 +4,12 @@ import { Typography, useMediaQuery, } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { AnimatePresence, motion } from "framer-motion"
 import Menu from "./menu.js"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import {useEffect} from 'react';
 
 export default function Home(){
     <link rel="stylesheet" href="home.css"/>
 
-    const delayTime = 2.5
     const buttonScale = 1.1
 
     const smallSize = useMediaQuery("@media screen and (max-width: 900px)")
@@ -18,16 +18,36 @@ export default function Home(){
     
     let navigate = useNavigate();
 
+    const useIntro = () => {
+
+        const location = useLocation()
+        const urlPath = location.pathname
+        const storage = window.localStorage;
+        const currTimestamp = Date.now();
+        const timestamp = JSON.parse(storage.getItem(`timestamp${urlPath}`) || '1000');
+        
+        const timeLimit = 60000 * 15; // 3 hours
+        
+        const hasTimePassed = currTimestamp - timestamp > timeLimit;
+        
+        useEffect(() => {
+            hasTimePassed ?
+                storage.setItem(`timestamp${urlPath}`, currTimestamp.toString()) 
+                : 
+                storage.setItem(`timestamp${urlPath}`, timestamp.toString());
+        }, []);
+
+        return hasTimePassed;
+        };
+
+    const delayTime = useIntro()
+    ? 2.5
+    : 0
+
     const pageVariant = {
         hidden: { opacity: 0, },
-        show: { opacity: 1,
-                transition: {
-                }
-            },
-        exit: { opacity: 0,
-                transition: {
-                }
-        }
+        show: { opacity: 1 },
+        exit: { opacity: 0 }
     }
 
     const logoVariant = {
@@ -142,33 +162,35 @@ export default function Home(){
     
 
     return(
-        <motion.div className="display" variants={pageVariant} initial="hidden" animate="show" exit="exit">
-            <Menu menuState={menuState} setMenuState={setMenuState} navigateAboutMe={navigateAboutMe}></Menu>
-            {/*logo div*/}
-            <motion.div className="logoBox"
-            variants={logoVariant}
-            initial="hidden"
-            animate="show"
-            whileHover="hover">
-                <Typography className="logoText">A|G</Typography>                    
+        <div className="display">
+            <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
+                <Menu menuState={menuState} setMenuState={setMenuState} navigateAboutMe={navigateAboutMe}></Menu>
+                {/*logo div*/}
+                <motion.div className="logoBox"
+                variants={logoVariant}
+                initial="hidden"
+                animate="show"
+                whileHover="hover">
+                    <Typography className="logoText">A|G</Typography>                    
+                </motion.div>
+                {/*div for menu buttons*/}
+                {menuBox}
+                {/*white box*/}
+                <motion.div layout className="centerBox" variants={centerBoxVariant}>
+                    <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
+                        Hi, I'm
+                    </motion.p>
+                    <motion.p className="myName" id="greetingMyName" variants={textVariant}>
+                        Armin Gross
+                    </motion.p>
+                    <motion.button className="knowMeBtn"
+                    variants={buttonVariant}
+                    whileHover={{ scale: buttonScale }}
+                    whileTap={{ scale: 0.8 }}>
+                        Get to know me
+                    </motion.button>
+                </motion.div>
             </motion.div>
-            {/*div for menu buttons*/}
-            {menuBox}
-            {/*white box*/}
-            <motion.div layout className="centerBox" variants={centerBoxVariant}>
-                <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
-                    Hi, I'm
-                </motion.p>
-                <motion.p className="myName" id="greetingMyName" variants={textVariant}>
-                    Armin Gross
-                </motion.p>
-                <motion.button className="knowMeBtn"
-                variants={buttonVariant}
-                whileHover={{ scale: buttonScale }}
-                whileTap={{ scale: 0.8 }}>
-                    Get to know me
-                </motion.button>
-            </motion.div>
-        </motion.div>
+        </div>
     )
 }
