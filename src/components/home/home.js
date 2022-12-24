@@ -24,11 +24,16 @@ export default function Home(){
         const urlPath = location.pathname
         const storage = window.localStorage;
         const currTimestamp = Date.now();
+        const storageTimestamp = storage.getItem('timestamp'+urlPath)
         const timestamp = JSON.parse(storage.getItem(`timestamp${urlPath}`) || '1000');
+        console.log(currTimestamp + " currTimestamp")
+        console.log(storageTimestamp + " storageTimestamp")
+        console.log(timestamp + " timestamp")
         
-        const timeLimit = 60000 * 15; // 3 hours
+        const timeLimit = 60000 * 15; // 15 minutes
         
         const hasTimePassed = currTimestamp - timestamp > timeLimit;
+        console.log(currTimestamp - timestamp)
         
         useEffect(() => {
             hasTimePassed ?
@@ -40,9 +45,34 @@ export default function Home(){
         return hasTimePassed;
         };
 
-    const delayTime = useIntro()
-    ? 2.5
-    : 0
+
+    const useAnimation = () => {
+
+        const urlPath = useLocation().pathname
+        const currTime = Date.now();
+        const storage = window.sessionStorage;
+        const timeLimit = 60000 * 15; // 15 minutes
+        const sessionTimeShouldBe = currTime + timeLimit;
+        storage.setItem("timestamp"+urlPath, sessionTimeShouldBe)
+        let sessionTime = window.sessionStorage.getItem("timestamp"+urlPath)
+        const timePassed = currTime - sessionTime;
+
+        if(timePassed > timeLimit){
+            sessionTime = currTime
+        }else{
+            sessionTime = sessionTimeShouldBe
+        }
+
+        console.log(sessionTime)
+        console.log(currTime)
+        
+
+        return "test"
+    }
+
+    useAnimation();
+
+    const delayTime = 2.5
 
     const pageVariant = {
         hidden: { opacity: 0, },
