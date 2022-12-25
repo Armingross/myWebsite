@@ -18,7 +18,7 @@ export default function Home(){
     
     let navigate = useNavigate();
 
-    const useIntro = () => {
+    /* const useIntro = () => {
 
         const location = useLocation()
         const urlPath = location.pathname
@@ -43,12 +43,14 @@ export default function Home(){
         }, []);
 
         return hasTimePassed;
-        };
+        }; */
 
 
     const useAnimation = () => {
+        const session = window.sessionStorage;
+        const local = window.localStorage;
 
-        const urlPath = useLocation().pathname
+        /* const urlPath = useLocation().pathname
         const currTime = Date.now();
         const storage = window.sessionStorage;
         const timeLimit = 60000 * 15; // 15 minutes
@@ -61,18 +63,23 @@ export default function Home(){
             sessionTime = currTime
         }else{
             sessionTime = sessionTimeShouldBe
-        }
-
-        console.log(sessionTime)
-        console.log(currTime)
+        } */
         
 
         return "test"
     }
 
-    useAnimation();
-
-    const delayTime = 2.5
+    /* delaytime which decides if animation has delay or not */
+    let delayTime;
+    
+    /*  */
+    let sessionCounter = sessionStorage.getItem("animation")
+    if(sessionCounter <= 1){
+        delayTime = 2.5;
+        sessionStorage.setItem("animation", sessionCounter+1)
+    }else{
+        delayTime = 0;
+    }
 
     const pageVariant = {
         hidden: { opacity: 0, },
