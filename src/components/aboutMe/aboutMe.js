@@ -52,8 +52,11 @@ export default function Home(){
                     <div id="firstPageTextBox">
                         <p className="text">I'm from Sarnthein</p>
                     </div>
-                    {/* Picture */}
-                    <img src="img/sarnthein.jpg" alt="picture of Sarnthein" className="firstPagePicture"/>
+                    {/* div which hides overflow */}
+                    <div className="firstPagePictureDiv">
+                        {/* Picture */}
+                        <img src="img/sarnthein.jpg" alt="picture of Sarnthein" className="firstPagePicture"/>
+                    </div>
                 </div>
 
                 {/* Second Page */}
@@ -65,9 +68,11 @@ export default function Home(){
                         <p className="text">of Italy</p>
                     </div>
                     {/* Picture Box */}
-                    <video className="secondPageVideo" autoPlay muted>
-                        <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
-                    </video>
+                    <div className="secondPageVideoDiv">
+                        <video className="secondPageVideo" onClick={e => e.target.play()} autoPlay muted>
+                            <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
+                        </video>
+                    </div>
                 </div>
 
                 {/* Third Page */}
@@ -76,9 +81,13 @@ export default function Home(){
                         <div id="thirdTextBox">
                             <p className="text">I like Hiking...</p>
                         </div>
-                        <img src="img/jakobsSpitzePanorama.jpg" alt="picture of a Tent" className="thirdPictureTwo"/>
+                        <div className="thirdPictureTwoDiv">
+                            <img src="img/jakobsSpitzePanorama.jpg" alt="picture of a Tent" className="thirdPictureTwo"/>
+                        </div>
                     </div>
-                    <img src="img/hikingTent.jpg" alt="picture of a Tent" className="thirdPictureOne"/>
+                    <div className="thirdPictureOneDiv">
+                        <img src="img/hikingTent.jpg" alt="picture of a Tent" className="thirdPictureOne"/>
+                    </div>
                 </div>
 
                 {/* Traveling page */}

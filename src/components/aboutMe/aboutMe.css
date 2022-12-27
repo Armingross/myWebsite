@@ -1,7 +1,12 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 31, 86, 0.765);
+    z-index: 0;
+    position: static;
+}
+
 .aboutMedisplay {
-    height: auto;
-    background-color: rgba(2, 31, 86, 0.765);/* 
-    background-color: rgba(10, 125, 153, 0.521); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,8 +15,7 @@
 .page {
     display: flex;
     width: 98%;
-    height: 100vh;/* 
-    border: 1px solid red; */
+    height: 100vh;
 }
 
 .text {
@@ -30,8 +34,16 @@
     width: 100%;
 }
 
+.firstPagePictureDiv{
+    width: 86.76vw;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
 .firstPagePicture {
-    width: 100%;
+    width: auto;
     height: 600px;
 }
 
@@ -46,6 +58,14 @@
 #secondPage {
     align-items: center;
     justify-content: space-evenly;
+}
+
+.secondPageVideoDiv {
+    width: 37.25vw;
+    height: 535px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .secondPageVideo {
@@ -63,13 +83,22 @@
 /* Hiking Page */
 #thirdPage {
     display: flex;
-    height: 100vh;
+    height: 50vw;
     align-items: flex-start;
-    gap: 10px;
+    gap: 30px;
+}
+
+.thirdPictureOneDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 27.9vw;
+    width: 25vw;
+    overflow: hidden;
 }
 
 .thirdPictureOne {
-    width: 30%;
+    height: 535px;
 }
 
 .thridTextPictureBox {
@@ -77,6 +106,10 @@
     flex-direction: column;
     justify-content: space-evenly;
     height: 100%;
+    width: 60vw;
+    align-items: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 #thirdTextBox {
@@ -86,8 +119,15 @@
     height: auto;
 }
 
+.thirdPictureTwoDiv{
+    display: flex;
+    align-items: center;
+    height: 28.8vw;
+    overflow: hidden;
+}
+
 .thirdPictureTwo {
-    width: 100%;
+    height: 553px;
 }
 
 

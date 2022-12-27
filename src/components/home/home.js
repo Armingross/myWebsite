@@ -18,64 +18,13 @@ export default function Home(){
     
     let navigate = useNavigate();
 
-    /* const useIntro = () => {
-
-        const location = useLocation()
-        const urlPath = location.pathname
-        const storage = window.localStorage;
-        const currTimestamp = Date.now();
-        const storageTimestamp = storage.getItem('timestamp'+urlPath)
-        const timestamp = JSON.parse(storage.getItem(`timestamp${urlPath}`) || '1000');
-        console.log(currTimestamp + " currTimestamp")
-        console.log(storageTimestamp + " storageTimestamp")
-        console.log(timestamp + " timestamp")
-        
-        const timeLimit = 60000 * 15; // 15 minutes
-        
-        const hasTimePassed = currTimestamp - timestamp > timeLimit;
-        console.log(currTimestamp - timestamp)
-        
-        useEffect(() => {
-            hasTimePassed ?
-                storage.setItem(`timestamp${urlPath}`, currTimestamp.toString()) 
-                : 
-                storage.setItem(`timestamp${urlPath}`, timestamp.toString());
-        }, []);
-
-        return hasTimePassed;
-        }; */
-
-
-    const useAnimation = () => {
-        const session = window.sessionStorage;
-        const local = window.localStorage;
-
-        /* const urlPath = useLocation().pathname
-        const currTime = Date.now();
-        const storage = window.sessionStorage;
-        const timeLimit = 60000 * 15; // 15 minutes
-        const sessionTimeShouldBe = currTime + timeLimit;
-        storage.setItem("timestamp"+urlPath, sessionTimeShouldBe)
-        let sessionTime = window.sessionStorage.getItem("timestamp"+urlPath)
-        const timePassed = currTime - sessionTime;
-
-        if(timePassed > timeLimit){
-            sessionTime = currTime
-        }else{
-            sessionTime = sessionTimeShouldBe
-        } */
-        
-
-        return "test"
-    }
-
     /* delaytime which decides if animation has delay or not */
     let delayTime;
     
     /*  */
     let sessionCounter = sessionStorage.getItem("animation")
     if(sessionCounter <= 1){
-        delayTime = 2.5;
+        delayTime = 3;
         sessionStorage.setItem("animation", sessionCounter+1)
     }else{
         delayTime = 0;
@@ -126,8 +75,8 @@ export default function Home(){
 
     const centerBoxVariant = smallSize
     ? {
-        hidden: { width:"100vw", height:"200px", border: 0},
-        show: { width: "100vw", height:"350px", border: 0,
+        hidden: { height:"200px", border: 0},
+        show: { height:"350px", border: 0,
             transition: {
                 delay: delayTime
             },
@@ -213,7 +162,7 @@ export default function Home(){
                 {/*div for menu buttons*/}
                 {menuBox}
                 {/*white box*/}
-                <motion.div layout className="centerBox" variants={centerBoxVariant}>
+                <motion.div className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">
                     <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
                         Hi, I'm
                     </motion.p>
