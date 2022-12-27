@@ -1,16 +1,10 @@
 body {
-    width: 100%;
-    height: 100%;
     background-color: rgba(2, 31, 86, 0.765);
-    z-index: 0;
-    position: static;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .display {
     height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     align-self: center;
@@ -107,8 +101,8 @@ body {
 
 
 .menuScreenBox {
-    width: 100vw;
     height: 100vh;
+    width: 100vw;
     position: absolute;
     z-index: 1;
     overflow: hidden;

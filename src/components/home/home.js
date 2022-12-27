@@ -148,35 +148,37 @@ export default function Home(){
     
 
     return(
-        <div className="display">
-            <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
-                <Menu menuState={menuState} setMenuState={setMenuState} navigateAboutMe={navigateAboutMe}></Menu>
-                {/*logo div*/}
-                <motion.div className="logoBox"
-                variants={logoVariant}
-                initial="hidden"
-                animate="show"
-                whileHover="hover">
-                    <Typography className="logoText">A|G</Typography>                    
+        <>
+            <Menu menuState={menuState} setMenuState={setMenuState} navigateAboutMe={navigateAboutMe}></Menu>
+            <div className="display">
+                <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
+                    {/*logo div*/}
+                    <motion.div className="logoBox"
+                    variants={logoVariant}
+                    initial="hidden"
+                    animate="show"
+                    whileHover="hover">
+                        <Typography className="logoText">A|G</Typography>                    
+                    </motion.div>
+                    {/*div for menu buttons*/}
+                    {menuBox}
+                    {/*white box*/}
+                    <motion.div className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">
+                        <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
+                            Hi, I'm
+                        </motion.p>
+                        <motion.p className="myName" id="greetingMyName" variants={textVariant}>
+                            Armin Gross
+                        </motion.p>
+                        <motion.button className="knowMeBtn"
+                        variants={buttonVariant}
+                        whileHover={{ scale: buttonScale }}
+                        whileTap={{ scale: 0.8 }}>
+                            Get to know me
+                        </motion.button>
+                    </motion.div>
                 </motion.div>
-                {/*div for menu buttons*/}
-                {menuBox}
-                {/*white box*/}
-                <motion.div className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">
-                    <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
-                        Hi, I'm
-                    </motion.p>
-                    <motion.p className="myName" id="greetingMyName" variants={textVariant}>
-                        Armin Gross
-                    </motion.p>
-                    <motion.button className="knowMeBtn"
-                    variants={buttonVariant}
-                    whileHover={{ scale: buttonScale }}
-                    whileTap={{ scale: 0.8 }}>
-                        Get to know me
-                    </motion.button>
-                </motion.div>
-            </motion.div>
-        </div>
+            </div>
+        </>
     )
 }
