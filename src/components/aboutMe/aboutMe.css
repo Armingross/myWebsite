@@ -14,8 +14,9 @@ body {
 
 .page {
     display: flex;
-    width: 98%;
+    width: 88vw;
     height: 100vh;
+    border: 1px solid red;
 }
 
 .text {
@@ -31,20 +32,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    width: 100%;
 }
 
 .firstPagePictureDiv{
-    width: 86.76vw;
+    width: 100%;
     height: 600px;
     display: flex;
     justify-content: center;
     overflow: hidden;
-}
-
-.firstPagePicture {
-    width: auto;
-    height: 600px;
 }
 
 #firstPageTextBox {
@@ -62,14 +57,10 @@ body {
 
 .secondPageVideoDiv {
     width: 37.25vw;
-    height: 535px;
+    height: 27.8vw;
     display: flex;
     justify-content: center;
     overflow: hidden;
-}
-
-.secondPageVideo {
-    height: 535px;
 }
 
 .secondPageTextBox {
@@ -83,8 +74,7 @@ body {
 /* Hiking Page */
 #thirdPage {
     display: flex;
-    height: 50vw;
-    align-items: flex-start;
+    align-items: center;
     gap: 30px;
 }
 
@@ -104,10 +94,9 @@ body {
 .thridTextPictureBox {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     height: 100%;
     width: 60vw;
-    align-items: center;
     align-items: center;
     overflow: hidden;
 }
@@ -116,7 +105,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: auto;
+    height: 15vw;
 }
 
 .thirdPictureTwoDiv{
@@ -138,11 +127,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    height: 60vw;
 }
 
-.fourthPictureOne {
+.fourthPictures {
     width: 28vw;
+    height: 37.18vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 #FourthTextPictureBox {
@@ -157,13 +150,16 @@ body {
     height: 188px;
 }
 
-.fourthPictureTwo {
-    width: 100%;
+.fourthPictureOne {
+    width: 536.6px;
 }
 
-.travelPictureTwo {
-    width: 28vw;
-    height: auto;
+.fourthPictureTwo {
+    width: 536.6px;
+}
+
+.fourthPictureThree {
+    width: 536.6px;
 }
 
 /* Sport Page */
@@ -173,12 +169,21 @@ body {
     justify-content: space-evenly;
 }
 
-.sportPictureOne {
+.fifthPictures {
     width: 28vw;
+    height: 37.18vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-.sportPictureTwo {
-    width: 28vw;
+.fifthPictureOne {
+    width: 536.6px;
+}
+
+.fifthPictureTwo {
+    width: 536.6px;
 }
 
 /* and of course */

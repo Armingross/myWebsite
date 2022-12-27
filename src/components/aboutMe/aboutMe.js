@@ -55,7 +55,7 @@ export default function Home(){
                     {/* div which hides overflow */}
                     <div className="firstPagePictureDiv">
                         {/* Picture */}
-                        <img src="img/sarnthein.jpg" alt="picture of Sarnthein" className="firstPagePicture"/>
+                        <img src="img/sarnthein.jpg" alt="picture of Sarnthein"/>
                     </div>
                 </div>
 
@@ -69,7 +69,7 @@ export default function Home(){
                     </div>
                     {/* Picture Box */}
                     <div className="secondPageVideoDiv">
-                        <video className="secondPageVideo" onClick={e => e.target.play()} autoPlay muted>
+                        <video onClick={e => e.target.play()} autoPlay muted>
                             <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
                         </video>
                     </div>
@@ -92,23 +92,33 @@ export default function Home(){
 
                 {/* Traveling page */}
                 <div className="page" id="fourthPage">
-                    <img src="img/grandCanyon.jpg" alt="picture of me at the Grand Canyon" className="fourthPictureOne"/>
+                    <div className="fourthPictures">
+                        <img src="img/grandCanyon.jpg" alt="picture of me at the Grand Canyon" className="fourthPictureOne"/>
+                    </div>
                     <div id="FourthTextPictureBox">
                         <div id="fourthTextBox">
                                 <p className="text">Traveling...</p>
                         </div>
-                        <img src="img/newYork.jpg" alt="picture of the New York Skyline" className="fourthPictureTwo"/>
+                        <div className="fourthPictures">
+                            <img src="img/newYork.jpg" alt="picture of the New York Skyline" className="fourthPictureTwo"/>
                     </div>
-                    <img src="img/goldenGate.jpg" alt="picture of me in front of the golden Gate Bridge" className="travelPictureTwo"/>
+                    </div>
+                    <div className="fourthPictures">
+                        <img src="img/goldenGate.jpg" alt="picture of me in front of the golden Gate Bridge" className="fourthPictureThree"/>
+                    </div>
                 </div>   
 
                 {/* Fifth page */}
                 <div className="page" id="fifthPage">
-                    <img src="img/gym.png" alt="picture of me playing volleyball" className="sportPictureOne"/>
+                    <div className="fifthPictures">
+                        <img src="img/gym.png" alt="picture of me playing volleyball" className="fifthPictureOne"/>
+                    </div>
                     <div>
                         <p className="text">Sport...</p>
                     </div>
-                    <img src="img/volleyball.jpg" alt="picture of me in the gym" className="sportPictureTwo"/>
+                    <div className="fifthPictures">
+                        <img src="img/volleyball.jpg" alt="picture of me in the gym" className="fifthPictureTwo"/>
+                    </div>
                 </div> 
 
                 {/* Sixth page */}
