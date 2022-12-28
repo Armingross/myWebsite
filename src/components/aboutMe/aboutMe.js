@@ -3,9 +3,10 @@ import styles from "./aboutMe.css"
 import { Typography } from '@mui/material'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Opacity } from "@mui/icons-material"
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import MenuLogo from "../menuLogo/menuLogo.js"
 
-export default function Home(){
+export default function AboutMe(){
     <link rel="stylesheet" href="aboutMe.css"/>
 
 /* for Parallax effekt, maybe try if i have time left */    
@@ -16,7 +17,7 @@ export default function Home(){
     });
     let y = useTransform(scrollYProgress, [0, 1], ["0%","-100%"]);
  */
-
+    
     let navigate = useNavigate();
     const delayTime = 0;
 
@@ -79,29 +80,8 @@ export default function Home(){
     return(
         <div className="aboutMedisplay">
             <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
-                {/* Logo in left up Corner */}
-                <motion.div className="logoBox" variants={logoVariant} initial="hidden" animate="show" whileHover="hover">
-                    <Typography className="logoText">A|G</Typography>                    
-                </motion.div>
-                {/* Menu in right up corner */}
-                <motion.div className="menuBox"
-                    variants={menuVariant}
-                    initial="hidden"
-                    animate="show">
-                        {/* left Button */}
-                        <motion.button className="menuButton" onClick={navigateHome} variants={menuButtonVariant} whileHover={{ scale:1.1 }}>
-                            Home
-                        </motion.button>
-                        {/* middle Button */}
-                        <motion.button className="menuButton" variants={menuButtonVariant} whileHover={{ scale:1.1 }}>
-                            Resume
-                        </motion.button>
-                        {/* right Button */}
-                        <motion.button className="menuButton" variants={menuButtonVariant} whileHover={{ scale:1.1 }}>
-                            Contact
-                        </motion.button>
-                </motion.div>
-
+                {/* Logo in left corner and Menu in right corner */}
+                <MenuLogo/>
                 {/* First Page */}
                 <div className="page" id="firstPage">
                     {/* Text Box */}

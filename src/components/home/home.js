@@ -1,11 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import styles from "./home.css"
-import { Typography, useMediaQuery, } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu';
-import { AnimatePresence, motion } from "framer-motion"
+import { useMediaQuery, } from '@mui/material'
+import { motion } from "framer-motion"
 import MenuLogo from "../menuLogo/menuLogo.js"
-import { useNavigate, useLocation } from 'react-router-dom';
-import {useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home(){
     <link rel="stylesheet" href="home.css"/>
@@ -22,6 +20,7 @@ export default function Home(){
     }else{
         delayTime = 0;
     }
+
 
     const pageVariant = {
         hidden: { opacity: 0, },
@@ -73,11 +72,7 @@ export default function Home(){
                 delay: delayTime
             }}
     }
-
-    const navigateAboutMe = () => {
-        navigate("/aboutme")
-    }
-    
+       
 
     return(
         <>

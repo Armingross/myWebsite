@@ -8,7 +8,7 @@ export default function App() {
   const location = useLocation();
 
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence mode='wait'>
       <Routes location={location} key={location.pathname}>
         <Route path='/' element={<Home />} />
         <Route path='aboutMe' element={<AboutMe />} />
