@@ -27,7 +27,7 @@
 
 .firstPagePictureDiv{
     width: 100%;
-    height: 600px;
+    height: 60vh;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -37,6 +37,7 @@
     height: 200px;
     display: flex;
     align-items: flex-start;
+
 }
 
 

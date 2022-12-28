@@ -1,5 +1,4 @@
 import React from "react"
-import styles from "./home.css"
 import { motion, AnimatePresence } from "framer-motion"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
