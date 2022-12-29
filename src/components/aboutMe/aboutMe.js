@@ -20,6 +20,7 @@ export default function AboutMe(){
     
     let navigate = useNavigate();
     const delayTime = 0;
+    const page = "aboutme"
 
     const pageVariant = {
         hidden: { opacity: 0 },
@@ -79,9 +80,9 @@ export default function AboutMe(){
 
     return(
         <div className="aboutMedisplay">
+            {/* Logo in left corner and Menu in right corner */}
+            <MenuLogo page={page}/>
             <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
-                {/* Logo in left corner and Menu in right corner */}
-                <MenuLogo/>
                 {/* First Page */}
                 <div className="page" id="firstPage">
                     {/* Text Box */}

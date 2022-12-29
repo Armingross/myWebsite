@@ -5,11 +5,29 @@ import { motion } from "framer-motion"
 import Menu from "./menu.js"
 import { useNavigate } from "react-router-dom";
 
-export default function MenuLogo({delayTime}) {
+export default function MenuLogo({delayTime, page}) {
 
     const smallSize = useMediaQuery("@media screen and (max-width: 900px)")
     let navigate = useNavigate();
-    const [menuState, setMenuState] = useState(false)    
+    const [menuState, setMenuState] = useState(false)
+
+    let aboutmeButtonStyle, resumeButtonStyle, contactButtonStyle;
+    let aboutMeHover, resumeHover, contactHover;
+    aboutMeHover = resumeHover = contactHover = { scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.354)" };
+    
+    let transparentButton = { color: "rgba(255, 255, 255, 0.6)", borderColor: "rgba(255, 255, 255, 0.6)" }
+    let disableHover = { scale: 1, backgroundColor: "transparent" };
+
+    if(page == "aboutme"){
+        aboutmeButtonStyle = transparentButton;
+        aboutMeHover = disableHover;
+    }else if(page == "resume"){
+        resumeButtonStyle = transparentButton;
+        resumeHover = disableHover;
+    }else if(page == "contact"){
+        contactButtonStyle = transparentButton;
+        contactHover = disableHover;
+    }
 
     const logoVariant = {
         hidden: { x: "-100vw" },
@@ -48,8 +66,8 @@ export default function MenuLogo({delayTime}) {
                 }}
     }
 
-    const navigateAboutMe = () => {
-        navigate("/aboutme")
+    function navigatetoPage(whereTo){
+        navigate("/"+whereTo)
     }
 
     const menuBox = smallSize
@@ -71,15 +89,15 @@ export default function MenuLogo({delayTime}) {
                 initial="hidden"
                 animate="show">
                     {/* left Button */}
-                    <motion.button className="menuButton" onClick={navigateAboutMe} variants={menuButtonVariant} whileHover={{ scale:1.1 }}>
+                    <motion.button className="menuButton" style={aboutmeButtonStyle} onClick={() => navigatetoPage("aboutme")} variants={menuButtonVariant} whileHover={aboutMeHover}>
                         About Me
                     </motion.button>
                     {/* middle Button */}
-                    <motion.button className="menuButton" variants={menuButtonVariant} whileHover={{ scale:1.1 }}>
+                    <motion.button className="menuButton" style={resumeButtonStyle} onClick={() => navigatetoPage("resume")} variants={menuButtonVariant} whileHover={resumeHover}>
                         Resume
                     </motion.button>
                     {/* right Button */}
-                    <motion.button className="menuButton" variants={menuButtonVariant} whileHover={{ scale:1.1 }}>
+                    <motion.button className="menuButton" style={contactButtonStyle} onClick={() => navigatetoPage("contact")} variants={menuButtonVariant} whileHover={contactHover}>
                         Contact
                     </motion.button>
         </motion.div>
@@ -87,15 +105,16 @@ export default function MenuLogo({delayTime}) {
 
     return(
         <>
-            <Menu menuState={menuState} setMenuState={setMenuState} navigateAboutMe={navigateAboutMe}/>
+            <Menu menuState={menuState} setMenuState={setMenuState} navigatetoPage={navigatetoPage}/>
             {/*logo div*/}
             <motion.div className="logoBox"
                 variants={logoVariant}
                 initial="hidden"
                 animate="show"
                 whileHover="hover"
+                onClick={() => navigatetoPage("")}
                 >
-                    <Typography className="logoText">A|G</Typography>                    
+                    <Typography className="logoText" onClick={() => navigatetoPage("aboutme")}>A|G</Typography>                    
             </motion.div>
             {/*div for menu buttons*/}
             {menuBox}

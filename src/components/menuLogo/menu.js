@@ -2,7 +2,7 @@ import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-export default function Menu({menuState, setMenuState, navigateAboutMe}) {
+export default function Menu({menuState, setMenuState, navigatetoPage}) {
 
     const menuScreenVariant = {
         hidden: { x: "100vw" },
@@ -30,9 +30,9 @@ export default function Menu({menuState, setMenuState, navigateAboutMe}) {
                     exit="hiddenAgain">
                         <div className="menuScreen">
                             <ArrowBackIcon className="arrowIcon" onClick={() => {setMenuState(false)}} sx={{fontSize: "40px"}}/>
-                            <p className="menuItems" onClick={navigateAboutMe}>About Me</p>
-                            <p className="menuItems">Resume</p>
-                            <p className="menuItems">Contact Me</p>
+                            <p className="menuItems" onClick={() => navigatetoPage("aboutme")}>About Me</p>
+                            <p className="menuItems" onClick={() => navigatetoPage("resume")}>Resume</p>
+                            <p className="menuItems" onClick={() => navigatetoPage("contactme")}>Contact Me</p>
                         </div>
                     </motion.div>
                 </div>

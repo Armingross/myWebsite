@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styles from "./home.css"
 import { useMediaQuery, } from '@mui/material'
 import { motion } from "framer-motion"
@@ -10,6 +10,7 @@ export default function Home(){
 
     const smallSize = useMediaQuery("@media screen and (max-width: 900px)")
     let navigate = useNavigate();
+    const page = "home"
 
     /* delaytime which decides if animation has delay or not */
     let delayTime;
@@ -76,7 +77,7 @@ export default function Home(){
 
     return(
         <>
-            <MenuLogo delayTime={delayTime}/>
+            <MenuLogo delayTime={delayTime} page={page}/>
             <div className="display">
                 <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
                     {/*white box*/}
