@@ -80,7 +80,7 @@
 }
 
 .thirdPictureOne {
-    height: 535px;
+    height: 100%;
 }
 
 .thridTextPictureBox {
@@ -108,7 +108,7 @@
 }
 
 .thirdPictureTwo {
-    height: 553px;
+    height: 100%;
 }
 
 
@@ -148,11 +148,11 @@
 }
 
 .fourthPictureTwo {
-    width: 536.6px;
+    width: 100%;
 }
 
 .fourthPictureThree {
-    width: 536.6px;
+    width: 100%;        
 }
 
 /* Sport Page */
