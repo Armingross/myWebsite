@@ -1,0 +1,48 @@
+.sliderBox {
+    width: 85vw;
+    height: 87vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.active {
+    height: 40%;
+    width: 100%;
+    display: flex;
+}
+
+.inActive {
+    height: 22%;
+    width: 80%;
+    display: flex;
+}
+
+.pictureBox {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.activeTextBox {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bothText {
+    font-family: Roboto;
+    color:white;
+}
+
+#activeText {
+    font-size: 60px;
+}
+
+#inActiveText {
+    font-size: 40px;
+}
