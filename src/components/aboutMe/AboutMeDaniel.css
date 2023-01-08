@@ -4,19 +4,35 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: flex-start;
+    border: 2px solid black;
+    gap: 65px;
 }
 
-.active {
-    height: 40%;
-    width: 100%;
-    display: flex;
-}
-
-.inActive {
+.itemBox {
     height: 22%;
     width: 80%;
     display: flex;
+    border: 1px solid green;
+}
+#prev2 {
+    order: 1;
+    display: none;
+}
+#prev {
+    order: 2;
+}
+#active {
+    height: 40%;
+    width: 100%;
+    order: 3;
+}
+#next {
+    order: 4;
+}
+#next2 {
+    order: 5;
+    display: none;
 }
 
 .pictureBox {
@@ -26,7 +42,7 @@
     justify-content: center;
 }
 
-.activeTextBox {
+.textBox {
     width: 50%;
     height: 100%;
     display: flex;
