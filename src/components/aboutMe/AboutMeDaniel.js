@@ -3,6 +3,12 @@ import MenuLogo from "../menuLogo/menuLogo.js"
 import styles from "./AboutMeDaniel.css"
 import { getItems } from "./Items.js"
 import { scroll } from "./Scroll.js"
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import NorthIcon from '@mui/icons-material/North';
+import SouthIcon from '@mui/icons-material/South';
 
 export default function AboutMeDaniel(){
     /* each Box has own state which has a changeable className so it can change style and position */
@@ -54,6 +60,14 @@ export default function AboutMeDaniel(){
         }
     }
 
+    /* arrows for scrolling up and down the list */
+    const arrowIcon = {
+        fontSize: "50px",
+        marginTop: "20px",
+        marginBottom: "20px",
+        color: "white"
+    } 
+
     return(
         <div className="display">
             <MenuLogo></MenuLogo>
@@ -69,9 +83,9 @@ export default function AboutMeDaniel(){
                 </div>
             ))}
             </div>
-            <div>
-                <button onClick={scrollUp}>nach oben</button>
-                <button onClick={scrollDown}>nach unten</button>
+            <div style={{display: "flex", flexDirection: "column"}}>
+                <ArrowUpwardIcon style={arrowIcon} onClick={scrollUp}/>
+                <ArrowDownwardIcon style={arrowIcon} onClick={scrollDown}/>
             </div>
         </div>
     )

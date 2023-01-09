@@ -1,5 +1,16 @@
 /* here we have all items which the changeable boxID so that it will change is style when button is clicked */
 export function getItems(box){
+
+    /* if the box state is active, the text id at the boxes position will also be active*/
+    const text = [];
+    for(let i = 0; i < box.length; i++){
+      if(box[i] == "active"){
+        text[i] = "activeText"
+      }else{
+        text[i] = "inActiveText"
+      }
+    }
+
     const items = [
         {
             id: 1,
@@ -8,7 +19,7 @@ export function getItems(box){
             text: "I like Sport",
             className: "itemBox",
             boxID: box[0],
-            textId: "inActiveText"
+            textId: text[0]
         },
         {
             id: 2,
@@ -17,7 +28,7 @@ export function getItems(box){
             text: "I like Traveling",
             className: "itemBox",
             boxID: box[1],
-            textId: "inActiveText"
+            textId: text[1]
         },
         {
             id: 3,
@@ -26,7 +37,7 @@ export function getItems(box){
             text: "Im from Sarnthein",
             className: "itemBox",
             boxID: box[2],
-            textId: "activeText"
+            textId: text[2]
         },
         {
             id: 4,
@@ -35,7 +46,7 @@ export function getItems(box){
             text: "I like Sport",
             className: "itemBox",
             boxID: box[3],
-            textId: "inActiveText"
+            textId: text[3]
         },
         {
             id: 5,
@@ -44,7 +55,7 @@ export function getItems(box){
             text: "I like Sport",
             className: "itemBox",
             boxID: box[4],
-            textId: "inActiveText"
+            textId: text[4]
         }
     ]
 
