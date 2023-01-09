@@ -54,11 +54,11 @@ export default function AboutMeDaniel(){
     let justifyContentBox
     if(pointer == 1){
         justifyContentBox = {
-            justifyContent: "flex-end"
+            justifyContent: "center"
         }
     }else{
         justifyContentBox = {
-            justifyContent: "flex-start"
+            justifyContent: "center"
         }
     }
 

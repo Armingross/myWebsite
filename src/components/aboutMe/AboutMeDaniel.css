@@ -6,33 +6,39 @@
     align-items: flex-end;
     border: 2px solid black;
     gap: 6.5vh;
+    /* overflow: hidden; */
 }
 
 .itemBox {
-    height: 22%;
+    height: 12%;
     width: 100%;
     display: flex;
     border: 1px solid green;
-    position: relative;
-    transition:top 2s, left 2s, width 2s, height 2s;
+    position: absolute;
+    transition: top 2s, bottom 2s;
 }
 
 #prev2 {
-    order: 1;
+    background-color: darkgreen;
+    top: -100vh;
 }
 #prev {
-    order: 2;
+    background-color: green;
+    top: 25vh;
 }
 #active {
-    order: 3;
-    height: 40%;
-    top: 300px;
+    background-color: red;
+    top: 42vh;
+    /* height: 40%;
+    top: 300px; */
 }
 #next {
-    order: 4;
+    background-color: yellow;
+    top: 67vh;
 }
 #next2 {
-    order: 5;
+    background-color: orange;
+    top: 200vh;
 }
 
 .pictureBox {
@@ -56,7 +62,7 @@
 }
 
 #activeText {
-    font-size: 70px;
+    font-size: 30px;
 }
 
 #inActiveText {
