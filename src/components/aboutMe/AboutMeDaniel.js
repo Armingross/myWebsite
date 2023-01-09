@@ -3,6 +3,7 @@ import MenuLogo from "../menuLogo/menuLogo.js"
 import styles from "./AboutMeDaniel.css"
 import { getItems } from "./Items.js"
 import { scroll } from "./Scroll.js"
+import { motion, AnimatePresence, delay } from "framer-motion"
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
@@ -27,7 +28,7 @@ export default function AboutMeDaniel(){
     /* all items(images with text, id...) box changes when the box states change */
     const items = getItems(box)
 
-    /* scroll up increments pointer by 1 */
+    /* scroll up deacreases pointer by 1 */
     const scrollUp = () => {
         let point = 1;
         if(pointer > 1){
@@ -38,14 +39,15 @@ export default function AboutMeDaniel(){
         scroll(setBox, point)
     }
 
-    /* same as scroll up just decreasing the pointer by 1 */
+    /* same as scroll up just increasing the pointer by 1 */
     const scrollDown = () => {
         let point = box.length
         if(pointer < box.length){
             point = pointer + 1;
         }
         setPointer(point);
-        scroll(setBox, point);
+        scroll(setBox, point)
+        
     }
 
     /* if user is on page 1, the 2 visible boxe wil be flex end, so that the active box is centered */
@@ -66,7 +68,9 @@ export default function AboutMeDaniel(){
         marginTop: "20px",
         marginBottom: "20px",
         color: "white"
-    } 
+    }
+
+    /* Variants */
 
     return(
         <div className="display">
@@ -74,9 +78,9 @@ export default function AboutMeDaniel(){
             <div className="sliderBox" style={justifyContentBox}>
             {items.map((item) => (
                 <div key={item.id} className={item.className} id={item.boxID}>
-                    <div className="pictureBox">
+                    <motion.div className="pictureBox">
                         <img src={item.imgsrc} alt={item.imgalt} height={"100%"}/>
-                    </div>
+                    </motion.div>
                     <div className="textBox">
                         <p className="bothText" id={item.textId}>{item.text}</p>
                     </div>

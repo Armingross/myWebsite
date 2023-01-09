@@ -10,28 +10,29 @@
 
 .itemBox {
     height: 22%;
-    width: 80%;
+    width: 100%;
     display: flex;
     border: 1px solid green;
+    position: relative;
+    transition:top 2s, left 2s, width 2s, height 2s;
 }
+
 #prev2 {
     order: 1;
-    display: none;
 }
 #prev {
     order: 2;
 }
 #active {
-    height: 40%;
-    width: 100%;
     order: 3;
+    height: 40%;
+    top: 300px;
 }
 #next {
     order: 4;
 }
 #next2 {
     order: 5;
-    display: none;
 }
 
 .pictureBox {
