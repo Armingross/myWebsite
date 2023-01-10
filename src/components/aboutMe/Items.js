@@ -14,18 +14,20 @@ export function getItems(box){
     const items = [
         {
             id: 1,
-            imgsrc: "img/goldenGate.jpg",
-            imgalt: "picture of me playing volleyball",
-            text: "I like Sport",
+            imgsrc: "img/sarntheinQuadrat.jpg",
+            imgalt: "picture of Sarnthein",
+            text: "I'm from Sarnthein",
             className: "itemBox",
             boxID: box[0],
             textId: text[0]
         },
         {
             id: 2,
-            imgsrc: "img/newYork.jpg",
-            imgalt: "picture of the New York Skyline",
-            text: "I like Traveling",
+            videosrc: "video/Sarnthein.mp4#svgView(preserveAspectRatio(none))",
+            imgalt: "video of zooming in on europe to Sarnthein",
+            text: "Which is Located",
+            text2: "in the North",
+            text3: "of Italy",
             className: "itemBox",
             boxID: box[1],
             textId: text[1]

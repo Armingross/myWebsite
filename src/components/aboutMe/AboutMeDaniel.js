@@ -58,7 +58,12 @@ export default function AboutMeDaniel(){
         color: "white"
     }
 
-    /* Variants */
+    let page2;
+    if(pointer == 2){
+        page2 = true
+    }else{
+        page2 = false
+    }
 
     return(
         <div className="display">
@@ -66,12 +71,31 @@ export default function AboutMeDaniel(){
             <div className="sliderBox">
             {items.map((item) => (
                 <div key={item.id} className={item.className} id={item.boxID}>
-                    <motion.div className="pictureBox">
-                        <img src={item.imgsrc} alt={item.imgalt} height={"100%"}/>
-                    </motion.div>
-                    <div className="textBox">
-                        <p className="bothText" id={item.textId}>{item.text}</p>
-                    </div>
+                        {
+                        page2 ? (
+                            <>
+                            <div className="pictureBox">
+                                <video onClick={e => e.target.play()} autoPlay muted>
+                                    <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
+                                </video>
+                            </div>
+                            <div className="textBox">
+                                <p className="bothText" id={item.textId}>{item.text}</p>
+                                <p className="bothText" id={item.textId}>{item.text2}</p>
+                                <p className="bothText" id={item.textId}>{item.text3}</p>
+                            </div>
+                            </>
+                        ) : (
+                            <>
+                            <div className="pictureBox">
+                                <img src={item.imgsrc} alt={item.imgalt} height={"100%"}/>
+                            </div>
+                            <div className="textBox">
+                                <p className="bothText" id={item.textId}>{item.text}</p>
+                            </div>
+                            </>
+                        )
+                        }
                 </div>
             ))}
             </div>
