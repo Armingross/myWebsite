@@ -30,6 +30,8 @@ export default function AboutMeDaniel(){
     const scrollUp = () => {
         if(pointer > 1){
             point = pointer - 1;
+        }else{
+            point = 1
         }
         setPointer(point);
         /* scroll changes the page to the page at point which is pointer */
@@ -40,6 +42,8 @@ export default function AboutMeDaniel(){
     const scrollDown = () => {
         if(pointer < box.length){
             point = pointer + 1;
+        }else{
+            point = box.length;
         }
         setPointer(point);
         scroll(setBox, point)
