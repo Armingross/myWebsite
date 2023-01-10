@@ -1,15 +1,10 @@
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import MenuLogo from "../menuLogo/menuLogo.js"
 import styles from "./AboutMeDaniel.css"
 import { getItems } from "./Items.js"
 import { scroll } from "./Scroll.js"
-import { motion, AnimatePresence, delay } from "framer-motion"
-import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
-import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import NorthIcon from '@mui/icons-material/North';
-import SouthIcon from '@mui/icons-material/South';
 
 export default function AboutMeDaniel(){
     /* each Box has own state which has a changeable className so it can change style and position */
@@ -21,6 +16,8 @@ export default function AboutMeDaniel(){
     /* pointer decides which boxes are visible */
     const [pointer, setPointer] = useState(1)
 
+    const videoPlay = useRef()
+
     /* array with all boxes and setBoxes to give it to the functions */
     const box = [box1, box2, box3, box4, box5]
     const setBox = [setBox1, setBox2, setBox3, setBox4, setBox5]
@@ -29,8 +26,8 @@ export default function AboutMeDaniel(){
     const items = getItems(box)
 
     /* scroll up deacreases pointer by 1 */
+    let point;
     const scrollUp = () => {
-        let point = 1;
         if(pointer > 1){
             point = pointer - 1;
         }
@@ -41,14 +38,25 @@ export default function AboutMeDaniel(){
 
     /* same as scroll up just increasing the pointer by 1 */
     const scrollDown = () => {
-        let point = box.length
         if(pointer < box.length){
             point = pointer + 1;
         }
         setPointer(point);
         scroll(setBox, point)
-        
     }
+
+    /* when pointer changes value, the video will either play or restart and pause */
+    useEffect(() => {
+        if(pointer === 2){
+            videoPlay.current.play();
+        }else{
+            videoPlay.current.currentTime = 0;
+            videoPlay.current.pause();
+        }
+    }, [pointer])
+
+    
+    
 
     /* arrows for scrolling up and down the list */
     const arrowIcon = {
@@ -58,13 +66,6 @@ export default function AboutMeDaniel(){
         color: "white"
     }
 
-    let page2;
-    if(pointer == 2){
-        page2 = true
-    }else{
-        page2 = false
-    }
-
     return(
         <div className="display">
             <MenuLogo></MenuLogo>
@@ -72,10 +73,10 @@ export default function AboutMeDaniel(){
             {items.map((item) => (
                 <div key={item.id} className={item.className} id={item.boxID}>
                         {
-                        page2 ? (
+                        item.page2 ? (
                             <>
                             <div className="pictureBox">
-                                <video onClick={e => e.target.play()} autoPlay muted>
+                                <video ref={videoPlay} muted>
                                     <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
                                 </video>
                             </div>

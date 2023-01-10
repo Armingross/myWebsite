@@ -30,7 +30,8 @@ export function getItems(box){
             text3: "of Italy",
             className: "itemBox",
             boxID: box[1],
-            textId: text[1]
+            textId: text[1],
+            page2: true
         },
         {
             id: 3,
