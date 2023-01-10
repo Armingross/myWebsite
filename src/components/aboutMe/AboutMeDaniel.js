@@ -50,18 +50,6 @@ export default function AboutMeDaniel(){
         
     }
 
-    /* if user is on page 1, the 2 visible boxe wil be flex end, so that the active box is centered */
-    let justifyContentBox
-    if(pointer == 1){
-        justifyContentBox = {
-            justifyContent: "center"
-        }
-    }else{
-        justifyContentBox = {
-            justifyContent: "center"
-        }
-    }
-
     /* arrows for scrolling up and down the list */
     const arrowIcon = {
         fontSize: "50px",
@@ -75,7 +63,7 @@ export default function AboutMeDaniel(){
     return(
         <div className="display">
             <MenuLogo></MenuLogo>
-            <div className="sliderBox" style={justifyContentBox}>
+            <div className="sliderBox">
             {items.map((item) => (
                 <div key={item.id} className={item.className} id={item.boxID}>
                     <motion.div className="pictureBox">

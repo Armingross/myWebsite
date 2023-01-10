@@ -1,53 +1,51 @@
+/* bos in which all items are.
+position relative so that the items are absolute positioned to this box and not the whole page */
 .sliderBox {
     width: 85vw;
     height: 87vh;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    border: 2px solid black;
-    gap: 6.5vh;
-    /* overflow: hidden; */
+    /* border: 2px solid black; */
+    position: relative;
+    overflow: hidden;
 }
 
+/* style of every itemBox */
 .itemBox {
-    height: 12%;
+    height: 22%;
     width: 100%;
     display: flex;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     position: absolute;
-    transition: top 2s, bottom 2s;
+    transition: top 1s, height 1s, width 1s;
 }
 
+/* here every item box is getting styled individualy */
 #prev2 {
-    background-color: darkgreen;
-    top: -100vh;
+    top: -40%;
 }
 #prev {
-    background-color: green;
-    top: 25vh;
+    top: 0;
 }
 #active {
-    background-color: red;
-    top: 42vh;
-    /* height: 40%;
-    top: 300px; */
+    top: 30%;
+    height: 40%;
 }
 #next {
-    background-color: yellow;
-    top: 67vh;
+    top: 78%;
 }
 #next2 {
-    background-color: orange;
-    top: 200vh;
+    top: 120%;
 }
 
+/* in the item box is a picture and text box */
 .pictureBox {
     width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
 }
-
 .textBox {
     width: 50%;
     height: 100%;
@@ -59,12 +57,13 @@
 .bothText {
     font-family: Roboto;
     color:white;
+    transition: font-size 1s;
 }
 
+/* style of text  whether active or not*/
 #activeText {
-    font-size: 30px;
+    font-size: 70px;
 }
-
 #inActiveText {
     font-size: 30px;
 }
