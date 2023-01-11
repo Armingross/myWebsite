@@ -64,7 +64,7 @@ export function getItems(box){
             id: 6,
             imgsrc: "img/volleyball.jpg",
             imgalt: "picture of me Programming",
-            text: "and of course programming",
+            text: "and programming",
             className: "itemBox",
             boxID: box[5],
             textId: text[5]
