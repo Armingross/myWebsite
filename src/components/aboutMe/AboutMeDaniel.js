@@ -13,14 +13,15 @@ export default function AboutMeDaniel(){
     const [box3, setBox3] = useState("next2")
     const [box4, setBox4] = useState("next2")
     const [box5, setBox5] = useState("next2")
+    const [box6, setBox6] = useState("next2")
     /* pointer decides which boxes are visible */
     const [pointer, setPointer] = useState(1)
 
     const videoPlay = useRef()
 
     /* array with all boxes and setBoxes to give it to the functions */
-    const box = [box1, box2, box3, box4, box5]
-    const setBox = [setBox1, setBox2, setBox3, setBox4, setBox5]
+    const box = [box1, box2, box3, box4, box5, box6]
+    const setBox = [setBox1, setBox2, setBox3, setBox4, setBox5, setBox6]
 
     /* all items(images with text, id...) box changes when the box states change */
     const items = getItems(box)
@@ -34,8 +35,6 @@ export default function AboutMeDaniel(){
             point = 1
         }
         setPointer(point);
-        /* scroll changes the page to the page at point which is pointer */
-        scroll(setBox, point)
     }
 
     /* same as scroll up just increasing the pointer by 1 */
@@ -46,11 +45,13 @@ export default function AboutMeDaniel(){
             point = box.length;
         }
         setPointer(point);
-        scroll(setBox, point)
     }
 
-    /* when pointer changes value, the video will either play or restart and pause */
+    /* when pointer changes value which happens after scrolldown or scrollup... */
     useEffect(() => {
+        /* ...scroll function will be called... */
+        scroll(setBox, pointer)
+        /* ...and the video will either play or restart and pause */
         if(pointer === 2){
             videoPlay.current.play();
         }else{

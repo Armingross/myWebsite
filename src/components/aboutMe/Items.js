@@ -14,7 +14,7 @@ export function getItems(box){
     const items = [
         {
             id: 1,
-            imgsrc: "img/sarntheinQuadrat.jpg",
+            imgsrc: "img/sarnthein4to3.jpg",
             imgalt: "picture of Sarnthein",
             text: "I'm from Sarnthein",
             className: "itemBox",
@@ -35,30 +35,39 @@ export function getItems(box){
         },
         {
             id: 3,
-            imgsrc: "img/sarntheinQuadrat.jpg",
-            imgalt: "picture of Sarnthein",
-            text: "Im from Sarnthein",
+            imgsrc: "img/jakobsSpitze.jpg",
+            imgalt: "picture of the cross on the Jakobs Spitze",
+            text: "I Like Hiking",
             className: "itemBox",
             boxID: box[2],
             textId: text[2]
         },
         {
             id: 4,
-            imgsrc: "img/gym.png",
-            imgalt: "picture of me playing volleyball",
-            text: "I like Sport",
+            imgsrc: "img/goldenGate4to3.jpg",
+            imgalt: "Picture of me in front of the Golden Gate Bridge",
+            text: "Traveling",
             className: "itemBox",
             boxID: box[3],
             textId: text[3]
         },
         {
             id: 5,
-            imgsrc: "img/volleyball.jpg",
+            imgsrc: "img/volleyball4to3.jpg",
             imgalt: "picture of me playing volleyball",
-            text: "I like Sport",
+            text: "Sport",
             className: "itemBox",
             boxID: box[4],
             textId: text[4]
+        },
+        {
+            id: 6,
+            imgsrc: "img/volleyball.jpg",
+            imgalt: "picture of me Programming",
+            text: "and of course programming",
+            className: "itemBox",
+            boxID: box[5],
+            textId: text[5]
         }
     ]
 

@@ -7,6 +7,7 @@ export function scroll(setBox, pointer){
         setBox[2]("next2")
         setBox[3]("next2")
         setBox[4]("next2")
+        setBox[5]("next2")
     /* here pointer is 2 which means active box is now the second one */
     }else if(pointer == 2){
         setBox[0]("prev")
@@ -14,23 +15,34 @@ export function scroll(setBox, pointer){
         setBox[2]("next")
         setBox[3]("next2")
         setBox[4]("next2")
+        setBox[5]("next2")
     }else if(pointer == 3){
         setBox[0]("prev2")
         setBox[1]("prev")
         setBox[2]("active")
         setBox[3]("next")
         setBox[4]("next2")
+        setBox[5]("next2")
     }else if(pointer == 4){
         setBox[0]("prev2")
         setBox[1]("prev2")
         setBox[2]("prev")
         setBox[3]("active")
         setBox[4]("next")
+        setBox[5]("next2")
     }else if(pointer == 5){
         setBox[0]("prev2")
         setBox[1]("prev2")
         setBox[2]("prev2")
         setBox[3]("prev")
         setBox[4]("active")
+        setBox[5]("next")
+    }else if(pointer == 6){
+        setBox[0]("prev2")
+        setBox[1]("prev2")
+        setBox[2]("prev2")
+        setBox[3]("prev2")
+        setBox[4]("prev")
+        setBox[5]("active")
     }
 }
