@@ -18,7 +18,7 @@ position relative so that the items are absolute positioned to this box and not 
     display: flex;
     /* border: 1px solid green; */
     position: absolute;
-    transition: top 1s, height 1s, width 1s;
+    transition: top 1s, height 1s, width 1s, opacity 1s;
 }
 
 /* here every item box is getting styled individualy */
@@ -27,14 +27,17 @@ position relative so that the items are absolute positioned to this box and not 
 }
 #prev {
     top: 0;
+    opacity: 0.5;
 }
 #active {
     top: 25%;
     height: 50%;
     width: 100%;
+    opacity: 1;
 }
 #next {
     top: 78%;
+    opacity: 0.5;
 }
 #next2 {
     top: 120%;
