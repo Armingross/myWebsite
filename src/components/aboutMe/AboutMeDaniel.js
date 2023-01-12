@@ -7,21 +7,20 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 export default function AboutMeDaniel(){
-    /* each Box has own state which has a changeable className so it can change style and position */
-    const [box1, setBox1] = useState("active")
-    const [box2, setBox2] = useState("next")
-    const [box3, setBox3] = useState("next2")
-    const [box4, setBox4] = useState("next2")
-    const [box5, setBox5] = useState("next2")
-    const [box6, setBox6] = useState("next2")
+    /* a state which every Box in it, which reference to the boxes id */
+    const [box, setBox] = useState({
+        box1: "active",
+        box2: "next",
+        box3: "next2",
+        box4: "next2",
+        box5: "next2",
+        box6: "next2"
+    })
     /* pointer decides which boxes are visible */
     const [pointer, setPointer] = useState(1)
 
+    /* refrence to the video which plays when "active" */
     const videoPlay = useRef()
-
-    /* array with all boxes and setBoxes to give it to the functions */
-    const box = [box1, box2, box3, box4, box5, box6]
-    const setBox = [setBox1, setBox2, setBox3, setBox4, setBox5, setBox6]
 
     /* all items(images with text, id...) box changes when the box states change */
     const items = getItems(box)
@@ -39,7 +38,7 @@ export default function AboutMeDaniel(){
 
     /* same as scroll up just increasing the pointer by 1 */
     const scrollDown = () => {
-        if(pointer < box.length){
+        if(pointer < Object.keys(box).length){
             point = pointer + 1;
         }else{
             point = box.length;
