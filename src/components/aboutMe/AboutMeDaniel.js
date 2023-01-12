@@ -7,21 +7,28 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 export default function AboutMeDaniel(){
-    /* each Box has own state which has a changeable className so it can change style and position */
-    const [box1, setBox1] = useState("active")
-    const [box2, setBox2] = useState("next")
-    const [box3, setBox3] = useState("next2")
-    const [box4, setBox4] = useState("next2")
-    const [box5, setBox5] = useState("next2")
-    const [box6, setBox6] = useState("next2")
+    /* each Box has own ref which has a changeable className so it can change style and position */
+    const box = [];
+    box[0] = useRef()
+    box[1] = useRef()
+    box[2] = useRef()
+    box[3] = useRef()
+    box[4] = useRef()
+    box[5] = useRef()
+
+    const text = [];
+    text[0] = useRef()
+    text[1] = useRef()
+    text[2] = useRef()
+    text[3] = useRef()
+    text[4] = useRef()
+    text[5] = useRef()
+
+
     /* pointer decides which boxes are visible */
     const [pointer, setPointer] = useState(1)
 
     const videoPlay = useRef()
-
-    /* array with all boxes and setBoxes to give it to the functions */
-    const box = [box1, box2, box3, box4, box5, box6]
-    const setBox = [setBox1, setBox2, setBox3, setBox4, setBox5, setBox6]
 
     /* all items(images with text, id...) box changes when the box states change */
     const items = getItems(box)
@@ -50,7 +57,7 @@ export default function AboutMeDaniel(){
     /* when pointer changes value which happens after scrolldown or scrollup... */
     useEffect(() => {
         /* ...scroll function will be called... */
-        scroll(setBox, pointer)
+        scroll(box, pointer)
         /* ...and the video will either play or restart and pause */
         if(pointer === 2){
             videoPlay.current.play();
@@ -58,7 +65,17 @@ export default function AboutMeDaniel(){
             videoPlay.current.currentTime = 0;
             videoPlay.current.pause();
         }
+        text[pointer - 1].current.id = "activeText"
+        if(pointer != box.length){
+            text[pointer].current.id = "inActiveText"
+        }
+        if(pointer != 1){
+            text[pointer - 2].current.id = "inActiveText"
+        }
+        console.log(text[1].current)
     }, [pointer])
+
+    
 
     
     
@@ -76,7 +93,7 @@ export default function AboutMeDaniel(){
             <MenuLogo></MenuLogo>
             <div className="sliderBox">
             {items.map((item) => (
-                <div key={item.id} className={item.className} id={item.boxID}>
+                <div ref={box[item.id-1]} className="itemBox" key={item.id} id="">
                         {
                         item.page2 ? (
                             <>
@@ -86,9 +103,9 @@ export default function AboutMeDaniel(){
                                 </video>
                             </div>
                             <div className="textBox">
-                                <p className="bothText" id={item.textId}>{item.text}</p>
-                                <p className="bothText" id={item.textId}>{item.text2}</p>
-                                <p className="bothText" id={item.textId}>{item.text3}</p>
+                                <p className="bothText" ref={text[1]} id="inActiveText">{item.text}</p>
+                                <p className="bothText" ref={text[1]} id="inActiveText">{item.text2}</p>
+                                <p className="bothText" ref={text[1]} id="inActiveText">{item.text3}</p>
                             </div>
                             </>
                         ) : (
@@ -97,7 +114,7 @@ export default function AboutMeDaniel(){
                                 <img src={item.imgsrc} alt={item.imgalt} height={"100%"}/>
                             </div>
                             <div className="textBox">
-                                <p className="bothText" id={item.textId}>{item.text}</p>
+                                <p className="bothText" ref={text[item.id-1]} id="inActiveText">{item.text}</p>
                             </div>
                             </>
                         )

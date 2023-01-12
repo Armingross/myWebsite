@@ -18,7 +18,6 @@ export function getItems(box){
             imgalt: "picture of Sarnthein",
             text: "I'm from Sarnthein",
             className: "itemBox",
-            boxID: box[0],
             textId: text[0]
         },
         {
@@ -29,7 +28,6 @@ export function getItems(box){
             text2: "in the North",
             text3: "of Italy",
             className: "itemBox",
-            boxID: box[1],
             textId: text[1],
             page2: true
         },
@@ -39,7 +37,6 @@ export function getItems(box){
             imgalt: "picture of the cross on the Jakobs Spitze",
             text: "I Like Hiking",
             className: "itemBox",
-            boxID: box[2],
             textId: text[2]
         },
         {
@@ -48,7 +45,6 @@ export function getItems(box){
             imgalt: "Picture of me in front of the Golden Gate Bridge",
             text: "Traveling",
             className: "itemBox",
-            boxID: box[3],
             textId: text[3]
         },
         {
@@ -57,7 +53,6 @@ export function getItems(box){
             imgalt: "picture of me playing volleyball",
             text: "Sport",
             className: "itemBox",
-            boxID: box[4],
             textId: text[4]
         },
         {
@@ -66,7 +61,6 @@ export function getItems(box){
             imgalt: "picture of me Programming",
             text: "and programming",
             className: "itemBox",
-            boxID: box[5],
             textId: text[5]
         }
     ]
