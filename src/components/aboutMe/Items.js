@@ -1,10 +1,11 @@
 /* here we have all items which the changeable boxID so that it will change is style when button is clicked */
 export function getItems(box){
-
+    /* this array is for the for loop which is for text style */
+    const boxArr = [box.box1, box.box2, box.box3, box.box4, box.box5, box.box6]
     /* if the box state is active, the text id at the boxes position will also be active*/
     const text = [];
-    for(let i = 0; i < box.length; i++){
-      if(box[i] == "active"){
+    for(let i = 0; i < boxArr.length; i++){
+      if(boxArr[i] == "active"){
         text[i] = "activeText"
       }else{
         text[i] = "inActiveText"
@@ -18,7 +19,7 @@ export function getItems(box){
             imgalt: "picture of Sarnthein",
             text: "I'm from Sarnthein",
             className: "itemBox",
-            boxID: box[0],
+            boxID: box.box1,
             textId: text[0]
         },
         {
@@ -29,7 +30,7 @@ export function getItems(box){
             text2: "in the North",
             text3: "of Italy",
             className: "itemBox",
-            boxID: box[1],
+            boxID: box.box2,
             textId: text[1],
             page2: true
         },
@@ -39,7 +40,7 @@ export function getItems(box){
             imgalt: "picture of the cross on the Jakobs Spitze",
             text: "I Like Hiking",
             className: "itemBox",
-            boxID: box[2],
+            boxID: box.box3,
             textId: text[2]
         },
         {
@@ -48,7 +49,7 @@ export function getItems(box){
             imgalt: "Picture of me in front of the Golden Gate Bridge",
             text: "Traveling",
             className: "itemBox",
-            boxID: box[3],
+            boxID: box.box4,
             textId: text[3]
         },
         {
@@ -57,7 +58,7 @@ export function getItems(box){
             imgalt: "picture of me playing volleyball",
             text: "Sport",
             className: "itemBox",
-            boxID: box[4],
+            boxID: box.box5,
             textId: text[4]
         },
         {
@@ -66,7 +67,7 @@ export function getItems(box){
             imgalt: "picture of me Programming",
             text: "and programming",
             className: "itemBox",
-            boxID: box[5],
+            boxID: box.box6,
             textId: text[5]
         }
     ]
