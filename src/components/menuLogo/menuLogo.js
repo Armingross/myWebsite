@@ -86,7 +86,7 @@ export default function MenuLogo({delayTime, page}) {
                         About Me
                     </motion.button>
                     {/* middle Button */}
-                    <motion.button className="menuButton" disabled={btnDisable["resume"]} style={btnStyle["resume"]} onClick={() => navigatetoPage("aboutMeDaniel")} variants={menuButtonVariant} whileHover={hover["resume"]}>
+                    <motion.button className="menuButton" disabled={btnDisable["resume"]} style={btnStyle["resume"]} onClick={() => navigatetoPage("resume")} variants={menuButtonVariant} whileHover={hover["resume"]}>
                         Resume
                     </motion.button>
                     {/* right Button */}
