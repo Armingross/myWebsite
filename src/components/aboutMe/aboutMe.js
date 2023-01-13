@@ -7,6 +7,8 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 export default function AboutMe(){
+    const [bgcolor, setBgcolor] = useState("green");
+    
     /* page is for MenuLogo so that i know which button should be disactivated */
     const page = "aboutme";
     /* a state which every Box in it, which reference to the boxes id */
@@ -51,7 +53,7 @@ export default function AboutMe(){
     /* when pointer changes value which happens after scrolldown or scrollup... */
     useEffect(() => {
         /* ...scroll function will be called... */
-        scroll(setBox, pointer)
+        scroll(setBox, pointer, setBgcolor)
         /* ...and the video will either play or restart and pause */
         if(pointer === 2){
             videoPlay.current.play();
@@ -73,7 +75,7 @@ export default function AboutMe(){
     }
 
     return(
-        <div className="display">
+        <div className="display" style={{backgroundColor: bgcolor}}>
             <MenuLogo page={page}></MenuLogo>
             <div className="sliderBox">
             {items.map((item) => (
@@ -82,7 +84,7 @@ export default function AboutMe(){
                         item.page2 ? (
                             <>
                             <div className="pictureBox">
-                                <video ref={videoPlay} muted>
+                                <video ref={videoPlay} muted style={{borderRadius: "50px"}}>
                                     <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
                                 </video>
                             </div>
@@ -95,7 +97,7 @@ export default function AboutMe(){
                         ) : (
                             <>
                             <div className="pictureBox">
-                                <img src={item.imgsrc} alt={item.imgalt} height={"100%"}/>
+                                <img src={item.imgsrc} alt={item.imgalt} height={"100%"} style={{borderRadius: "50px"}}/>
                             </div>
                             <div className="textBox">
                                 <p className="bothText" id={item.textId}>{item.text}</p>
