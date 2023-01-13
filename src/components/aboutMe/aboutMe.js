@@ -1,12 +1,14 @@
 import { useState, useRef, useEffect } from "react"
 import MenuLogo from "../menuLogo/menuLogo.js"
-import styles from "./AboutMe.css"
+import styles from "../myWebsite.css"
 import { getItems } from "./Items.js"
 import { scroll } from "./Scroll.js"
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 export default function AboutMe(){
+    /* page is for MenuLogo so that i know which button should be disactivated */
+    const page = "aboutme";
     /* a state which every Box in it, which reference to the boxes id */
     const [box, setBox] = useState({
         box1: "active",
@@ -15,9 +17,9 @@ export default function AboutMe(){
         box4: "next2",
         box5: "next2",
         box6: "next2"
-    })
+    });
     /* pointer decides which boxes are visible */
-    const [pointer, setPointer] = useState(1)
+    const [pointer, setPointer] = useState(1);
 
     /* refrence to the video which plays when "active" */
     const videoPlay = useRef()
@@ -72,7 +74,7 @@ export default function AboutMe(){
 
     return(
         <div className="display">
-            <MenuLogo></MenuLogo>
+            <MenuLogo page={page}></MenuLogo>
             <div className="sliderBox">
             {items.map((item) => (
                 <div key={item.id} className={item.className} id={item.boxID}>

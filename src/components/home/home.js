@@ -1,16 +1,17 @@
 import React, { useState } from "react"
-import styles from "./home.css"
+import styles from "../myWebsite.css"
 import { useMediaQuery, } from '@mui/material'
 import { motion } from "framer-motion"
 import MenuLogo from "../menuLogo/menuLogo.js"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 export default function Home(){
     <link rel="stylesheet" href="home.css"/>
 
     const smallSize = useMediaQuery("@media screen and (max-width: 900px)")
     let navigate = useNavigate();
-    const page = "home"
+    /* page is for MenuLogo so that i know which button should be disactivated */
+    const page = "home";
 
     /* delaytime which decides if animation has delay or not */
     let delayTime;
@@ -91,7 +92,8 @@ export default function Home(){
                         <motion.button className="knowMeBtn"
                         variants={buttonVariant}
                         whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.8 }}>
+                        whileTap={{ scale: 0.8 }}
+                        onClick={() => navigate("aboutme")}>
                             Get to know me
                         </motion.button>
                     </motion.div>

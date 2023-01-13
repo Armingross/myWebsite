@@ -2,6 +2,14 @@ body {
     background-color: rgba(2, 31, 86, 0.765);
 }
 
+
+/*
+
+
+    HOME 
+
+
+*/
 .display {
     height: 100vh;
     width: 100vw;
@@ -154,3 +162,120 @@ body {
         justify-content: flex-start;
     }
   }
+
+
+/*
+
+
+    ABOUT ME 
+
+
+*/
+
+/* bos in which all items are.
+position relative so that the items are absolute positioned to this box and not the whole page */
+.sliderBox {
+    width: 85vw;
+    height: 87vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* border: 2px solid black; */
+    position: relative;
+    overflow: hidden;
+}
+
+/* style of every itemBox */
+.itemBox {
+    height: 22%;
+    width: 60%;
+    display: flex;
+    /* border: 1px solid green; */
+    position: absolute;
+    transition: top 1s, height 1s, width 1s, opacity 1s;
+}
+
+/* here every item box is getting styled individualy */
+#prev2 {
+    top: -40%;
+}
+#prev {
+    top: 0;
+    opacity: 0.5;
+}
+#active {
+    top: 25%;
+    height: 50%;
+    width: 100%;
+    opacity: 1;
+}
+#next {
+    top: 78%;
+    opacity: 0.5;
+}
+#next2 {
+    top: 120%;
+}
+
+/* in the item box is a picture and text box */
+.pictureBox {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.textBox {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bothText {
+    font-family: Roboto;
+    color:white;
+    transition: font-size 1s;
+    margin: 0;
+}
+
+/* style of text  whether active or not*/
+#activeText {
+    font-size: 70px;
+}
+#inActiveText {
+    font-size: 30px;
+}
+
+
+/*
+
+
+    RESUME 
+
+
+*/
+
+.centerBoxResume {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 50px;
+    width: 800px;
+    height: 500px;
+    border: 3px solid white;
+}
+
+.Resumebtn {
+    width: 300px;
+    height: 100px;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 15px;
+    color: white;
+    font-size: 30px;
+    font-family: Roboto;
+    font-weight: 400;
+}
