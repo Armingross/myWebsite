@@ -7,7 +7,7 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 export default function AboutMe(){
-    const [bgcolor, setBgcolor] = useState("green");
+    const [bgcolor, setBgcolor] = useState("");
     
     /* page is for MenuLogo so that i know which button should be disactivated */
     const page = "aboutme";
@@ -84,7 +84,7 @@ export default function AboutMe(){
                         item.page2 ? (
                             <>
                             <div className="pictureBox">
-                                <video ref={videoPlay} muted style={{borderRadius: "50px"}}>
+                                <video ref={videoPlay} muted className="picture">
                                     <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
                                 </video>
                             </div>
@@ -97,7 +97,7 @@ export default function AboutMe(){
                         ) : (
                             <>
                             <div className="pictureBox">
-                                <img src={item.imgsrc} alt={item.imgalt} height={"100%"} style={{borderRadius: "50px"}}/>
+                                <img src={item.imgsrc} alt={item.imgalt} height={"100%"} className="picture"/>
                             </div>
                             <div className="textBox">
                                 <p className="bothText" id={item.textId}>{item.text}</p>

@@ -97,7 +97,7 @@ export default function MenuLogo({delayTime, page}) {
         )
 
     return(
-        <>
+        <div className="menuLogo">
             <Menu menuState={menuState} setMenuState={setMenuState} navigatetoPage={navigatetoPage}/>
             {/*logo div*/}
             <motion.div className="logoBox"
@@ -111,6 +111,6 @@ export default function MenuLogo({delayTime, page}) {
             </motion.div>
             {/*div for menu buttons*/}
             {menuBox}
-        </>
+        </div>
     )
 }

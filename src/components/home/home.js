@@ -49,8 +49,8 @@ export default function Home(){
         }
     }
     : {
-        hidden: { width:"500px", height:"300px", border: 0},
-        show: { width:"800px", height:"500px", border: "3px solid white",
+        hidden: { width:"500px", height:"300px", boxShadow: 0},
+        show: { width:"800px", height:"500px", boxShadow: "0px 0px 29px 7px rgba(0,0,0,0.2)",
             transition: {
                 delay: delayTime
             },
@@ -68,11 +68,13 @@ export default function Home(){
         }
 
     const buttonVariant = {
-        hidden: { opacity: 0 },
-        show: { opacity: 1,
+        hidden: { opacity: 0, scale: 1 },
+        show: { opacity: 1, scale: 1.1,
             transition: {
-                delay: delayTime
-            }}
+                opacity: { delay: delayTime },
+                scale: { duration: 0.7, repeat: Infinity, repeatType: "reverse" }
+            },
+        }
     }
        
 
@@ -91,7 +93,6 @@ export default function Home(){
                         </motion.p>
                         <motion.button className="knowMeBtn"
                         variants={buttonVariant}
-                        whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.8 }}
                         onClick={() => navigate("aboutme")}>
                             Get to know me
