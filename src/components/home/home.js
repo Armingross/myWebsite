@@ -41,8 +41,8 @@ export default function Home(){
 
     const centerBoxVariant = smallSize
     ? {
-        hidden: { height:"200px", border: 0},
-        show: { height:"350px", border: 0,
+        hidden: { height:"200px", width:"400px", border: 0},
+        show: { height:"350px", width:"400px", border: 0,
             transition: {
                 delay: delayTime
             },

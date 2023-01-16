@@ -1,6 +1,20 @@
+/*
+<a href="https://www.freepik.com/free-vector/internet-networking-technology-background-with-blue-digital-wave_16406292.htm#query=internet%20pattern&position=17&from_view=search&track=sph">Image by rawpixel.com</a> on Freepik
+<a href="https://www.freepik.com/free-vector/abstract-digital-science-fiction-matrix-like-background_26600961.htm#query=internet%20pattern&position=34&from_view=search&track=sph">Image by WangXiNa</a> on Freepik
+<a href="https://www.freepik.com/free-vector/abstract-background-with-white-gradient-wave-design_12180358.htm#page=5&query=internet%20pattern&position=15&from_view=search&track=sph">Image by kjpargeter</a> on Freepik
+<a href="https://www.vecteezy.com/free-vector/black">Black Vectors by Vecteezy</a>
+*/
+
+:root {
+    --white: white;
+    --black: rgba(0, 0, 0, 0.9);
+    --blue: rgba(2, 31, 86, 0.765);
+}
+
 body {
-    /* background-image: url("pattern/wood_1.webp"); */
-    background-color: rgb(61, 83, 125);
+    /* background-image: url("pattern/12180358_gradient_wave_in_monochrome_colours_0901.jpg");
+    background-size: cover; */
+    background-color: var(--blue);
 }
 
 
@@ -26,15 +40,14 @@ body {
     align-items: center;
     justify-content: space-evenly;
     border-radius: 50px;
-    /* background-color: rgba(0, 49, 140, 0.326); */
 }
 
 /* .menuLogo {
-    height: 80px;
+    height: 90px;
     width: 100%;
-    background-color: rgba(0, 49, 140, 0.326);
-    box-shadow: 0px 0px 29px 7px rgba(0,0,0,0.2);
+    background-color: var(--black);
     position: absolute;
+    top: 0;
 } */
 
 .greeting {
@@ -49,9 +62,9 @@ body {
     width: 190px;
     height: 65px;
     background-color: transparent;
-    border: 2px solid white;
+    border: 2px solid var(--white);
     border-radius: 15px;
-    color: white;
+    color: var(--white);
     font-size: 20px;
 }
 
@@ -61,7 +74,7 @@ body {
 
 #greetingMyName {
     font-family: Roboto;
-    color:white;
+    color:var(--white);
     font-weight: 400;
     margin-top: 0;
     margin-bottom: 0;
@@ -80,22 +93,22 @@ body {
 }
 
 .menuButton {
-    border: 2px solid white;
     border-radius: 10px;
     width: 100px;
     height: 28px;
-    background-color: transparent;/* 
-    background-color: rgba(0, 0, 0, 0.244); */
-    color: white;
+    border: 2px solid var(--white);
+    background-color: transparent;
+    color: var(--white);
     font-size: 19px;
 }
 
 .logoBox {
     position: absolute;
-    border: 2px solid white;
+    border: 2px solid var(--white);
+    background-color: transparent;
     border-radius: 5px;
     left: 40px;
-    top: 30px;
+    top: 22.5px;
     height: 45px;
     width: 45px;
     display: flex;
@@ -104,7 +117,7 @@ body {
 }
 
 .logoText {
-    color: white;
+    color: var(--white);
     font-size: 24px;
     margin: 2px;
     letter-spacing: 1.5px;
@@ -170,7 +183,7 @@ body {
         right: 0px;
         display: flex;
         justify-content: flex-start;
-    }
+    }   
   }
 
 
@@ -186,7 +199,7 @@ body {
 position relative so that the items are absolute positioned to this box and not the whole page */
 .sliderBox {
     width: 85vw;
-    height: 87vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -251,7 +264,7 @@ position relative so that the items are absolute positioned to this box and not 
 
 .bothText {
     font-family: Roboto;
-    color:white;
+    color:var(--white);
     transition: font-size 1s;
     margin: 0;
 }
@@ -268,12 +281,12 @@ position relative so that the items are absolute positioned to this box and not 
 /*
 
 
-    RESUME 
+    Contact 
 
 
 */
 
-.centerBoxResume {
+.centerBoxContact {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -284,14 +297,38 @@ position relative so that the items are absolute positioned to this box and not 
     box-shadow: 0px 0px 29px 7px rgba(0,0,0,0.2);
 }
 
-.Resumebtn {
-    width: 300px;
-    height: 100px;
+.Contactbtn {
+    width: 280px;
+    height: 90px;
     background-color: transparent;
     border: 3px solid white;
     border-radius: 15px;
     color: white;
-    font-size: 30px;
+    font-size: 28px;
     font-family: Roboto;
     font-weight: 400;
+}
+.Contactbtn:hover {
+    background-color: rgba(255, 255, 255, 0.354);
+}
+
+.socialMediaBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.textIcon {
+    width: 28%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.socialMediaText {
+    font-family: Roboto;
+    color:var(--white);
+    font-size: 30px;
+    text-decoration: none;
 }

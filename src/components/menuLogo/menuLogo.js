@@ -11,15 +11,15 @@ export default function MenuLogo({delayTime, page}) {
     let navigate = useNavigate();
     const [menuState, setMenuState] = useState(false)
 
-    let btnStyle = ["aboutme", "resume", "contact"];
+    let btnStyle = ["home", "aboutme", "contact"];
     btnStyle[page] = { color: "rgba(255, 255, 255, 0.6)", borderColor: "rgba(255, 255, 255, 0.6)" }
 
-    let hover = ["aboutme", "resume", "contact"];
-    hover["aboutme"] = hover["resume"] = hover["contact"] = { scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.354)" };
+    let hover = ["home", "aboutme", "contact"];
+    hover["home"] = hover["aboutme"] = hover["contact"] = { scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.354)" };
     hover[page] = { scale: 1, backgroundColor: "rgba(0, 0, 0, 0)" };
 
-    let btnDisable = ["aboutme", "resume", "contact"];
-    btnDisable["aboutme"] = btnDisable["resume"] = btnDisable["contact"] = false;
+    let btnDisable = ["home", "aboutme", "contact"];
+    btnDisable["home"] = btnDisable["aboutme"] = btnDisable["contact"] = false;
     btnDisable[page] = true;
 
     const logoVariant = {
@@ -82,15 +82,33 @@ export default function MenuLogo({delayTime, page}) {
                 initial="hidden"
                 animate="show">
                     {/* left Button */}
-                    <motion.button className="menuButton" disabled={btnDisable["aboutme"]} style={btnStyle["aboutme"]} onClick={() => navigatetoPage("aboutme")} variants={menuButtonVariant} whileHover={hover["aboutme"]}>
-                        About Me
+                    <motion.button
+                    className="menuButton"
+                    disabled={btnDisable["home"]}
+                    style={btnStyle["home"]}
+                    onClick={() => navigatetoPage("")}
+                    variants={menuButtonVariant}
+                    whileHover={hover["home"]}>
+                        Home
                     </motion.button>
                     {/* middle Button */}
-                    <motion.button className="menuButton" disabled={btnDisable["resume"]} style={btnStyle["resume"]} onClick={() => navigatetoPage("resume")} variants={menuButtonVariant} whileHover={hover["resume"]}>
-                        Resume
+                    <motion.button
+                    className="menuButton"
+                    disabled={btnDisable["aboutme"]}
+                    style={btnStyle["aboutme"]}
+                    onClick={() => navigatetoPage("aboutme")}
+                    variants={menuButtonVariant}
+                    whileHover={hover["aboutme"]}>
+                        About Me
                     </motion.button>
                     {/* right Button */}
-                    <motion.button className="menuButton" disabled={btnDisable["contact"]} style={btnStyle["contact"]} onClick={() => navigatetoPage("contact")} variants={menuButtonVariant} whileHover={hover["contact"]}>
+                    <motion.button
+                    className="menuButton"
+                    disabled={btnDisable["contact"]}
+                    style={btnStyle["contact"]}
+                    onClick={() => navigatetoPage("contact")}
+                    variants={menuButtonVariant}
+                    whileHover={hover["contact"]}>
                         Contact
                     </motion.button>
         </motion.div>
