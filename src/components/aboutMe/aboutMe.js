@@ -118,7 +118,6 @@ export default function AboutMe(){
                                 <div className="textBox">
                                     <p className="bothText" id={item.textId}>{item.text}</p>
                                     <p className="bothText" id={item.textId}>{item.text2}</p>
-                                    <p className="bothText" id={item.textId}>{item.text3}</p>
                                 </div>
                                 </>
                             ) : (
