@@ -7,8 +7,12 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import { useMediaQuery, } from '@mui/material'
+import { motion } from "framer-motion"
 
 export default function AboutMe(){
+    /* delaytime to give it to <MenuLogo> */
+    let delayTime = 0;
+
     const [bgcolor, setBgcolor] = useState("");
     
     /* page is for MenuLogo so that i know which button should be disactivated */
@@ -84,10 +88,18 @@ export default function AboutMe(){
             <ArrowDownwardIcon style={arrowIconStyle} onClick={scrollDown}/>
         </div>
     )
+
+    const pageVariant = {
+        hidden: { opacity: 0, },
+        show: { opacity: 1 },
+        exit: { opacity: 0 }
+    }
     
     return(
-        <div className="display" id="displayAboutMe" style={{ backgroundColor: bgcolor }}>
-            <MenuLogo page={page}/>
+        <motion.div className="display" id="displayAboutMe" style={{ backgroundColor: bgcolor }}
+            variants={pageVariant} initial="hidden" animate="show" exit="exit"
+        >
+            <MenuLogo delayTime={delayTime} page={page}/>
             <ReactScrollWheelHandler
             upHandler={(e) => scrollUp()}
             downHandler={(e) => scrollDown()}
@@ -125,6 +137,6 @@ export default function AboutMe(){
                 </div>
             </ReactScrollWheelHandler>
             {arrowIcon}
-        </div>
+        </motion.div>
     )
 }

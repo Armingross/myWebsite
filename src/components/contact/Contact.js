@@ -6,6 +6,9 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import { motion } from "framer-motion"
 
 export default function Contact(){
+    /* delaytime to give it to <MenuLogo> */
+    let delayTime = 0;
+
     /* page is for MenuLogo so that i know which button should be disactivated */
     const page = "contact"
 
@@ -17,10 +20,16 @@ export default function Contact(){
             },
         }
     }
+
+    const pageVariant = {
+        hidden: { opacity: 0, },
+        show: { opacity: 1 },
+        exit: { opacity: 0 }
+    }
     
     return(
-        <div className="display">
-            <MenuLogo page={page}></MenuLogo>
+        <motion.div className="display" variants={pageVariant} initial="hidden" animate="show" exit="exit">
+            <MenuLogo delayTime={delayTime} page={page}/>
             <div className="centerBoxContact">
                 <div className="socialMediaBox">
                     <motion.div className="textIcon" whileHover={{ scale: 1.1 }}>
@@ -53,6 +62,6 @@ export default function Contact(){
                     Download Resume
                 </motion.a>
             </div> 
-        </div>
+        </motion.div>
     )    
 }

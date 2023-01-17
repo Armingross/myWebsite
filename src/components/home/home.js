@@ -79,9 +79,8 @@ export default function Home(){
        
 
     return(
-        <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
+        <motion.div className="display" variants={pageVariant} initial="hidden" animate="show" exit="exit">
             <MenuLogo delayTime={delayTime} page={page}/>
-            <div className="display">
                 {/*white box*/}
                 <motion.div className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">
                     <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
@@ -97,7 +96,6 @@ export default function Home(){
                         Get to know me
                     </motion.button>
                 </motion.div>
-            </div>
         </motion.div>
     )
 }
