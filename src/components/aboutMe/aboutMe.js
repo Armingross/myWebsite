@@ -5,6 +5,8 @@ import { getItems } from "./Items.js"
 import { scroll } from "./Scroll.js"
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import ReactScrollWheelHandler from "react-scroll-wheel-handler";
+import { useMediaQuery, } from '@mui/material'
 
 export default function AboutMe(){
     const [bgcolor, setBgcolor] = useState("");
@@ -45,7 +47,7 @@ export default function AboutMe(){
         if(pointer < Object.keys(box).length){
             point = pointer + 1;
         }else{
-            point = box.length;
+            point = Object.keys(box).length;
         }
         setPointer(point);
     }
@@ -63,55 +65,66 @@ export default function AboutMe(){
         }
     }, [pointer])
 
-    
-    
-
     /* arrows for scrolling up and down the list */
-    const arrowIcon = {
+    const smallSize = useMediaQuery("@media screen and (max-width: 900px)");
+
+    const arrowIconStyle = {
         fontSize: "50px",
         marginTop: "20px",
         marginBottom: "20px",
         color: "white"
     }
 
+    const arrowIcon = smallSize
+    ? (
+        null
+    ) : (
+        <div style={{display: "flex", flexDirection: "column"}}>
+            <ArrowUpwardIcon style={arrowIconStyle} onClick={scrollUp}/>
+            <ArrowDownwardIcon style={arrowIconStyle} onClick={scrollDown}/>
+        </div>
+    )
+    
     return(
-        <div className="display" style={{backgroundColor: bgcolor}}>
-            <MenuLogo page={page}></MenuLogo>
-            <div className="sliderBox">
-            {items.map((item) => (
-                <div key={item.id} className={item.className} id={item.boxID}>
-                        {
-                        item.page2 ? (
-                            <>
-                            <div className="pictureBox">
-                                <video ref={videoPlay} muted className="picture">
-                                    <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
-                                </video>
-                            </div>
-                            <div className="textBox">
-                                <p className="bothText" id={item.textId}>{item.text}</p>
-                                <p className="bothText" id={item.textId}>{item.text2}</p>
-                                <p className="bothText" id={item.textId}>{item.text3}</p>
-                            </div>
-                            </>
-                        ) : (
-                            <>
-                            <div className="pictureBox">
-                                <img src={item.imgsrc} alt={item.imgalt} height={"100%"} className="picture"/>
-                            </div>
-                            <div className="textBox">
-                                <p className="bothText" id={item.textId}>{item.text}</p>
-                            </div>
-                            </>
-                        )
-                        }
+        <div className="display" id="displayAboutMe" style={{ backgroundColor: bgcolor }}>
+            <MenuLogo page={page}/>
+            <ReactScrollWheelHandler
+            upHandler={(e) => scrollUp()}
+            downHandler={(e) => scrollDown()}
+            >
+                <div className="sliderBox">
+                    {items.map((item) => (
+                        <div key={item.id} className={item.className} id={item.boxID}>
+                            {
+                            item.page2 ? (
+                                <>
+                                <div className="pictureBox">
+                                    <video ref={videoPlay} muted className="picture">
+                                        <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
+                                    </video>
+                                </div>
+                                <div className="textBox">
+                                    <p className="bothText" id={item.textId}>{item.text}</p>
+                                    <p className="bothText" id={item.textId}>{item.text2}</p>
+                                    <p className="bothText" id={item.textId}>{item.text3}</p>
+                                </div>
+                                </>
+                            ) : (
+                                <>
+                                <div className="pictureBox">
+                                    <img src={item.imgsrc} alt={item.imgalt} className="picture"/>
+                                </div>
+                                <div className="textBox">
+                                    <p className="bothText" id={item.textId}>{item.text}</p>
+                                </div>
+                                </>
+                            )
+                            }
+                        </div>
+                    ))}
                 </div>
-            ))}
-            </div>
-            <div style={{display: "flex", flexDirection: "column"}}>
-                <ArrowUpwardIcon style={arrowIcon} onClick={scrollUp}/>
-                <ArrowDownwardIcon style={arrowIcon} onClick={scrollDown}/>
-            </div>
+            </ReactScrollWheelHandler>
+            {arrowIcon}
         </div>
     )
 }

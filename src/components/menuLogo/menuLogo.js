@@ -67,13 +67,13 @@ export default function MenuLogo({delayTime, page}) {
     ? (
         /* Menu icon Box */
         <div className="menuBox">
-                    {/* Menu icon */}
-                    <motion.div
-                        variants={menuIconVariant}
-                        initial="hidden"
-                        animate="show">
-                                <MenuIcon onClick={() => {setMenuState(true)}} sx={{color:"white", fontSize: "55px"}}/>
-                    </motion.div>
+            {/* Menu icon */}
+            <motion.div
+            variants={menuIconVariant}
+            initial="hidden"
+            animate="show">
+                <MenuIcon onClick={() => {setMenuState(true)}} sx={{color:"white", fontSize: "55px"}}/>
+            </motion.div>
         </div>
         )
     : (
@@ -123,8 +123,7 @@ export default function MenuLogo({delayTime, page}) {
                 initial="hidden"
                 animate="show"
                 whileHover="hover"
-                onClick={() => navigatetoPage("")}
-                >
+                onClick={() => navigatetoPage("")}>
                     <Typography className="logoText" onClick={() => navigatetoPage("aboutme")}>A|G</Typography>                    
             </motion.div>
             {/*div for menu buttons*/}

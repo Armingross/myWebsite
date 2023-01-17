@@ -20,7 +20,7 @@ export function getItems(box){
             text: "I'm from Sarnthein",
             className: "itemBox",
             boxID: box.box1,
-            textId: text[0]
+            textId: text[0],
         },
         {
             id: 2,

@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 export default function Home(){
     <link rel="stylesheet" href="home.css"/>
 
-    const smallSize = useMediaQuery("@media screen and (max-width: 900px)")
     let navigate = useNavigate();
     /* page is for MenuLogo so that i know which button should be disactivated */
     const page = "home";
@@ -39,10 +38,11 @@ export default function Home(){
                 }}
     }
 
+    const smallSize = useMediaQuery("@media screen and (max-width: 900px)")
     const centerBoxVariant = smallSize
     ? {
-        hidden: { height:"200px", width:"400px", border: 0},
-        show: { height:"350px", width:"400px", border: 0,
+        hidden: { height:"200px"},
+        show: { height:"350px",
             transition: {
                 delay: delayTime
             },
@@ -79,27 +79,25 @@ export default function Home(){
        
 
     return(
-        <>
+        <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
             <MenuLogo delayTime={delayTime} page={page}/>
             <div className="display">
-                <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
-                    {/*white box*/}
-                    <motion.div className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">
-                        <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
-                            Hi, I'm
-                        </motion.p>
-                        <motion.p className="myName" id="greetingMyName" variants={textVariant}>
-                            Armin Gross
-                        </motion.p>
-                        <motion.button className="knowMeBtn"
-                        variants={buttonVariant}
-                        whileTap={{ scale: 0.8 }}
-                        onClick={() => navigate("aboutme")}>
-                            Get to know me
-                        </motion.button>
-                    </motion.div>
+                {/*white box*/}
+                <motion.div className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">
+                    <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
+                        Hi, I'm
+                    </motion.p>
+                    <motion.p className="myName" id="greetingMyName" variants={textVariant}>
+                        Armin Gross
+                    </motion.p>
+                    <motion.button className="knowMeBtn"
+                    variants={buttonVariant}
+                    whileTap={{ scale: 0.8 }}
+                    onClick={() => navigate("aboutme")}>
+                        Get to know me
+                    </motion.button>
                 </motion.div>
             </div>
-        </>
+        </motion.div>
     )
 }

@@ -11,7 +11,7 @@ export default function Contact(){
 
     const buttonVariant = {
         hidden: { scale: 1 },
-        show: { scale: 1.1,
+        show: { scale: 1.08,
             transition: {
                 scale: { duration: 0.7, repeat: Infinity, repeatType: "reverse" }
             },
@@ -42,13 +42,16 @@ export default function Contact(){
                         </motion.a>
                     </motion.div>
                 </div>
-                <motion.button
-                className="Contactbtn"
+                <motion.a
+                className="downloadResumeBtn"
                 variants={buttonVariant}
                 initial="hidden"
                 animate="show"
-                whileTap={{ scale: 0.8 }}
-                >Download Resume</motion.button>
+                whileTap={{ scale: 0.95 }}
+                href="Resume/Resume.zip"
+                download>
+                    Download Resume
+                </motion.a>
             </div> 
         </div>
     )    
