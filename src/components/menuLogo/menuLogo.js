@@ -12,7 +12,7 @@ export default function MenuLogo({delayTime, page}) {
     const [menuState, setMenuState] = useState(false)
 
     let btnStyle = ["home", "aboutme", "contact"];
-    btnStyle[page] = { color: "rgba(255, 255, 255, 0.6)", borderColor: "rgba(255, 255, 255, 0.6)" }
+    btnStyle[page] = { color: "rgba(255, 255, 255, 0.6)", borderColor: "rgba(255, 255, 255, 0.6)", cursor: "auto" }
 
     let hover = ["home", "aboutme", "contact"];
     hover["home"] = hover["aboutme"] = hover["contact"] = { scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.354)" };

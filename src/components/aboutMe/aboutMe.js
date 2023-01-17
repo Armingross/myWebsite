@@ -76,7 +76,8 @@ export default function AboutMe(){
         fontSize: "50px",
         marginTop: "20px",
         marginBottom: "20px",
-        color: "white"
+        color: "white",
+        cursor: "pointer"
     }
 
     const arrowIcon = smallSize
