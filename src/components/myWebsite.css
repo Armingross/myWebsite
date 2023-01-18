@@ -222,17 +222,23 @@ body {
     align-items: flex-end;
 }
 
+.sliderAndArrow {
+    display: flex;
+    height: 88vh;
+    width: 85vw;
+    margin-bottom: 3vh;
+}
+
 /* bos in which all items are.
 position relative so that the items are absolute positioned to this box and not the whole page */
 .sliderBox {
-    width: 85vw;
-    height: 88vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     position: relative;
     overflow: hidden;
-    margin-bottom: 3vh;
 }
 
 /* style of every itemBox */
@@ -242,7 +248,6 @@ position relative so that the items are absolute positioned to this box and not 
     display: flex;
     position: absolute;
     transition: top 1s, height 1s, width 1s, opacity 1s;
-    margin-right: 4%;
 }
 
 /* here every item box is getting styled individualy */

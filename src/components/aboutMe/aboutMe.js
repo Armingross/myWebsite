@@ -94,6 +94,15 @@ export default function AboutMe(){
             },
         }
     }
+
+    let upArrowHidden = false;
+    if(pointer === 1) {
+        upArrowHidden = true;
+    }
+    let downArrowHidden = false;
+    if(pointer === Object.keys(box).length) {
+        downArrowHidden = true;
+    }
     
     return(
         <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
@@ -106,6 +115,7 @@ export default function AboutMe(){
                 upHandler={(e) => scrollUp()}
                 downHandler={(e) => scrollDown()}
                 >
+                    <div className="sliderAndArrow">
                     <div className="sliderBox">
                         {items.map((item) => (
                             <div key={item.id} className={item.className} id={item.boxID}>
@@ -135,11 +145,12 @@ export default function AboutMe(){
                                 }
                             </div>
                         ))}
+                    </div>
                         <div className="arrowBox">
-                            <motion.div variants={arrowVariant} initial="hidden" animate="show">
+                            <motion.div variants={arrowVariant} initial="hidden" animate="show" hidden={upArrowHidden}>
                                 <ArrowUpwardIcon style={arrowIconStyle} onClick={scrollUp}/>
                             </motion.div>
-                            <motion.div variants={arrowVariant} initial="hidden" animate="show">
+                            <motion.div variants={arrowVariant} initial="hidden" animate="show" hidden={downArrowHidden}>
                                 <ArrowDownwardIcon style={arrowIconStyle} onClick={scrollDown}/>
                             </motion.div>
                         </div>
