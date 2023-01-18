@@ -12,8 +12,6 @@ import { motion } from "framer-motion"
 export default function AboutMe(){
     /* delaytime to give it to <MenuLogo> */
     let delayTime = 0;
-
-    const [bgcolor, setBgcolor] = useState("");
     
     /* page is for MenuLogo so that i know which button should be disactivated */
     const page = "aboutme";
@@ -59,7 +57,7 @@ export default function AboutMe(){
     /* when pointer changes value which happens after scrolldown or scrollup... */
     useEffect(() => {
         /* ...scroll function will be called... */
-        scroll(setBox, pointer, setBgcolor)
+        scroll(setBox, pointer)
         /* ...and the video will either play or restart and pause */
         if(pointer === 2){
             videoPlay.current.play();
@@ -80,66 +78,74 @@ export default function AboutMe(){
         cursor: "pointer",
     }
 
-    const arrowIcon = smallSize
-    ? (
-        <div className="arrowBox">
-            <ArrowUpwardIcon style={arrowIconStyle} onClick={scrollUp}/>
-            <ArrowDownwardIcon style={arrowIconStyle} onClick={scrollDown}/>
-        </div>
-    ) : (
-        <div style={{display: "flex", flexDirection: "column"}}>
-            <ArrowUpwardIcon style={arrowIconStyle} onClick={scrollUp}/>
-            <ArrowDownwardIcon style={arrowIconStyle} onClick={scrollDown}/>
-        </div>
-    )
-
     const pageVariant = {
         hidden: { opacity: 0, },
         show: { opacity: 1 },
         exit: { opacity: 0 }
     }
+
+    const arrowVariant = {
+        hidden: { scale: 1 },
+        show: { scale: 1.2,
+            transition: {
+                duration: 0.7,
+                repeat: Infinity,
+                repeatType: "reverse"
+            },
+        }
+    }
     
     return(
-        <motion.div className="display" id="displayAboutMe" style={{ backgroundColor: bgcolor }}
-            variants={pageVariant} initial="hidden" animate="show" exit="exit"
-        >
-            <MenuLogo delayTime={delayTime} page={page}/>
-            <ReactScrollWheelHandler
-            upHandler={(e) => scrollUp()}
-            downHandler={(e) => scrollDown()}
-            >
-                <div className="sliderBox">
-                    {items.map((item) => (
-                        <div key={item.id} className={item.className} id={item.boxID}>
-                            {
-                            item.page2 ? (
-                                <>
-                                <div className="pictureBox">
-                                    <video ref={videoPlay} muted className="picture">
-                                        <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
-                                    </video>
-                                </div>
-                                <div className="textBox">
-                                    <p className="bothText" id={item.textId}>{item.text}</p>
-                                    <p className="bothText" id={item.textId}>{item.text2}</p>
-                                </div>
-                                </>
-                            ) : (
-                                <>
-                                <div className="pictureBox">
-                                    <img src={item.imgsrc} alt={item.imgalt} className="picture"/>
-                                </div>
-                                <div className="textBox">
-                                    <p className="bothText" id={item.textId}>{item.text}</p>
-                                </div>
-                                </>
-                            )
-                            }
+        <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
+            <img className="backgroundImg" src="img/bg/onLine.jpg"
+                alt="picture of me on the Street Line"
+            />
+            <div className="display" id="displayAboutMe">
+                <MenuLogo delayTime={delayTime} page={page}/>
+                <ReactScrollWheelHandler
+                upHandler={(e) => scrollUp()}
+                downHandler={(e) => scrollDown()}
+                >
+                    <div className="sliderBox">
+                        {items.map((item) => (
+                            <div key={item.id} className={item.className} id={item.boxID}>
+                                {
+                                item.page2 ? (
+                                    <>
+                                    <div className="pictureBox">
+                                        <video ref={videoPlay} muted className="picture">
+                                            <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
+                                        </video>
+                                    </div>
+                                    <div className="textBox">
+                                        <p className="bothText" id={item.textId}>{item.text}</p>
+                                        <p className="bothText" id={item.textId}>{item.text2}</p>
+                                    </div>
+                                    </>
+                                ) : (
+                                    <>
+                                    <div className="pictureBox">
+                                        <img src={item.imgsrc} alt={item.imgalt} className="picture"/>
+                                    </div>
+                                    <div className="textBox">
+                                        <p className="bothText" id={item.textId}>{item.text}</p>
+                                    </div>
+                                    </>
+                                )
+                                }
+                            </div>
+                        ))}
+                        <div className="arrowBox">
+                            <motion.div variants={arrowVariant} initial="hidden" animate="show">
+                                <ArrowUpwardIcon style={arrowIconStyle} onClick={scrollUp}/>
+                            </motion.div>
+                            <motion.div variants={arrowVariant} initial="hidden" animate="show">
+                                <ArrowDownwardIcon style={arrowIconStyle} onClick={scrollDown}/>
+                            </motion.div>
                         </div>
-                    ))}
-                </div>
-            </ReactScrollWheelHandler>
-            {arrowIcon}
+                    </div>
+                </ReactScrollWheelHandler>
+            </div>
         </motion.div>
     )
 }

@@ -17,7 +17,7 @@ export function getItems(box){
             id: 1,
             imgsrc: "img/sarnthein4to3.jpg",
             imgalt: "picture of Sarnthein",
-            text: "I'm from Sarnthein",
+            text: "I'm from Sarnthein...",
             className: "itemBox",
             boxID: box.box1,
             textId: text[0],
@@ -26,7 +26,7 @@ export function getItems(box){
             id: 2,
             videosrc: "video/Sarnthein.mp4#svgView(preserveAspectRatio(none))",
             imgalt: "video of zooming in on europe to Sarnthein",
-            text: "Which is Located",
+            text: "...which is Located",
             text2: "in Northern Italy",
             className: "itemBox",
             boxID: box.box2,
@@ -37,7 +37,7 @@ export function getItems(box){
             id: 3,
             imgsrc: "img/jakobsSpitze.jpg",
             imgalt: "picture of the cross on the Jakobs Spitze",
-            text: "I Like Hiking",
+            text: "I like hiking...",
             className: "itemBox",
             boxID: box.box3,
             textId: text[2]
@@ -46,7 +46,7 @@ export function getItems(box){
             id: 4,
             imgsrc: "img/goldenGate4to3.jpg",
             imgalt: "Picture of me in front of the Golden Gate Bridge",
-            text: "Traveling",
+            text: "...traveling...",
             className: "itemBox",
             boxID: box.box4,
             textId: text[3]
@@ -55,7 +55,7 @@ export function getItems(box){
             id: 5,
             imgsrc: "img/volleyball4to3.jpg",
             imgalt: "picture of me playing volleyball",
-            text: "Sport",
+            text: "...doing sports...",
             className: "itemBox",
             boxID: box.box5,
             textId: text[4]
@@ -64,7 +64,7 @@ export function getItems(box){
             id: 6,
             imgsrc: "img/volleyball.jpg",
             imgalt: "picture of me Programming",
-            text: "and programming",
+            text: "& programming",
             className: "itemBox",
             boxID: box.box6,
             textId: text[5]

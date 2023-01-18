@@ -1,20 +1,14 @@
-/*
-<a href="https://www.freepik.com/free-vector/internet-networking-technology-background-with-blue-digital-wave_16406292.htm#query=internet%20pattern&position=17&from_view=search&track=sph">Image by rawpixel.com</a> on Freepik
-<a href="https://www.freepik.com/free-vector/abstract-digital-science-fiction-matrix-like-background_26600961.htm#query=internet%20pattern&position=34&from_view=search&track=sph">Image by WangXiNa</a> on Freepik
-<a href="https://www.freepik.com/free-vector/abstract-background-with-white-gradient-wave-design_12180358.htm#page=5&query=internet%20pattern&position=15&from_view=search&track=sph">Image by kjpargeter</a> on Freepik
-<a href="https://www.vecteezy.com/free-vector/black">Black Vectors by Vecteezy</a>
-*/
 
 :root {
-    --white: white;
-    --black: rgba(0, 0, 0, 0.9);
-    --blue: rgba(2, 31, 86, 0.765);
+    --white: rgb(255, 255, 255);
+    --black: rgba(42, 43, 50, 1);
+    --blackCenterBoxes: rgba(42, 43, 50, 0.9);
+    --blackAbouteMeBG: rgba(42, 43, 50, 0.6);
+    --blackBG: rgba(42, 43, 50, 0.3);
 }
 
 body {
-    /* background-image: url("pattern/12180358_gradient_wave_in_monochrome_colours_0901.jpg");
-    background-size: cover; */
-    background-color: var(--blue);
+    background-color: var(--black);
 }
 
 
@@ -31,6 +25,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--blackBG);
+}
+
+.backgroundImg {
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    position: absolute;
 }
 
 .centerBox {
@@ -39,27 +41,28 @@ body {
     align-items: center;
     justify-content: space-evenly;
     border-radius: 50px;
+    background-color: var(--blackCenterBoxes);
 }
 
 /* .menuLogo {
     height: 90px;
     width: 100%;
-    background-color: var(--black);
+    background-color: rgba(18, 68, 131, 0.3);
     position: absolute;
     top: 0;
 } */
 
 .greeting {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .myName {
-    font-size: 80px;
+    font-size: 90px;
 }
 
 .knowMeBtn {
-    width: 280px;
-    height: 90px;
+    width: 250px;
+    height: 80px;
     background-color: transparent;
     border: 3px solid var(--white);
     border-radius: 15px;
@@ -72,12 +75,21 @@ body {
     background-color: rgba(255, 255, 255, 0.354);
 }
 
+.greetingMyNameBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 200px;
+}
+
 #greetingMyName {
-    font-family: Roboto;
+    font-family: Arial, Helvetica, sans-serif;
     color:var(--white);
     font-weight: 400;
     margin-top: 0;
     margin-bottom: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .menuBox {
@@ -205,16 +217,22 @@ body {
 
 */
 
+#displayAboutMe {
+    background-color: var(--blackAbouteMeBG);
+    align-items: flex-end;
+}
+
 /* bos in which all items are.
 position relative so that the items are absolute positioned to this box and not the whole page */
 .sliderBox {
     width: 85vw;
-    height: 75vh;
+    height: 88vh;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     position: relative;
     overflow: hidden;
+    margin-bottom: 3vh;
 }
 
 /* style of every itemBox */
@@ -224,6 +242,7 @@ position relative so that the items are absolute positioned to this box and not 
     display: flex;
     position: absolute;
     transition: top 1s, height 1s, width 1s, opacity 1s;
+    margin-right: 4%;
 }
 
 /* here every item box is getting styled individualy */
@@ -289,19 +308,11 @@ position relative so that the items are absolute positioned to this box and not 
 .arrowBox{
     display: flex;
     flex-direction: column;
+    height: 100%;
+    justify-content: center;
 }
 
 @media screen and (max-width: 900px) {
-    /*  */
-    #displayAboutMe {
-        align-items: flex-end
-    }
-    /* box in which all items are.
-    position relative so that the items are absolute positioned to this box and not the whole page */
-    .sliderBox {
-        height: 87vh;
-        width: 85vw;
-    }
 
     /* style of every itemBox */
     .itemBox {
@@ -342,7 +353,6 @@ position relative so that the items are absolute positioned to this box and not 
 
     .arrowBox{
         justify-content: space-around;
-        height: 100%;
     }
   }
 
@@ -364,6 +374,7 @@ position relative so that the items are absolute positioned to this box and not 
     width: 800px;
     height: 500px;
     box-shadow: 0px 0px 29px 7px rgba(0,0,0,0.2);
+    background-color: var(--blackCenterBoxes);
 }
 
 .downloadResumeBtn {

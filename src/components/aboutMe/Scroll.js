@@ -13,7 +13,6 @@ export function scroll(setBox, pointer, setBgcolor){
                 box5: "next2",
                 box6: "next2"
             })
-            /* setBgcolor("rgba(2, 31, 86, 0.765)") */
             break;
         case 2:
             /* in this case its the second one and so on... */
@@ -25,7 +24,6 @@ export function scroll(setBox, pointer, setBgcolor){
                 box5: "next2",
                 box6: "next2"
             })
-            /* setBgcolor("green") */
             break;
         case 3:
             setBox({
@@ -36,7 +34,6 @@ export function scroll(setBox, pointer, setBgcolor){
                 box5: "next2",
                 box6: "next2"
             })
-            /* setBgcolor("blue") */
             break;
         case 4:
             setBox({
@@ -47,7 +44,6 @@ export function scroll(setBox, pointer, setBgcolor){
                 box5: "next",
                 box6: "next2"
             })
-            /* setBgcolor("blue") */
             break;
         case 5:
             setBox({
@@ -58,7 +54,6 @@ export function scroll(setBox, pointer, setBgcolor){
                 box5: "active",
                 box6: "next"
             })
-            /* setBgcolor("yellow") */
             break;
         case 6:
             setBox({
@@ -69,7 +64,6 @@ export function scroll(setBox, pointer, setBgcolor){
                 box5: "prev",
                 box6: "active"
             })
-            /* setBgcolor("orange") */
             break;
         }
 }

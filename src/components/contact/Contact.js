@@ -28,40 +28,45 @@ export default function Contact(){
     }
     
     return(
-        <motion.div className="display" variants={pageVariant} initial="hidden" animate="show" exit="exit">
-            <MenuLogo delayTime={delayTime} page={page}/>
-            <div className="centerBoxContact">
-                <div className="socialMediaBox">
-                    <motion.div className="textIcon" whileHover={{ scale: 1.1 }}>
-                        <InstagramIcon/>
-                        <motion.a href="https://www.instagram.com/aregross" target="to _blank" className="socialMediaText">
-                            Instagram
-                        </motion.a>
-                    </motion.div>
-                    <motion.div className="textIcon" whileHover={{ scale: 1.1 }}>
-                        <MailOutlineIcon/>
-                        <motion.a href="mailto:armingross01@gmail.com" target="to _blank" className="socialMediaText">
-                            Mail
-                        </motion.a>
-                    </motion.div>
-                    <motion.div className="textIcon" whileHover={{ scale: 1.1 }}>
-                        <GitHubIcon/>
-                        <motion.a href="https://github.com/Armingross" target="to _blank" className="socialMediaText">
-                            GitHub
-                        </motion.a>
-                    </motion.div>
-                </div>
-                <motion.a
-                className="downloadResumeBtn"
-                variants={buttonVariant}
-                initial="hidden"
-                animate="show"
-                whileTap={{ scale: 0.95 }}
-                href="Resume/Resume.zip"
-                download>
-                    Download Resume
-                </motion.a>
-            </div> 
+        <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
+            <img className="backgroundImg" src="img/bg/onRight.jpg"
+                alt="picture of me on the side of a Street"
+            />
+            <div className="display">
+                <MenuLogo delayTime={delayTime} page={page}/>
+                <div className="centerBoxContact">
+                    <div className="socialMediaBox">
+                        <motion.div className="textIcon" whileHover={{ scale: 1.1 }}>
+                            <InstagramIcon/>
+                            <motion.a href="https://www.instagram.com/aregross" target="to _blank" className="socialMediaText">
+                                Instagram
+                            </motion.a>
+                        </motion.div>
+                        <motion.div className="textIcon" whileHover={{ scale: 1.1 }}>
+                            <MailOutlineIcon/>
+                            <motion.a href="mailto:armingross01@gmail.com" target="to _blank" className="socialMediaText">
+                                Mail
+                            </motion.a>
+                        </motion.div>
+                        <motion.div className="textIcon" whileHover={{ scale: 1.1 }}>
+                            <GitHubIcon/>
+                            <motion.a href="https://github.com/Armingross" target="to _blank" className="socialMediaText">
+                                GitHub
+                            </motion.a>
+                        </motion.div>
+                    </div>
+                    <motion.a
+                    className="downloadResumeBtn"
+                    variants={buttonVariant}
+                    initial="hidden"
+                    animate="show"
+                    whileTap={{ scale: 0.95 }}
+                    href="Resume/Resume.zip"
+                    download>
+                        Download Resume
+                    </motion.a>
+                </div> 
+            </div>
         </motion.div>
     )    
 }

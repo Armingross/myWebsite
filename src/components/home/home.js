@@ -24,7 +24,7 @@ export default function Home(){
 
 
     const pageVariant = {
-        hidden: { opacity: 0, },
+        hidden: { opacity: 0,},
         show: { opacity: 1 },
         exit: { opacity: 0 }
     }
@@ -49,7 +49,7 @@ export default function Home(){
         }
     }
     : {
-        hidden: { width:"500px", height:"300px", boxShadow: 0},
+        hidden: { width:"600px", height:"300px", boxShadow: "none"},
         show: { width:"800px", height:"500px", boxShadow: "0px 0px 29px 7px rgba(0,0,0,0.2)",
             transition: {
                 delay: delayTime
@@ -76,26 +76,42 @@ export default function Home(){
             },
         }
     }
+
+    const backgroundImgVariant = {
+        hidden: { opacity: 0 },
+        show: { opacity: 1,
+                transition:{
+                    delay: delayTime
+                }}
+    }
        
 
     return(
-        <motion.div className="display" variants={pageVariant} initial="hidden" animate="show" exit="exit">
-            <MenuLogo delayTime={delayTime} page={page}/>
-                {/*white box*/}
-                <motion.div className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">
-                    <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
-                        Hi, I'm
-                    </motion.p>
-                    <motion.p className="myName" id="greetingMyName" variants={textVariant}>
-                        Armin Gross
-                    </motion.p>
-                    <motion.button className="knowMeBtn"
-                    variants={buttonVariant}
-                    whileTap={{ scale: 0.8 }}
-                    onClick={() => navigate("aboutme")}>
-                        Get to know me
-                    </motion.button>
-                </motion.div>
+        <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
+            <motion.img className="backgroundImg" src="img/bg/backToCam.jpg"
+            alt="picture of me in front of a long street"
+            variants={backgroundImgVariant} initial="hidden" animate="show"
+            />
+            <div className="display">
+                <MenuLogo delayTime={delayTime} page={page}/>
+                    {/*white box*/}
+                    <motion.div className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">
+                        <div className="greetingMyNameBox">
+                            <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
+                                Hi, my name is
+                            </motion.p>
+                            <motion.p className="myName" id="greetingMyName" variants={textVariant}>
+                                Armin Gross
+                            </motion.p>
+                        </div>
+                        <motion.button className="knowMeBtn"
+                        variants={buttonVariant}
+                        whileTap={{ scale: 0.8 }}
+                        onClick={() => navigate("aboutme")}>
+                            Get to know me
+                        </motion.button>
+                    </motion.div>
+            </div>
         </motion.div>
     )
 }
