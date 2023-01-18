@@ -77,12 +77,15 @@ export default function AboutMe(){
         marginTop: "20px",
         marginBottom: "20px",
         color: "white",
-        cursor: "pointer"
+        cursor: "pointer",
     }
 
     const arrowIcon = smallSize
     ? (
-        null
+        <div className="arrowBox">
+            <ArrowUpwardIcon style={arrowIconStyle} onClick={scrollUp}/>
+            <ArrowDownwardIcon style={arrowIconStyle} onClick={scrollDown}/>
+        </div>
     ) : (
         <div style={{display: "flex", flexDirection: "column"}}>
             <ArrowUpwardIcon style={arrowIconStyle} onClick={scrollUp}/>
