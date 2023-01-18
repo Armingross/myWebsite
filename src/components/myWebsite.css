@@ -248,6 +248,7 @@ position relative so that the items are absolute positioned to this box and not 
 /* here every item box is getting styled individualy */
 #prev2 {
     top: -40%;
+    user-select: none
 }
 #prev {
     top: 0;
@@ -265,6 +266,7 @@ position relative so that the items are absolute positioned to this box and not 
 }
 #next2 {
     top: 120%;
+    user-select: none
 }
 
 /* in the item box is a picture and text box */
