@@ -306,7 +306,7 @@ position relative so that the items are absolute positioned to this box and not 
 
 /* style of text  whether active or not*/
 #activeText {
-    font-size: 70px;
+    font-size: 69px;
 }
 #inActiveText {
     font-size: 30px;
