@@ -4,6 +4,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { motion } from "framer-motion"
+import { BgImages } from "../backgroundImages/BgImages"
 
 export default function Contact(){
     /* delaytime to give it to <MenuLogo> */
@@ -29,7 +30,7 @@ export default function Contact(){
     
     return(
         <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
-            <img className="backgroundImg" src="img/bg/onRight.jpg"
+            <img className="backgroundImg" src={BgImages(page)}
                 alt="picture of me on the side of a Street"
             />
             <div className="display">

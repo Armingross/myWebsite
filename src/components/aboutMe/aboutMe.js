@@ -8,6 +8,7 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import { useMediaQuery, } from '@mui/material'
 import { motion } from "framer-motion"
+import { BgImages } from "../backgroundImages/BgImages"
 
 export default function AboutMe(){
     /* delaytime to give it to <MenuLogo> */
@@ -106,7 +107,7 @@ export default function AboutMe(){
     
     return(
         <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
-            <img className="backgroundImg" src="img/bg/onLine.jpg"
+            <img className="backgroundImg" src={BgImages(page)}
                 alt="picture of me on the Street Line"
             />
             <div className="display" id="displayAboutMe">

@@ -3,6 +3,7 @@ import styles from "../myWebsite.css"
 import { useMediaQuery, } from '@mui/material'
 import { motion } from "framer-motion"
 import MenuLogo from "../menuLogo/menuLogo.js"
+import { BgImages } from "../backgroundImages/BgImages"
 import { useNavigate } from "react-router-dom";
 
 export default function Home(){
@@ -88,7 +89,7 @@ export default function Home(){
 
     return(
         <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
-            <motion.img className="backgroundImg" src="img/bg/backToCam.jpg"
+            <motion.img className="backgroundImg" src={BgImages(page)}
             alt="picture of me in front of a long street"
             variants={backgroundImgVariant} initial="hidden" animate="show"
             />
