@@ -4,7 +4,8 @@
     --black: rgba(42, 43, 50, 1);
     --blackCenterBoxes: rgba(42, 43, 50, 0.9);
     --blackAbouteMeBG: rgba(42, 43, 50, 0.6);
-    --blackBG: rgba(42, 43, 50, 0.3);
+    --blackBg: rgba(42, 43, 50, 0.3);
+    --blackBgSm: rgba(42, 43, 50, 0.5);
 }
 
 body {
@@ -25,7 +26,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--blackBG);
+    background-color: var(--blackBg);
 }
 
 .backgroundImg {
@@ -154,7 +155,7 @@ body {
 
 .menuScreen {
     height: 100%;
-    background-color: rgb(62, 84, 126);
+    background-color: var(--black);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -183,6 +184,14 @@ body {
 
 
   @media screen and (max-width: 900px) {
+    .display {
+        background-color: var(--blackBgSm);
+    }
+
+    .centerBox {
+        background-color: transparent;
+    }
+
     .greeting {
         font-size: 35px;
     }
@@ -323,7 +332,7 @@ position relative so that the items are absolute positioned to this box and not 
     justify-content: center;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-aspect-ratio: 6/4) {
 
     /* style of every itemBox */
     .itemBox {
@@ -356,10 +365,10 @@ position relative so that the items are absolute positioned to this box and not 
 
     /* style of text  whether active or not*/
     #activeText {
-        font-size: 40px;
+        font-size: 500%;
     }
     #inActiveText {
-        font-size: 11px;
+        font-size: 100%;
     }
 
     .arrowBox{
@@ -389,7 +398,30 @@ position relative so that the items are absolute positioned to this box and not 
     }
   }
 
+  /* smaller than 500px */
+  @media screen and (max-width: 500px) {
+    #activeText {
+        font-size: 35px;
+    }
+  }
 
+  /* smartphone ratio */
+  @media screen and (max-aspect-ratio: 4/7) {
+    .sliderAndArrow {
+        width: 99vw;
+    }
+  }
+
+  /* smartphone ratio */
+  @media screen and (max-aspect-ratio: 9/21) {
+    .pictureBox {
+        height: 60%;
+    }
+    #activeText {
+        font-size: 70px;
+    }
+  } 
+  
 /*
 
 
@@ -457,6 +489,7 @@ position relative so that the items are absolute positioned to this box and not 
         width: auto;
         height: 450px;
         box-shadow: none;
+        background-color: transparent;
     }
     .downloadResumeBtn:hover {
         background-color: transparent;
