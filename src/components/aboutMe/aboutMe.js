@@ -139,7 +139,7 @@ export default function AboutMe(){
                                         <img src={item.imgsrc} alt={item.imgalt} className="picture"/>
                                     </div>
                                     <div className="textBox">
-                                        <p className="bothText" id={item.textId}>{item.text}</p>
+                                        <div className="bothText" id={item.textId}>{item.text}</div>
                                     </div>
                                     </>
                                 )

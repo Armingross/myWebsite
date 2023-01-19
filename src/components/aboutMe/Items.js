@@ -17,7 +17,7 @@ export function getItems(box){
             id: 1,
             imgsrc: "img/sarnthein4to3.jpg",
             imgalt: "picture of Sarnthein",
-            text: "I'm from Sarnthein...",
+            text: "I'm from Sarnthein..",
             className: "itemBox",
             boxID: box.box1,
             textId: text[0],

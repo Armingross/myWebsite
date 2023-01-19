@@ -246,6 +246,7 @@ position relative so that the items are absolute positioned to this box and not 
     height: 22%;
     width: 60%;
     display: flex;
+    justify-content: flex-start;
     position: absolute;
     transition: top 1s, height 1s, width 1s, opacity 1s;
 }
@@ -276,10 +277,11 @@ position relative so that the items are absolute positioned to this box and not 
 
 /* in the item box is a picture and text box */
 .pictureBox {
-    width: 50%;
+    width: 45%;
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .picture {
@@ -306,10 +308,12 @@ position relative so that the items are absolute positioned to this box and not 
 
 /* style of text  whether active or not*/
 #activeText {
-    font-size: 69px;
+    font-size: 4.4vw;
+            /* 69px */
 }
 #inActiveText {
-    font-size: 30px;
+    font-size: 2vw;
+            /* 30px */
 }
 
 .arrowBox{
@@ -360,6 +364,28 @@ position relative so that the items are absolute positioned to this box and not 
 
     .arrowBox{
         justify-content: space-around;
+    }
+  }
+
+  /* when picture between 900px and 1200px */
+  @media screen and (min-width: 900px) and (max-width: 1200px) {
+    .itemBox{
+        justify-content: space-evenly;
+    }
+
+    .pictureBox{
+        width: 50%;
+    }
+    .picture {
+        height: 95%;
+        box-shadow: none;
+    }
+  }
+
+  /* picture is smaller when screen is between 900px and 1050px */
+  @media screen and (min-width: 900px) and (max-width: 1050px) {
+    .picture {
+        height: 80%;
     }
   }
 
