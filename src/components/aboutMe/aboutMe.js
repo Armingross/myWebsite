@@ -148,12 +148,16 @@ export default function AboutMe(){
                         ))}
                     </div>
                         <div className="arrowBox">
+                            <div style={{height: "40%", display: "flex", alignItems: "flex-end"}}>
                             <motion.div variants={arrowVariant} initial="hidden" animate="show" hidden={upArrowHidden}>
                                 <ArrowUpwardIcon style={arrowIconStyle} onClick={scrollUp}/>
                             </motion.div>
+                            </div>
+                            <div style={{height: "40%"}}>
                             <motion.div variants={arrowVariant} initial="hidden" animate="show" hidden={downArrowHidden}>
                                 <ArrowDownwardIcon style={arrowIconStyle} onClick={scrollDown}/>
                             </motion.div>
+                            </div>
                         </div>
                     </div>
                 </ReactScrollWheelHandler>
