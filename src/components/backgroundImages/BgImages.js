@@ -16,13 +16,11 @@ export function BgImages(page){
         homeBg = "img/bg/backToCam/backToCam_5to2.jpg";
         aboutmeBg = "img/bg/onLine/onLine_5to2.jpg";
         contactBg = "img/bg/onRight/onRight_5to2.jpg";
-        console.log("5to2")
     /* when screen is between 5/2 and 7/4 (normal pc display ratio) */
     }else if(ratio_7to4_5to2){
         homeBg = "img/bg/backToCam/backToCam_Pc.jpg";
         aboutmeBg = "img/bg/onLine/onLine_Pc.jpg";
         contactBg = "img/bg/onRight/onRight_Pc.jpg";
-        console.log("5to4")
     }else if(ratio_1to1_7to4){
         homeBg = "img/bg/backToCam/backToCam_1to1.jpg";
         aboutmeBg = "img/bg/onLine/onLine_1to1.jpg";

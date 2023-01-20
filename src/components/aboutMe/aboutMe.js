@@ -124,13 +124,13 @@ export default function AboutMe(){
                                 item.page2 ? (
                                     <>
                                     <div className="pictureBox">
-                                        <video ref={videoPlay} muted playsinline className="picture">
+                                        <video ref={videoPlay} muted playsInline className="picture">
                                             <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
                                         </video>
                                     </div>
                                     <div className="textBox">
-                                        <p className="bothText" id={item.textId}>{item.text}</p>
-                                        <p className="bothText" id={item.textId}>{item.text2}</p>
+                                        <p className="text" id={item.textId}>{item.text}</p>
+                                        <p className="text" id={item.textId}>{item.text2}</p>
                                     </div>
                                     </>
                                 ) : (
@@ -139,7 +139,7 @@ export default function AboutMe(){
                                         <img src={item.imgsrc} alt={item.imgalt} className="picture"/>
                                     </div>
                                     <div className="textBox">
-                                        <div className="bothText" id={item.textId}>{item.text}</div>
+                                        <div className="text" id={item.textId}>{item.text}</div>
                                     </div>
                                     </>
                                 )
