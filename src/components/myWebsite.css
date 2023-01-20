@@ -408,7 +408,7 @@ position relative so that the items are absolute positioned to this box and not 
   /* smartphone ratio */
   @media screen and (max-aspect-ratio: 4/7) {
     .sliderAndArrow {
-        width: 99vw;
+        width: 97vw;
     }
   }
 

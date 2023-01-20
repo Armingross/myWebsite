@@ -124,7 +124,7 @@ export default function AboutMe(){
                                 item.page2 ? (
                                     <>
                                     <div className="pictureBox">
-                                        <video ref={videoPlay} muted className="picture">
+                                        <video ref={videoPlay} muted playsinline className="picture">
                                             <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
                                         </video>
                                     </div>
