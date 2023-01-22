@@ -77,6 +77,9 @@ export default function AboutMe(){
         marginBottom: "20px",
         color: "white",
         cursor: "pointer",
+        '@media screen and (max-height: 500px)': {
+            fontSize: "10vh"
+        },
     }
 
     const pageVariant = {
@@ -150,12 +153,12 @@ export default function AboutMe(){
                         <div className="arrowBox">
                             <div style={{height: "40%", display: "flex", alignItems: "flex-end"}}>
                             <motion.div variants={arrowVariant} initial="hidden" animate="show" hidden={upArrowHidden}>
-                                <ArrowUpwardIcon style={arrowIconStyle} onClick={scrollUp}/>
+                                <ArrowUpwardIcon sx={arrowIconStyle} onClick={scrollUp}/>
                             </motion.div>
                             </div>
                             <div style={{height: "40%"}}>
                             <motion.div variants={arrowVariant} initial="hidden" animate="show" hidden={downArrowHidden}>
-                                <ArrowDownwardIcon style={arrowIconStyle} onClick={scrollDown}/>
+                                <ArrowDownwardIcon sx={arrowIconStyle} onClick={scrollDown}/>
                             </motion.div>
                             </div>
                         </div>
