@@ -46,14 +46,6 @@ body {
     background-color: var(--blackCenterBoxes);
 }
 
-/* .menuLogo {
-    height: 90px;
-    width: 100%;
-    background-color: rgba(18, 68, 131, 0.3);
-    position: absolute;
-    top: 0;
-} */
-
 .greeting {
     font-size: 40px;
 }
