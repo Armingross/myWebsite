@@ -5,8 +5,12 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { motion } from "framer-motion"
 import { BgImages } from "../backgroundImages/BgImages"
+import { useState } from "react";
 
 export default function Contact(){
+    /* img state which is default low storage and changes when normal img is loaded */
+    const [imgSrc, setImgSrc] = useState("img/bg/onLine/onRightBlur.png")
+
     /* delaytime to give it to <MenuLogo> */
     let delayTime = 0;
 
@@ -27,12 +31,20 @@ export default function Contact(){
         show: { opacity: 1 },
         exit: { opacity: 0 }
     }
+
+    const bgImg = BgImages(page)
+    const imgLoaded = () => {
+        setImgSrc(bgImg)
+    }
     
     return(
         <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
-            <img className="backgroundImg" src={BgImages(page)}
+            <img className="backgroundImg" src={imgSrc}
                 alt="picture of me on the side of a Street"
             />
+            {/* this img is not visible its just so that it can load and
+            when its loaded the upper img is gonna be this one */}
+            <img src={BgImages(page)} onLoad={imgLoaded} hidden></img>
             <div className="display">
                 <MenuLogo delayTime={delayTime} page={page}/>
                 <div className="centerBoxContact">

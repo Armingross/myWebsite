@@ -8,6 +8,9 @@ import { useNavigate } from "react-router-dom";
 
 export default function Home(){
     <link rel="stylesheet" href="home.css"/>
+    
+    /* img state which is default low storage and changes when normal img is loaded */
+    const [imgSrc, setImgSrc] = useState("img/bg/onLine/backToCamBlur.png")
 
     let navigate = useNavigate();
     /* page is for MenuLogo so that i know which button should be disactivated */
@@ -86,13 +89,20 @@ export default function Home(){
                 }}
     }
        
+    const bgImg = BgImages(page)
+    const imgLoaded = () => {
+        setImgSrc(bgImg)
+    }
 
     return(
         <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
-            <motion.img className="backgroundImg" src={BgImages(page)}
+            <motion.img className="backgroundImg" src={imgSrc}
             alt="picture of me in front of a long street"
             variants={backgroundImgVariant} initial="hidden" animate="show"
             />
+            {/* this img is not visible its just so that it can load and
+            when its loaded the upper img is gonna be this one */}
+            <img src={BgImages(page)} onLoad={imgLoaded} hidden/>
             <div className="display">
                 <MenuLogo delayTime={delayTime} page={page}/>
                     {/*white box*/}

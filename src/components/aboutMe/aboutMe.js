@@ -11,6 +11,9 @@ import { motion } from "framer-motion"
 import { BgImages } from "../backgroundImages/BgImages"
 
 export default function AboutMe(){
+    /* img state which is default low storage and changes when normal img is loaded */
+    const [imgSrc, setImgSrc] = useState("img/bg/onLine/onLineBlur.png")
+
     /* delaytime to give it to <MenuLogo> */
     let delayTime = 0;
     
@@ -108,11 +111,19 @@ export default function AboutMe(){
         downArrowHidden = true;
     }
     
+    const bgImg = BgImages(page)
+    const imgLoaded = () => {
+        setImgSrc(bgImg)
+    }
+
     return(
         <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
-            <img className="backgroundImg" src={BgImages(page)}
+            <img className="backgroundImg" src={imgSrc}
                 alt="picture of me on the Street Line"
             />
+            {/* this img is not visible its just so that it can load and
+            when its loaded the upper img is gonna be this one */}
+            <img src={BgImages(page)} onLoad={imgLoaded} hidden></img>
             <div className="display" id="displayAboutMe">
                 <MenuLogo delayTime={delayTime} page={page}/>
                 <ReactScrollWheelHandler

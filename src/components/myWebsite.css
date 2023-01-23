@@ -13,6 +13,13 @@ body {
     font-size: 100%;
 }
 
+.backgroundImg {
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    position: absolute;
+}
+
 
 /*
 
@@ -28,13 +35,6 @@ body {
     align-items: center;
     justify-content: center;
     background-color: var(--blackBg);
-}
-
-.backgroundImg {
-    height: 100vh;
-    width: 100vw;
-    z-index: -1;
-    position: absolute;
 }
 
 .centerBox {
