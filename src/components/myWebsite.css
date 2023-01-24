@@ -73,19 +73,20 @@ body {
     font-size: 5.6rem;
 }
 
-.knowMeBtn {
-    width: 250px;
-    height: 80px;
+.centerBox-button {
     background-color: transparent;
     border: 3px solid var(--white);
     border-radius: 15px;
-    color: var(--white);
     font-size: 28px;
-    cursor: pointer;
+}
+.centerBox-button:hover {
+    background-color: rgba(255, 255, 255, 0.354);    
 }
 
-.knowMeBtn:hover{
-    background-color: rgba(255, 255, 255, 0.354);
+.centerBox-button-Home {
+    width: 250px;
+    height: 80px;
+    cursor: pointer;
 }
 
 .menuBox {
@@ -380,20 +381,14 @@ position relative so that the items are absolute positioned to this box and not 
 
 */
 
-.downloadResumeBtn {
+.centerBox-button-AboutMe {
     width: 280px;
     height: 90px;
-    background-color: transparent;
-    border: 3px solid var(--white);
-    border-radius: 15px;
-    font-size: 28px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-}
-.downloadResumeBtn:hover {
-    background-color: rgba(255, 255, 255, 0.354);
+    cursor: pointer;
 }
 
 .socialMediaBox {

@@ -103,7 +103,7 @@ export default function Home(){
                             Armin Gross
                         </motion.p>
                     </div>
-                    <motion.button className="text knowMeBtn"
+                    <motion.button className="text centerBox-button centerBox-button-Home"
                     variants={buttonVariant}
                     whileTap={{ scale: 0.8 }}
                     onClick={() => navigate("aboutme")}>

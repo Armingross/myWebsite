@@ -69,7 +69,7 @@ export default function Contact(){
                         </motion.div>
                     </div>
                     <motion.a
-                    className="text downloadResumeBtn"
+                    className="text centerBox-button centerBox-button-AboutMe"
                     variants={buttonVariant}
                     initial="hidden"
                     animate="show"
