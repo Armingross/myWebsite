@@ -10,7 +10,7 @@ export default function Home(){
     <link rel="stylesheet" href="home.css"/>
     
     /* img state which is default low storage and changes when normal img is loaded */
-    const [imgSrc, setImgSrc] = useState("img/bg/onLine/backToCamBlur.png")
+    const [imgSrc, setImgSrc] = useState("img/bg/backToCam/backToCamBlur.png")
 
     let navigate = useNavigate();
     /* page is for MenuLogo so that i know which button should be disactivated */
@@ -105,7 +105,7 @@ export default function Home(){
             <img src={BgImages(page)} onLoad={imgLoaded} hidden/>
             <div className="display">
                 <MenuLogo delayTime={delayTime} page={page}/>
-                    {/*white box*/}
+                    {/*center box*/}
                     <motion.div className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">
                         <div className="greetingMyNameBox">
                             <motion.p className="greeting" id="greetingMyName" variants={textVariant}>

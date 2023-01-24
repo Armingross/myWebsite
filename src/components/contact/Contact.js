@@ -9,7 +9,7 @@ import { useState } from "react";
 
 export default function Contact(){
     /* img state which is default low storage and changes when normal img is loaded */
-    const [imgSrc, setImgSrc] = useState("img/bg/onLine/onRightBlur.png")
+    const [imgSrc, setImgSrc] = useState("img/bg/onRight/onRightBlur.png")
 
     /* delaytime to give it to <MenuLogo> */
     let delayTime = 0;
