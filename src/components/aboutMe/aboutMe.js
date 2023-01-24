@@ -143,8 +143,8 @@ export default function AboutMe(){
                                         </video>
                                     </div>
                                     <div className="textBox">
-                                        <p className="text" id={item.textId}>{item.text}</p>
-                                        <p className="text" id={item.textId}>{item.text2}</p>
+                                        <p className="text aboutMeText" id={item.textId}>{item.text}</p>
+                                        <p className="text aboutMeText" id={item.textId}>{item.text2}</p>
                                     </div>
                                     </>
                                 ) : (
@@ -153,7 +153,7 @@ export default function AboutMe(){
                                         <img src={item.imgsrc} alt={item.imgalt} className="picture"/>
                                     </div>
                                     <div className="textBox">
-                                        <div className="text" id={item.textId}>{item.text}</div>
+                                        <div className="text aboutMeText" id={item.textId}>{item.text}</div>
                                     </div>
                                     </>
                                 )

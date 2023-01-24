@@ -95,15 +95,15 @@ export default function Home(){
                 <MenuLogo delayTime={delayTime} page={page}/>
                 {/*center box*/}
                 <motion.div className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">
-                    <div className="greetingMyNameBox">
-                        <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
+                    <div className="textBox-greeting-myName">
+                        <motion.p className="text greeting" variants={textVariant}>
                             Hi, my name is
                         </motion.p>
-                        <motion.p className="myName" id="greetingMyName" variants={textVariant}>
+                        <motion.p className="text myName" variants={textVariant}>
                             Armin Gross
                         </motion.p>
                     </div>
-                    <motion.button className="knowMeBtn"
+                    <motion.button className="text knowMeBtn"
                     variants={buttonVariant}
                     whileTap={{ scale: 0.8 }}
                     onClick={() => navigate("aboutme")}>

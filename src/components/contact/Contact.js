@@ -51,25 +51,25 @@ export default function Contact(){
                     <div className="socialMediaBox">
                         <motion.div className="textIcon" whileHover={{ scale: 1.1 }}>
                             <InstagramIcon/>
-                            <motion.a href="https://www.instagram.com/aregross" target="to _blank" className="socialMediaText">
+                            <motion.a href="https://www.instagram.com/aregross" target="to _blank" className="text socialMediaText">
                                 Instagram
                             </motion.a>
                         </motion.div>
                         <motion.div className="textIcon" whileHover={{ scale: 1.1 }}>
                             <MailOutlineIcon/>
-                            <motion.a href="mailto:armingross01@gmail.com" target="to _blank" className="socialMediaText">
+                            <motion.a href="mailto:armingross01@gmail.com" target="to _blank" className="text socialMediaText">
                                 Mail
                             </motion.a>
                         </motion.div>
                         <motion.div className="textIcon" whileHover={{ scale: 1.1 }}>
                             <GitHubIcon/>
-                            <motion.a href="https://github.com/Armingross" target="to _blank" className="socialMediaText">
+                            <motion.a href="https://github.com/Armingross" target="to _blank" className="text socialMediaText">
                                 GitHub
                             </motion.a>
                         </motion.div>
                     </div>
                     <motion.a
-                    className="downloadResumeBtn"
+                    className="text downloadResumeBtn"
                     variants={buttonVariant}
                     initial="hidden"
                     animate="show"

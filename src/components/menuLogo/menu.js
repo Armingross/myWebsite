@@ -30,9 +30,9 @@ export default function Menu({menuState, setMenuState, navigatetoPage}) {
                     exit="hiddenAgain">
                         <div className="menuScreen">
                             <ArrowBackIcon className="arrowIcon" onClick={() => {setMenuState(false)}} sx={{fontSize: "40px"}}/>
-                            <p className="menuItems" onClick={() => navigatetoPage("")}>Home</p>
-                            <p className="menuItems" onClick={() => navigatetoPage("aboutme")}>About Me</p>
-                            <p className="menuItems" onClick={() => navigatetoPage("contact")}>Contact</p>
+                            <p className="text menuItems" onClick={() => navigatetoPage("")}>Home</p>
+                            <p className="text menuItems" onClick={() => navigatetoPage("aboutme")}>About Me</p>
+                            <p className="text menuItems" onClick={() => navigatetoPage("contact")}>Contact</p>
                         </div>
                     </motion.div>
                 </div>

@@ -53,12 +53,24 @@ body {
     background-color: var(--blackCenterBoxes);
 }
 
-.greeting {
-    font-size: 40px;
+.textBox-greeting-myName {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 200px;
+    border: 2px solid red;
 }
-
+.text {
+    font-family: Roboto;
+    color: var(--white);
+    margin: 0;
+}
+.greeting {
+    font-size: 2.4rem;
+}
 .myName {
-    font-size: 90px;
+    font-size: 5.6rem;
 }
 
 .knowMeBtn {
@@ -74,23 +86,6 @@ body {
 
 .knowMeBtn:hover{
     background-color: rgba(255, 255, 255, 0.354);
-}
-
-.greetingMyNameBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 200px;
-}
-
-#greetingMyName {
-    font-family: Roboto;
-    color:var(--white);
-    font-weight: 400;
-    margin-top: 0;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: center;
 }
 
 .menuBox {
@@ -163,10 +158,8 @@ body {
 }
 
 .menuItems {
-    color: white;
     font-size: 40px;
-    font-weight: 400;
-    font-family: Roboto;
+    margin: 5vh;
 }
 .menuItems:hover{
     color: grey;
@@ -302,11 +295,8 @@ position relative so that the items are absolute positioned to this box and not 
     justify-content: center;
 }
 
-.text {
-    font-family: Roboto;
-    color:var(--white);
+.aboutMeText {
     transition: font-size 1s;
-    margin: 0;
     font-size: 3.3vh;
 }
 
@@ -351,7 +341,7 @@ position relative so that the items are absolute positioned to this box and not 
         justify-content: space-around;
     }
 
-    .text {
+    .aboutMeText {
         font-size: 2.1vh;
     }
   }
@@ -375,7 +365,7 @@ position relative so that the items are absolute positioned to this box and not 
     .pictureBox {
         height: 50%;
     }
-    .text {
+    .aboutMeText {
         font-size: 1.6vh;
     }
   }
@@ -396,10 +386,7 @@ position relative so that the items are absolute positioned to this box and not 
     background-color: transparent;
     border: 3px solid var(--white);
     border-radius: 15px;
-    color: var(--white);
     font-size: 28px;
-    font-family: Roboto;
-    font-weight: 400;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -425,18 +412,12 @@ position relative so that the items are absolute positioned to this box and not 
 }
 
 .socialMediaText {
-    font-family: Roboto;
-    color:var(--white);
     font-size: 30px;
     text-decoration: none;
 }
 
 
 @media screen and (max-width: 900px) {
-    .downloadResumeBtn:hover {
-        background-color: transparent;
-    }
-    
     .socialMediaBox {
         height: 30%;
         flex-direction: column;
@@ -445,8 +426,11 @@ position relative so that the items are absolute positioned to this box and not 
     }
 
     .downloadResumeBtn {
-        width: 200px;
+        width: 210px;
         height: 70px;
         font-size: 23px;
+    }
+    .downloadResumeBtn:hover {
+        background-color: transparent;
     }
   }
