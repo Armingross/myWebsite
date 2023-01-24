@@ -28,12 +28,30 @@ body {
 
 
 */
+
+.flexCentered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    font-family: Roboto;
+    color: var(--white);
+    margin: 0;
+}
+
+.centerBox-button {
+    background-color: transparent;
+    border: 3px solid var(--white);
+    border-radius: 15px;
+    font-size: 28px;
+}
+
 .display {
     height: 100vh;
     width: 100vw;
     display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: var(--blackBg);
 }
 .displayAboutMe {
@@ -59,13 +77,8 @@ body {
     justify-content: space-evenly;
     align-items: center;
     height: 200px;
-    border: 2px solid red;
 }
-.text {
-    font-family: Roboto;
-    color: var(--white);
-    margin: 0;
-}
+
 .greeting {
     font-size: 2.4rem;
 }
@@ -73,12 +86,6 @@ body {
     font-size: 5.6rem;
 }
 
-.centerBox-button {
-    background-color: transparent;
-    border: 3px solid var(--white);
-    border-radius: 15px;
-    font-size: 28px;
-}
 .centerBox-button:hover {
     background-color: rgba(255, 255, 255, 0.354);    
 }
@@ -121,9 +128,6 @@ body {
     top: 22.5px;
     height: 45px;
     width: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
 }
 
@@ -152,10 +156,7 @@ body {
 .menuScreen {
     height: 100%;
     background-color: var(--black);
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .menuItems {
@@ -186,7 +187,6 @@ body {
         height: 450px;
         box-shadow: none;
         background-color: transparent;
-        border: 2px solid red;
     }
 
     .greeting {
@@ -277,9 +277,6 @@ position relative so that the items are absolute positioned to this box and not 
 .pictureBox {
     width: 45%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .picture {
@@ -290,10 +287,7 @@ position relative so that the items are absolute positioned to this box and not 
 .textBox {
     width: 50%;
     height: 100%;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .aboutMeText {
@@ -331,11 +325,9 @@ position relative so that the items are absolute positioned to this box and not 
     .pictureBox {
         width: 100%;
         height: 70%;
-        justify-content: center;
     }
     .textBox {
         height: 20%;
-        justify-content: center;
     }
 
     .arrowBox{
@@ -384,9 +376,6 @@ position relative so that the items are absolute positioned to this box and not 
 .centerBox-button-AboutMe {
     width: 280px;
     height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-decoration: none;
     cursor: pointer;
 }
@@ -399,9 +388,6 @@ position relative so that the items are absolute positioned to this box and not 
 
 .textIcon {
     width: 28%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 8px;
     color: var(--white);
 }

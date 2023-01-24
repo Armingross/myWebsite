@@ -45,23 +45,23 @@ export default function Contact(){
             {/* this img is not visible its just so that it can load and
             when its loaded the upper img is gonna be this one */}
             <img src={BgImages(page)} onLoad={imgLoaded} hidden></img>
-            <div className="display">
+            <div className="flexCentered display">
                 <MenuLogo delayTime={delayTime} page={page}/>
                 <div className="centerBox">
                     <div className="socialMediaBox">
-                        <motion.div className="textIcon" whileHover={{ scale: 1.1 }}>
+                        <motion.div className="flexCentered textIcon" whileHover={{ scale: 1.1 }}>
                             <InstagramIcon/>
                             <motion.a href="https://www.instagram.com/aregross" target="to _blank" className="text socialMediaText">
                                 Instagram
                             </motion.a>
                         </motion.div>
-                        <motion.div className="textIcon" whileHover={{ scale: 1.1 }}>
+                        <motion.div className="flexCentered textIcon" whileHover={{ scale: 1.1 }}>
                             <MailOutlineIcon/>
                             <motion.a href="mailto:armingross01@gmail.com" target="to _blank" className="text socialMediaText">
                                 Mail
                             </motion.a>
                         </motion.div>
-                        <motion.div className="textIcon" whileHover={{ scale: 1.1 }}>
+                        <motion.div className="flexCentered textIcon" whileHover={{ scale: 1.1 }}>
                             <GitHubIcon/>
                             <motion.a href="https://github.com/Armingross" target="to _blank" className="text socialMediaText">
                                 GitHub
@@ -69,7 +69,7 @@ export default function Contact(){
                         </motion.div>
                     </div>
                     <motion.a
-                    className="text centerBox-button centerBox-button-AboutMe"
+                    className="text centerBox-button flexCentered centerBox-button-AboutMe"
                     variants={buttonVariant}
                     initial="hidden"
                     animate="show"

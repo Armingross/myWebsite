@@ -28,7 +28,7 @@ export default function Menu({menuState, setMenuState, navigatetoPage}) {
                     initial="hidden"
                     animate="show"
                     exit="hiddenAgain">
-                        <div className="menuScreen">
+                        <div className="flexCentered menuScreen">
                             <ArrowBackIcon className="arrowIcon" onClick={() => {setMenuState(false)}} sx={{fontSize: "40px"}}/>
                             <p className="text menuItems" onClick={() => navigatetoPage("")}>Home</p>
                             <p className="text menuItems" onClick={() => navigatetoPage("aboutme")}>About Me</p>

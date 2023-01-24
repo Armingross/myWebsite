@@ -91,7 +91,7 @@ export default function Home(){
             {/* this img is not visible its just so that it can load it and
             when its loaded the upper img is gonna have the src of this one */}
             <img src={BgImages(page)} onLoad={imgLoaded} hidden/>
-            <div className="display">
+            <div className="flexCentered display">
                 <MenuLogo delayTime={delayTime} page={page}/>
                 {/*center box*/}
                 <motion.div className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">

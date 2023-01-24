@@ -118,7 +118,7 @@ export default function MenuLogo({delayTime, page}) {
         <div className="menuLogo">
             <Menu menuState={menuState} setMenuState={setMenuState} navigatetoPage={navigatetoPage}/>
             {/*logo div*/}
-            <motion.div className="logoBox"
+            <motion.div className="flexCentered logoBox"
                 variants={logoVariant}
                 initial="hidden"
                 animate="show"

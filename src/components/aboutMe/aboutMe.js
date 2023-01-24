@@ -137,22 +137,22 @@ export default function AboutMe(){
                                 {
                                 item.page2 ? (
                                     <>
-                                    <div className="pictureBox">
+                                    <div className="flexCentered pictureBox">
                                         <video ref={videoPlay} muted playsInline className="picture">
                                             <source src="video/Sarnthein.mp4#svgView(preserveAspectRatio(none))" type="video/mp4"/>
                                         </video>
                                     </div>
-                                    <div className="textBox">
+                                    <div className="flexCentered textBox">
                                         <p className="text aboutMeText" id={item.textId}>{item.text}</p>
                                         <p className="text aboutMeText" id={item.textId}>{item.text2}</p>
                                     </div>
                                     </>
                                 ) : (
                                     <>
-                                    <div className="pictureBox">
+                                    <div className="flexCentered pictureBox">
                                         <img src={item.imgsrc} alt={item.imgalt} className="picture"/>
                                     </div>
-                                    <div className="textBox">
+                                    <div className="flexCentered textBox">
                                         <div className="text aboutMeText" id={item.textId}>{item.text}</div>
                                     </div>
                                     </>
