@@ -34,8 +34,8 @@ export default function Home(){
     const screenSmallSize = useMediaQuery("@media screen and (max-width: 900px)")
     const centerBoxVariant = screenSmallSize
     ? {
-        hidden: { height:"200px", boxShadow: 0},
-        show: { height:"350px", boxShadow: 0,
+        hidden: { height:"200px", boxShadow: "none"},
+        show: { height:"350px", boxShadow: "none",
             transition: {
                 delay: delayTime
             },

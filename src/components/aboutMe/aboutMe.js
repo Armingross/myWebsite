@@ -124,7 +124,7 @@ export default function AboutMe(){
             {/* this img is not visible its just so that it can load and
             when its loaded the upper img is gonna be this one */}
             <img src={BgImages(page)} onLoad={imgLoaded} hidden></img>
-            <div className="display" id="displayAboutMe">
+            <div className="display displayAboutMe">
                 <MenuLogo delayTime={delayTime} page={page}/>
                 <ReactScrollWheelHandler
                 upHandler={(e) => scrollUp()}

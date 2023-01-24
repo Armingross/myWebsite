@@ -47,7 +47,7 @@ export default function Contact(){
             <img src={BgImages(page)} onLoad={imgLoaded} hidden></img>
             <div className="display">
                 <MenuLogo delayTime={delayTime} page={page}/>
-                <div className="centerBoxContact">
+                <div className="centerBox">
                     <div className="socialMediaBox">
                         <motion.div className="textIcon" whileHover={{ scale: 1.1 }}>
                             <InstagramIcon/>
