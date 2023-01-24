@@ -63,10 +63,10 @@ export default function MenuLogo({delayTime, page}) {
         navigate("/"+whereTo)
     }
 
-    const menuBox = smallSize
+    const menuButtonsBox = smallSize
     ? (
         /* Menu icon Box */
-        <div className="menuBox">
+        <div className="menuButtons-Box">
             {/* Menu icon */}
             <motion.div
             variants={menuIconVariant}
@@ -77,13 +77,12 @@ export default function MenuLogo({delayTime, page}) {
         </div>
         )
     : (
-        <motion.div className="menuBox"
+        <motion.div className="menuButtons-Box"
                 variants={menuVariant}
                 initial="hidden"
                 animate="show">
                     {/* left Button */}
                     <motion.button
-                    className="menuButton"
                     disabled={btnDisable["home"]}
                     style={btnStyle["home"]}
                     onClick={() => navigatetoPage("")}
@@ -93,7 +92,6 @@ export default function MenuLogo({delayTime, page}) {
                     </motion.button>
                     {/* middle Button */}
                     <motion.button
-                    className="menuButton"
                     disabled={btnDisable["aboutme"]}
                     style={btnStyle["aboutme"]}
                     onClick={() => navigatetoPage("aboutme")}
@@ -103,7 +101,6 @@ export default function MenuLogo({delayTime, page}) {
                     </motion.button>
                     {/* right Button */}
                     <motion.button
-                    className="menuButton"
                     disabled={btnDisable["contact"]}
                     style={btnStyle["contact"]}
                     onClick={() => navigatetoPage("contact")}
@@ -115,10 +112,10 @@ export default function MenuLogo({delayTime, page}) {
         )
 
     return(
-        <div className="menuLogo">
+        <div>
             <Menu menuState={menuState} setMenuState={setMenuState} navigatetoPage={navigatetoPage}/>
             {/*logo div*/}
-            <motion.div className="flexCentered logoBox"
+            <motion.div className="flexCentered logo"
                 variants={logoVariant}
                 initial="hidden"
                 animate="show"
@@ -127,7 +124,7 @@ export default function MenuLogo({delayTime, page}) {
                     <Typography className="logoText" onClick={() => navigatetoPage("aboutme")}>A|G</Typography>                    
             </motion.div>
             {/*div for menu buttons*/}
-            {menuBox}
+            {menuButtonsBox}
         </div>
     )
 }

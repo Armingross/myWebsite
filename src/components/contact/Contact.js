@@ -69,7 +69,7 @@ export default function Contact(){
                         </motion.div>
                     </div>
                     <motion.a
-                    className="text centerBox-button flexCentered centerBox-button-AboutMe"
+                    className="text centerBox-button flexCentered centerBox-button-Contact"
                     variants={buttonVariant}
                     initial="hidden"
                     animate="show"
