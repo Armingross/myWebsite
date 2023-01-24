@@ -1,22 +1,20 @@
 import React, { useState } from "react"
-import styles from "../myWebsite.css"
 import { useMediaQuery, } from '@mui/material'
 import { motion } from "framer-motion"
 import MenuLogo from "../menuLogo/menuLogo.js"
 import { BgImages } from "../backgroundImages/BgImages"
 import { useNavigate } from "react-router-dom";
 
-export default function Home(){
-    <link rel="stylesheet" href="home.css"/>
-    
-    /* img state which is default low storage and changes when normal img is loaded */
-    const [imgSrc, setImgSrc] = useState("img/bg/backToCam/backToCamBlur.png")
+export default function Home(){    
+    /* img state which is default a blur image and changes when right img is loaded */
+    const [bgImgSrc, setBgImgSrc] = useState("img/bg/backToCam/backToCamBlur.png")
 
     let navigate = useNavigate();
+
     /* page is for MenuLogo so that i know which button should be disactivated */
     const page = "home";
 
-    /* delaytime which decides if animation has delay or not */
+    /* animation delay on first page load */
     let delayTime;
     let sessionCounter = sessionStorage.getItem("animation")
     if(sessionCounter <= 1){
@@ -32,18 +30,9 @@ export default function Home(){
         show: { opacity: 1 },
         exit: { opacity: 0 }
     }
-    
-    const menuIconVariant = {
-        hidden: { x: "100vw" },
-        show: { x: 0,
-                transition: {
-                    type: "tween",
-                    delay: delayTime
-                }}
-    }
 
-    const smallSize = useMediaQuery("@media screen and (max-width: 900px)")
-    const centerBoxVariant = smallSize
+    const screenSmallSize = useMediaQuery("@media screen and (max-width: 900px)")
+    const centerBoxVariant = screenSmallSize
     ? {
         hidden: { height:"200px", boxShadow: 0},
         show: { height:"350px", boxShadow: 0,
@@ -91,37 +80,36 @@ export default function Home(){
        
     const bgImg = BgImages(page)
     const imgLoaded = () => {
-        setImgSrc(bgImg)
+        setBgImgSrc(bgImg)
     }
 
     return(
         <motion.div variants={pageVariant} initial="hidden" animate="show" exit="exit">
-            <motion.img className="backgroundImg" src={imgSrc}
+            <motion.img className="backgroundImg" src={bgImgSrc} variants={backgroundImgVariant}
             alt="picture of me in front of a long street"
-            variants={backgroundImgVariant} initial="hidden" animate="show"
             />
-            {/* this img is not visible its just so that it can load and
-            when its loaded the upper img is gonna be this one */}
+            {/* this img is not visible its just so that it can load it and
+            when its loaded the upper img is gonna have the src of this one */}
             <img src={BgImages(page)} onLoad={imgLoaded} hidden/>
             <div className="display">
                 <MenuLogo delayTime={delayTime} page={page}/>
-                    {/*center box*/}
-                    <motion.div className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">
-                        <div className="greetingMyNameBox">
-                            <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
-                                Hi, my name is
-                            </motion.p>
-                            <motion.p className="myName" id="greetingMyName" variants={textVariant}>
-                                Armin Gross
-                            </motion.p>
-                        </div>
-                        <motion.button className="knowMeBtn"
-                        variants={buttonVariant}
-                        whileTap={{ scale: 0.8 }}
-                        onClick={() => navigate("aboutme")}>
-                            Get to know me
-                        </motion.button>
-                    </motion.div>
+                {/*center box*/}
+                <motion.div className="centerBox" variants={centerBoxVariant} initial="hidden" animate="show">
+                    <div className="greetingMyNameBox">
+                        <motion.p className="greeting" id="greetingMyName" variants={textVariant}>
+                            Hi, my name is
+                        </motion.p>
+                        <motion.p className="myName" id="greetingMyName" variants={textVariant}>
+                            Armin Gross
+                        </motion.p>
+                    </div>
+                    <motion.button className="knowMeBtn"
+                    variants={buttonVariant}
+                    whileTap={{ scale: 0.8 }}
+                    onClick={() => navigate("aboutme")}>
+                        Get to know me
+                    </motion.button>
+                </motion.div>
             </div>
         </motion.div>
     )
