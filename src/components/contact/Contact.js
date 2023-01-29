@@ -6,6 +6,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import { motion } from "framer-motion"
 import { BgImages } from "../backgroundImages/BgImages"
 import { useState } from "react";
+import resume from "../Resume/Resume.pdf"
 
 export default function Contact(){
     /* img state which is default low storage and changes when normal img is loaded */
@@ -74,8 +75,8 @@ export default function Contact(){
                     initial="hidden"
                     animate="show"
                     whileTap={{ scale: 0.95 }}
-                    href="Resume/Resume.zip"
-                    download>
+                    href={resume}
+                    download="Resume">
                         Download Resume
                     </motion.a>
                 </div> 

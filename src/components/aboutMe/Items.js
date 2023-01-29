@@ -15,7 +15,7 @@ export function getItems(box){
     const items = [
         {
             id: 1,
-            imgsrc: "img/sarnthein4to3.jpg",
+            imgsrc: "img/sarnthein.jpg",
             imgalt: "picture of Sarnthein",
             text: "I'm from Sarnthein..",
             className: "itemBox",
@@ -44,7 +44,7 @@ export function getItems(box){
         },
         {
             id: 4,
-            imgsrc: "img/goldenGate4to3.jpg",
+            imgsrc: "img/goldenGate.jpg",
             imgalt: "Picture of me in front of the Golden Gate Bridge",
             text: "...traveling...",
             className: "itemBox",
@@ -53,7 +53,7 @@ export function getItems(box){
         },
         {
             id: 5,
-            imgsrc: "img/volleyball4to3.jpg",
+            imgsrc: "img/volleyball.jpg",
             imgalt: "picture of me playing volleyball",
             text: "...doing sports...",
             className: "itemBox",
@@ -62,7 +62,7 @@ export function getItems(box){
         },
         {
             id: 6,
-            imgsrc: "img/volleyball.jpg",
+            imgsrc: "img/programming.jpg",
             imgalt: "picture of me Programming",
             text: "& programming",
             className: "itemBox",
