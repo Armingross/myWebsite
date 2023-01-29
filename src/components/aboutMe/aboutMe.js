@@ -126,14 +126,11 @@ export default function AboutMe(){
             <img src={BgImages(page)} onLoad={imgLoaded} hidden></img>
             <div className="display displayAboutMe">
                 <MenuLogo delayTime={delayTime} page={page}/>
-                <ReactScrollWheelHandler
-                upHandler={(e) => scrollUp()}
-                downHandler={(e) => scrollDown()}
-                >
+                <ReactScrollWheelHandler upHandler={(e) => scrollUp()} downHandler={(e) => scrollDown()}>
                     <div className="sliderAndArrow">
                     <div className="sliderBox">
                         {items.map((item) => (
-                            <div key={item.id} className={item.className} id={item.boxID}>
+                            <div key={item.id} className="itemBox" id={item.boxID}>
                                 {
                                 item.page2 ? (
                                     <>
@@ -143,8 +140,8 @@ export default function AboutMe(){
                                         </video>
                                     </div>
                                     <div className="flexCentered textBox">
-                                        <p className="text aboutMeText" id={item.textId}>{item.text}</p>
-                                        <p className="text aboutMeText" id={item.textId}>{item.text2}</p>
+                                        <p className="text aboutMeText">{item.text}</p>
+                                        <p className="text aboutMeText">{item.text2}</p>
                                     </div>
                                     </>
                                 ) : (
@@ -153,7 +150,7 @@ export default function AboutMe(){
                                         <img src={item.imgsrc} alt={item.imgalt} className="picture"/>
                                     </div>
                                     <div className="flexCentered textBox">
-                                        <div className="text aboutMeText" id={item.textId}>{item.text}</div>
+                                        <div className="text aboutMeText">{item.text}</div>
                                     </div>
                                     </>
                                 )

@@ -53,11 +53,6 @@ button {
     display: flex;
     background-color: var(--blackBg);
 }
-.displayAboutMe {
-    background-color: var(--blackAbouteMeBG);
-    align-items: flex-end;
-    justify-content: center;
-}
 
 .centerBox {
     display: flex;
@@ -230,6 +225,27 @@ button {
   }
 
 
+  
+/*
+
+
+    Contact 
+
+
+*/
+.text-and-Icon {
+    width: 28%;
+    gap: 8px;
+    color: var(--white);
+}
+
+.socialMediaText {
+    font-size: 1.9rem;
+    text-decoration: none;
+}
+
+
+
 /*
 
 
@@ -237,6 +253,13 @@ button {
 
 
 */
+
+
+.displayAboutMe {
+    background-color: var(--blackAbouteMeBG);
+    align-items: flex-end;
+    justify-content: center;
+}
 
 .sliderAndArrow {
     display: flex;
@@ -249,7 +272,6 @@ button {
 position relative so that the items are absolute positioned to this box and not the whole page */
 .sliderBox {
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -262,7 +284,6 @@ position relative so that the items are absolute positioned to this box and not 
     height: 25%;
     width: 50%;
     display: flex;
-    justify-content: flex-start;
     position: absolute;
     transition: opacity 1s, transform 1s;
 }
@@ -291,9 +312,7 @@ position relative so that the items are absolute positioned to this box and not 
 /* in the item box is a picture and text box */
 .pictureBox {
     width: 45%;
-    height: 100%;
 }
-
 .picture {
     border-radius: 9%;
     height: 100%;
@@ -301,10 +320,8 @@ position relative so that the items are absolute positioned to this box and not 
 
 .textBox {
     width: 50%;
-    height: 100%;
     flex-direction: column;
 }
-
 .aboutMeText {
     transition: font-size 1s;
     font-size: 3.3vh;
@@ -313,7 +330,6 @@ position relative so that the items are absolute positioned to this box and not 
 .arrowBox{
     display: flex;
     flex-direction: column;
-    height: 100%;
     justify-content: center;
 }
 
@@ -323,13 +339,14 @@ position relative so that the items are absolute positioned to this box and not 
     }
   }
 
+  /* smallSize (tablet smartphone..) */
 @media screen and (max-aspect-ratio: 6/4) {
 
     /* style of every itemBox */
     .itemBox {
-        width: 100%;
         flex-direction: column;
         align-items: center;
+        width: 100%;
         gap: 2%;
     }
     #active {
@@ -377,24 +394,3 @@ position relative so that the items are absolute positioned to this box and not 
         font-size: 1.6vh;
     }
   }
-
-
-  
-/*
-
-
-    Contact 
-
-
-*/
-
-.text-and-Icon {
-    width: 28%;
-    gap: 8px;
-    color: var(--white);
-}
-
-.socialMediaText {
-    font-size: 1.9rem;
-    text-decoration: none;
-}

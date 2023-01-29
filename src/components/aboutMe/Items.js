@@ -2,15 +2,6 @@
 export function getItems(box){
     /* this array is for the for loop which is for text style */
     const boxArr = [box.box1, box.box2, box.box3, box.box4, box.box5, box.box6]
-    /* if the box state is active, the text id at the boxes position will also be active*/
-    const text = [];
-    for(let i = 0; i < boxArr.length; i++){
-      if(boxArr[i] == "active"){
-        text[i] = "activeText"
-      }else{
-        text[i] = "inActiveText"
-      }
-    }
 
     const items = [
         {
@@ -18,9 +9,7 @@ export function getItems(box){
             imgsrc: "img/sarnthein.jpg",
             imgalt: "picture of Sarnthein",
             text: "I'm from Sarnthein..",
-            className: "itemBox",
             boxID: box.box1,
-            textId: text[0],
         },
         {
             id: 2,
@@ -28,9 +17,7 @@ export function getItems(box){
             imgalt: "video of zooming in on europe to Sarnthein",
             text: "...which is Located",
             text2: "in Northern Italy",
-            className: "itemBox",
             boxID: box.box2,
-            textId: text[1],
             page2: true
         },
         {
@@ -38,36 +25,28 @@ export function getItems(box){
             imgsrc: "img/jakobsSpitze.jpg",
             imgalt: "picture of the cross on the Jakobs Spitze",
             text: "I like hiking...",
-            className: "itemBox",
             boxID: box.box3,
-            textId: text[2]
         },
         {
             id: 4,
             imgsrc: "img/goldenGate.jpg",
             imgalt: "Picture of me in front of the Golden Gate Bridge",
             text: "...traveling...",
-            className: "itemBox",
             boxID: box.box4,
-            textId: text[3]
         },
         {
             id: 5,
             imgsrc: "img/volleyball.jpg",
             imgalt: "picture of me playing volleyball",
             text: "...doing sports...",
-            className: "itemBox",
             boxID: box.box5,
-            textId: text[4]
         },
         {
             id: 6,
             imgsrc: "img/programming.jpg",
             imgalt: "picture of me Programming",
             text: "& programming",
-            className: "itemBox",
             boxID: box.box6,
-            textId: text[5]
         }
     ]
 
