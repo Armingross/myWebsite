@@ -56,6 +56,7 @@ button {
 .displayAboutMe {
     background-color: var(--blackAbouteMeBG);
     align-items: flex-end;
+    justify-content: center;
 }
 
 .centerBox {
@@ -179,6 +180,7 @@ button {
 }
 
 
+/* Menu and Logo, Home and contact Screen small size */
   @media screen and (max-width: 900px) {
     .display {
         background-color: var(--blackBgSm);
@@ -189,15 +191,25 @@ button {
         box-shadow: none;
         background-color: transparent;
     }
-
-    .greeting {
-        font-size: 35px;
-    }
     
-    .myName {
-        font-size: 60px;
+    .centerBox-button {
+        width: 225px;
+        height: 70px;
+        font-size: 25px;
+    }
+    .centerBox-button:hover {
+        background-color: transparent;
     }
 
+    /* home font */
+    .greeting {
+        font-size: 2.2rem;
+    }
+    .myName {
+        font-size: 3.8rem;
+    }
+
+    /* menu */
     .menuButtons-Box {
         width: 96px;
         height: 45px;
@@ -207,11 +219,13 @@ button {
         display: flex;
         justify-content: flex-start;
     }   
-
-    .knowMeBtn {
-        width: 180px;
-        height: 60px;
-        font-size: 22px;
+    
+    /* contact */
+    .socialMediaBox {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 30%;
     }
   }
 
@@ -231,7 +245,7 @@ button {
     margin-bottom: 3vh;
 }
 
-/* bos in which all items are.
+/* box in which all items are.
 position relative so that the items are absolute positioned to this box and not the whole page */
 .sliderBox {
     width: 100%;
@@ -374,38 +388,13 @@ position relative so that the items are absolute positioned to this box and not 
 
 */
 
-.socialMediaBox {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.textIcon {
+.text-and-Icon {
     width: 28%;
     gap: 8px;
     color: var(--white);
 }
 
 .socialMediaText {
-    font-size: 30px;
+    font-size: 1.9rem;
     text-decoration: none;
 }
-
-
-@media screen and (max-width: 900px) {
-    .socialMediaBox {
-        height: 30%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .downloadResumeBtn {
-        width: 210px;
-        height: 70px;
-        font-size: 23px;
-    }
-    .downloadResumeBtn:hover {
-        background-color: transparent;
-    }
-  }

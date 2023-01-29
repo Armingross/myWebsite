@@ -49,20 +49,20 @@ export default function Contact(){
             <div className="flexCentered display">
                 <MenuLogo delayTime={delayTime} page={page}/>
                 <div className="centerBox">
-                    <div className="socialMediaBox">
-                        <motion.div className="flexCentered textIcon" whileHover={{ scale: 1.1 }}>
+                    <div className="flexCentered socialMediaBox" style={{width:"100%"}}>
+                        <motion.div className="flexCentered text-and-Icon" whileHover={{ scale: 1.1 }}>
                             <InstagramIcon/>
                             <motion.a href="https://www.instagram.com/aregross" target="to _blank" className="text socialMediaText">
                                 Instagram
                             </motion.a>
                         </motion.div>
-                        <motion.div className="flexCentered textIcon" whileHover={{ scale: 1.1 }}>
+                        <motion.div className="flexCentered text-and-Icon" whileHover={{ scale: 1.1 }}>
                             <MailOutlineIcon/>
                             <motion.a href="mailto:armingross01@gmail.com" target="to _blank" className="text socialMediaText">
                                 Mail
                             </motion.a>
                         </motion.div>
-                        <motion.div className="flexCentered textIcon" whileHover={{ scale: 1.1 }}>
+                        <motion.div className="flexCentered text-and-Icon" whileHover={{ scale: 1.1 }}>
                             <GitHubIcon/>
                             <motion.a href="https://github.com/Armingross" target="to _blank" className="text socialMediaText">
                                 GitHub
