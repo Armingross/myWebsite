@@ -371,6 +371,7 @@ position relative so that the items are absolute positioned to this box and not 
     }
   }
 
+  /* smartphone */
   @media screen and (max-aspect-ratio: 7/12) {
     .sliderAndArrow {
         width: 95vw;
@@ -380,17 +381,20 @@ position relative so that the items are absolute positioned to this box and not 
     }
   }
 
+  /* long but not wide smartphone */
+  @media screen and (max-aspect-ratio: 5/11) {
+      .pictureBox {
+          height: 50%;
+        }
+        .aboutMeText {
+            font-size: 1.6vh;
+    }
+  }
+  
+  /* not long but wide */
   @media screen and (min-aspect-ratio: 14/5) {
     .sliderAndArrow {
         width: 50vw;
     }
   }
-
-  @media screen and (max-aspect-ratio: 5/11) {
-    .pictureBox {
-        height: 50%;
-    }
-    .aboutMeText {
-        font-size: 1.6vh;
-    }
-  }
+  
