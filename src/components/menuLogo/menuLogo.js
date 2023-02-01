@@ -121,9 +121,8 @@ export default function MenuLogo({delayTime, page}) {
                 animate="show"
                 whileHover="hover"
                 onClick={() => navigatetoPage("")}>
-                    <Typography className="logoText" onClick={() => navigatetoPage("aboutme")}>A|G</Typography>                    
+                    <Typography className="logoText">A|G</Typography>                    
             </motion.div>
-            {/*div for menu buttons*/}
             {menuButtonsBox}
         </div>
     )
