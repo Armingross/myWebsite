@@ -1,4 +1,3 @@
-import './App.css';
 import AboutMe from './components/aboutMe/AboutMe';
 import Home from './components/home/home';
 import Contact from './components/contact/Contact';

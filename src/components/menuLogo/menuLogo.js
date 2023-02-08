@@ -115,14 +115,14 @@ export default function MenuLogo({delayTime, page}) {
         <div>
             <Menu menuState={menuState} setMenuState={setMenuState} navigatetoPage={navigatetoPage}/>
             {/*logo div*/}
-            <motion.div className="flexCentered logo"
+            <motion.img src="img/AG_Logo.png"
+                alt= "logo"
+                className="flexCentered logo"
                 variants={logoVariant}
                 initial="hidden"
                 animate="show"
                 whileHover="hover"
-                onClick={() => navigatetoPage("")}>
-                    <Typography className="logoText">A|G</Typography>                    
-            </motion.div>
+                onClick={() => navigatetoPage("")}/>
             {menuButtonsBox}
         </div>
     )
