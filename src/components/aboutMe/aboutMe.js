@@ -5,6 +5,7 @@ import { getItems } from "./Items.js"
 import { scroll } from "./Scroll.js"
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import { useMediaQuery, } from '@mui/material'
 import { motion } from "framer-motion"
@@ -58,6 +59,10 @@ export default function AboutMe(){
         setPointer(point);
     }
 
+    const scrollToStart = () => {
+        setPointer(1)
+    }
+
     /* when pointer changes value which happens after scrolldown or scrollup... */
     useEffect(() => {
         /* ...scroll function will be called... */
@@ -78,6 +83,17 @@ export default function AboutMe(){
         fontSize: "50px",
         marginTop: "20px",
         marginBottom: "20px",
+        color: "white",
+        cursor: "pointer",
+        '@media screen and (max-height: 500px)': {
+            fontSize: "10vh"
+        },
+    }
+
+    const arrowToTheTop = {
+        fontSize: "50px",
+        position: "absolute",
+        bottom: "0",
         color: "white",
         cursor: "pointer",
         '@media screen and (max-height: 500px)': {
@@ -169,6 +185,7 @@ export default function AboutMe(){
                                 <ArrowDownwardIcon sx={arrowIconStyle} onClick={scrollDown}/>
                             </motion.div>
                             </div>
+                            <ExpandLessIcon sx={arrowToTheTop} onClick={scrollToStart}/>
                         </div>
                     </div>
                 </ReactScrollWheelHandler>
