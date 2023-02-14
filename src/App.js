@@ -1,4 +1,4 @@
-import AboutMe from './components/aboutMe/AboutMe';
+import AboutMe from './components/aboutMe/aboutMe';
 import Home from './components/home/home';
 import Contact from './components/contact/Contact';
 import { Route, Routes, useLocation } from 'react-router-dom';
