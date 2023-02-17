@@ -5,7 +5,7 @@ import { getItems } from "./Items.js"
 import { scroll } from "./Scroll.js"
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import { useMediaQuery, } from '@mui/material'
 import { motion } from "framer-motion"
@@ -92,10 +92,9 @@ export default function AboutMe(){
 
     const arrowToTheTop = {
         fontSize: "50px",
-        position: "absolute",
-        bottom: "0",
         color: "white",
         cursor: "pointer",
+        transform: "rotate(180deg)",
         '@media screen and (max-height: 500px)': {
             fontSize: "10vh"
         },
@@ -125,6 +124,10 @@ export default function AboutMe(){
     let downArrowHidden = false;
     if(pointer === Object.keys(box).length) {
         downArrowHidden = true;
+    }
+    let toTheTopArrowHidden = true;
+    if(pointer === Object.keys(box).length) {
+        toTheTopArrowHidden = false;
     }
     
     const bgImg = BgImages(page)
@@ -185,10 +188,12 @@ export default function AboutMe(){
                                 <ArrowDownwardIcon sx={arrowIconStyle} onClick={scrollDown}/>
                             </motion.div>
                             </div>
-                            <ExpandLessIcon sx={arrowToTheTop} onClick={scrollToStart}/>
                         </div>
                     </div>
                 </ReactScrollWheelHandler>
+            </div>
+            <div className="toTheTopArrowBox" hidden={toTheTopArrowHidden}>
+                    <ExpandCircleDownIcon sx={arrowToTheTop} onClick={scrollToStart}/>
             </div>
         </motion.div>
     )
